@@ -2,7 +2,9 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
-
+import { Button } from "@nextui-org/button";
+import Link from "next/link";
+import { FaArrowLeft } from "react-icons/fa";
 interface Project {
   name: string;
   image: StaticImageData;
@@ -48,17 +50,24 @@ const ProjectShow: React.FC<ProjectProps> = ({ project }) => {
 
   return (
     <div className="max-w-4xl mx-auto p-4 md:p-8 bg-gray-100 dark:bg-gray-900  shadow-lg rounded-lg">
+      <div className="flex items-right text-cyan-600 dark:text-cyan-400 text-3xl font-bold mb-8">
+        <Link href="/">
+          <FaArrowLeft />
+        </Link>
+      </div>
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.h1
-          variants={itemVariants}
-          className="text-3xl font-bold text-cyan-600 dark:text-cyan-500 mb-4"
-        >
-          {project.name}
-        </motion.h1>
+        <div className="flex justify-center mb-5">
+          <motion.h1
+            variants={itemVariants}
+            className="text-3xl font-bold text-cyan-600 dark:text-cyan-500 mb-4"
+          >
+            {project.name}
+          </motion.h1>
+        </div>
       </motion.div>
       <div className="mb-4 flex justify-center">
         <Image

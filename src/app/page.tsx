@@ -4,6 +4,10 @@ import { ProjectsList } from "./data/projects";
 import CamZiny from "./components/CamZiny";
 import Contact from "./components/Contact";
 
+export const metadata = {
+  title: "Home - Cam Ziny",
+};
+
 export default function Home() {
   return (
     <div className="mt-32 container mx-auto px-4">
