@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import Image, { StaticImageData } from "next/image";
+import { motion } from "framer-motion";
 
 interface Project {
   name: string;
@@ -22,11 +24,42 @@ interface ProjectProps {
 }
 
 const ProjectShow: React.FC<ProjectProps> = ({ project }) => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        when: "beforeChildren",
+        duration: 0.5,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { scale: 0.95, rotate: -5, opacity: 0 },
+    visible: {
+      scale: 1,
+      rotate: 0,
+      opacity: 1,
+      transition: { duration: 0.3 },
+    },
+  };
+
   return (
     <div className="max-w-4xl mx-auto p-4 md:p-8 bg-gray-100 dark:bg-gray-900  shadow-lg rounded-lg">
-      <h1 className="text-3xl font-bold text-cyan-600 dark:text-cyan-500 mb-4">
-        {project.name}
-      </h1>
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.h1
+          variants={itemVariants}
+          className="text-3xl font-bold text-cyan-600 dark:text-cyan-500 mb-4"
+        >
+          {project.name}
+        </motion.h1>
+      </motion.div>
       <div className="mb-4 flex justify-center">
         <Image
           src={project.image}
