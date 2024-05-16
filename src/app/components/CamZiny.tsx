@@ -5,20 +5,38 @@ import useRange from "./UseRange";
 import { Card } from "@nextui-org/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
+import { motion } from "framer-motion";
 
 const CamZiny: React.FC = () => {
-  const scrollPosition = useScrollPosition();
-  const textScale = useRange(scrollPosition, 0, 50, 1, 0.8);
-  const textX = useRange(scrollPosition, 0, 50, 0, 42);
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+        when: "beforeChildren",
+        duration: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.4 },
+    },
+  };
 
   const links = [
     {
-      icon: <FaGithub className="" />,
-      link: "https://github.com/camziny",
-    },
-    {
       icon: <FaLinkedin className="" />,
       link: "https://www.linkedin.com/in/cameron-ziny/",
+    },
+    {
+      icon: <FaGithub className="" />,
+      link: "https://github.com/camziny",
     },
     {
       icon: <IoMdMail className="" />,
@@ -28,20 +46,23 @@ const CamZiny: React.FC = () => {
 
   return (
     <div className="relative mt-16">
-      <h1
-        style={{
-          transform: `scale(${textScale}) translateX(${textX}px)`,
-        }}
-        className="text-3xl font-bold transition-transform duration-500 text-cyan-600 dark:text-cyan-300"
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
-        Hi, I'm Cam Ziny
-      </h1>
+        <motion.h1
+          variants={itemVariants}
+          className="title text-cyan-600 text-2xl dark:text-cyan-400 font-bold"
+        >
+          Hi, I'm Cam Ziny
+        </motion.h1>
+      </motion.div>
       <Card className="text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 rounded-lg p-4 mt-2 shadow-xl">
         <p className="text-lg leading-relaxed">
-          I'm a passionate software developer with a love for creating beautiful
-          and functional web applications. With a background in software
-          engineering and a keen eye for design, I aim to bridge the gap between
-          technology and user experience.
+          I'm a software developer with a passion for creating web applications
+          that enhance user experiences. My expertise lies in developing robust,
+          scalable solutions using modern technologies.
         </p>
         <div className="flex justify-center text-cyan-600 dark:text-cyan-500 text-2xl rounded-lg p-2 mt-2 items-center">
           {links.map((item, index) => (

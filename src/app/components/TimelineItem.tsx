@@ -46,11 +46,11 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
       }`}
     >
       <div
-        className={`w-full md:max-w-md px-4 py-4 mb-8 ${
-          index % 2 === 0 ? "md:pl-16 md:pr-4" : "md:pr-16 md:pl-4"
+        className={`w-full md:max-w-md px-4 py-2 mb-4 ${
+          index % 2 === 0 ? "md:pl-12 md:pr-4" : "md:pr-12 md:pl-4"
         }`}
       >
-        <div className="relative bg-white dark:bg-gray-800 shadow-xl rounded-lg rounded-b-none p-4 md:p-6">
+        <div className="relative bg-white dark:bg-gray-800 shadow-xl rounded-lg rounded-b-none p-2 md:p-4">
           <div className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-4">
             <div className="flex-shrink-0">{item.icon}</div>
             <div className="flex-grow">
@@ -66,12 +66,12 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
             {item.title}
           </p>
         </div>
-        <div className=" bg-gray-200 dark:bg-gray-800 rounded-b-lg p-2">
-          <div className="mt-4">
+        <div className="bg-gray-200 dark:bg-gray-800 rounded-b-lg p-1">
+          <div className="mt-2">
             {item.skills.map((skill, skillIndex) => (
               <Chip
                 key={skillIndex}
-                className="inline-block bg-cyan-500 dark:bg-cyan-600 px-3 py-1 rounded-md text-sm text-white mr-2 mb-2"
+                className="inline-block bg-cyan-500 dark:bg-cyan-600 px-3 py-1 rounded-md text-sm text-white mr-2 mb-1"
               >
                 {skill}
               </Chip>
