@@ -55,14 +55,14 @@ const CamZiny: React.FC = () => {
           variants={itemVariants}
           className="title text-cyan-600 text-2xl dark:text-cyan-400 font-bold"
         >
-          Hi, I'm Cam Ziny
+          Hi, I&apos;m Cam Ziny
         </motion.h1>
       </motion.div>
       <Card className="text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 rounded-lg p-4 mt-2 shadow-xl">
         <p className="text-lg leading-relaxed">
-          I'm a software developer with a passion for creating web applications
-          that enhance user experiences. My expertise lies in developing robust,
-          scalable solutions using modern technologies.
+          I&apos;m a software developer with a passion for creating web
+          applications that enhance user experiences. My expertise lies in
+          developing robust, scalable solutions using modern technologies.
         </p>
         <div className="flex justify-center text-cyan-600 dark:text-cyan-500 text-2xl rounded-lg p-2 mt-2 items-center">
           {links.map((item, index) => (
