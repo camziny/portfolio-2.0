@@ -1,5 +1,9 @@
 import React from "react";
 
+export const metadata = {
+  title: "About - Cam Ziny",
+};
+
 const About = () => {
   return (
     <div className="bg-gray-100 min-h-screen p-4 sm:p-6 dark:bg-gray-800">

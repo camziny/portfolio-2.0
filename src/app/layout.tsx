@@ -7,12 +7,14 @@ import { switchThemeDuration } from "./constants";
 import Navbar from "./navbar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Cam Ziny",
-  description: "Software Developer",
+  description:
+    "I'm a software developer with a passion for creating web applications that enhance user experiences. My expertise lies in developing robust, scalable solutions using modern technologies.",
 };
 
 export default function RootLayout({
