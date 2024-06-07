@@ -16,7 +16,7 @@ export default function Home() {
         <h2 className="text-center text-2xl font-bold text-gray-700 dark:text-white">
           Projects
         </h2>
-        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-4 flex flex-wrap justify-center gap-4">
           {ProjectsList.map((project: any) => (
             <ProjectCard key={project.name} project={project} />
           ))}
