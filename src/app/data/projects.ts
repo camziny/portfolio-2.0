@@ -4,6 +4,7 @@ import myFC from "./images/myFC.png";
 import humanOrAiLogo from "./images/humanOrAiLogo.png";
 import zfit from "./images/zfit.png";
 import tripLogo from "./images/tripLogo.png";
+import route9 from "./images/route 9 landscape 3.png";
 
 export const ProjectsList = [
   {
@@ -11,6 +12,14 @@ export const ProjectsList = [
     image: divox2,
     skills:
       "Divoxutils is a web application inspired by the legacy of daocutils and other notable predecessors like gimpchimp. Designed to fill the gap left by daocutils, it serves as a dynamic hub for Dark Age of Camelot enthusiasts. Built using Next.js, PostgreSQL, Prisma, and TypeScript, and deployed on Vercel, this project combines robust technology with a passion for gaming.",
+    link: "https://divoxutils.com/",
+    github: "https://github.com/camziny/divoxutils",
+  },
+  {
+    name: "Route 9 Landscape Products",
+    image: route9,
+    skills:
+      "The Route 9 Landscape Products web app is a platform designed to establish a strong online presence for a landscape products store. The platform includes a customer-facing application providing up-to-date inventory, detailed product information, and a robust admin application for managing content.",
     link: "https://divoxutils.com/",
     github: "https://github.com/camziny/divoxutils",
   },

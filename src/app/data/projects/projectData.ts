@@ -5,6 +5,7 @@ import humanOrAiLogo from "../images/humanOrAiLogo.png";
 import zfit from "../images/zfit.png";
 import tripLogo from "../images/tripLogo.png";
 import Image, { StaticImageData } from "next/image";
+import route9 from "../images/route 9 landscape.png";
 
 interface Project {
   name: string;
@@ -23,6 +24,81 @@ interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    name: "divoxutils",
+    image: divox3,
+    description:
+      "divoxutils is a specialized tool designed for the Dark Age of Camelot gaming community. It offers a unique blend of features tailored to enhance the gaming experience for enthusiasts of this classic MMORPG.",
+    keyFeatures: [
+      "Character Lists: Users can compile all of their Dark Age of Camelot characters into a single, manageable list.",
+      "Leaderboards: See where you stand in both 'All Time' and 'Last Week' categories, offering competitive insight into your game standing.",
+      "Group Builder: A novel feature allowing users to create in-game group setups by adding other users and selecting characters for each participant.",
+      "Discord Bot: Seamlessly integrate with your Discord server, providing access to a range of commands that fetch information and statistics about users and their characters.",
+      "User Authentication: Discord SSO with Clerk to ensure ease of use and secure access for our users.",
+    ],
+    technologies: [
+      "NextJS & TypeScript",
+      "Clerk/NextJS for user management and authentication",
+      "Vercel for hosting",
+      "Prisma for database management",
+      "PostgreSQL for data storage",
+      "Playwright for testing",
+    ],
+    links: {
+      demo: "https://divoxutils.com",
+      source: "https://github.com/camziny/divoxutils",
+    },
+    purpose:
+      "To provide a comprehensive suite of tools for Dark Age of Camelot players to enhance their gaming experience and community engagement.",
+    role: "Sole developer and project owner: Managed all aspects of the 'divoxutils' project from conception to deployment.",
+    technicalHurdles: [
+      "Reducing request times and preventing timeout errors when loading large user lists, which became a significant issue as some users have lists with over 100 characters.",
+    ],
+    solutions: [
+      "Modified the database schema for optimized data handling and implemented cron jobs to periodically update and pre-process data, significantly reducing load times and preventing timeout errors.",
+    ],
+  },
+  {
+    name: "Route 9 Landscape Products",
+    image: route9,
+    description:
+      "Route 9 Landscape Products is an online platform designed to establish a strong online presence for a landscape products store. The platform includes a customer-facing application providing up-to-date inventory, detailed product information, and a robust admin application for managing content.",
+    keyFeatures: [
+      "Customer-Facing Application:",
+      "Up-to-date Inventory: Provides real-time inventory updates, helping customers know the availability of products.",
+      "Detailed Product Descriptions: Offers comprehensive information about each product, including images and descriptions.",
+      "Google Maps Integration: Includes an interactive map to help customers locate the store easily.",
+      "Contact Information: Provides easily accessible contact details for the store.",
+      "Responsive Design: Ensures a seamless user experience across various devices and screen sizes.",
+      "Admin Application",
+      "Content Management: Allows administrators to update product information, inventory details, and other website content.",
+      "User Authentication: Ensures that only authorized personnel can access the admin functionalities.",
+      "Responsive Design: Ensures the interface is user-friendly and works well on various devices.",
+    ],
+    technologies: [
+      "NextJS & TypeScript",
+      "Drizzle ORM for database management",
+      "PostgreSQL for data storage",
+      "Clerk/NextJS for user management and authentication",
+      "Tailwind CSS for styling",
+      "Google Maps JS API for map integration (customer-facing app)",
+      "Vercel for hosting",
+    ],
+    links: {
+      demo: "https://r9-landscape.vercel.app/",
+      source: "https://github.com/camziny/r9-landscape",
+    },
+    purpose:
+      "To create an online presence for Route 9 Landscape Products and provide customers with up-to-date inventory, detailed product information, contact details, and general store information. Additionally, to provide store administrators with a robust and easy-to-use platform for managing and updating website content.",
+    role: "Sole developer and project owner: Managed all aspects of the Route 9 Landscape Products project from conception to deployment.",
+    technicalHurdles: [
+      "I challenged myself to learn server actions to take advantage of the performance benefits when performing CRUD operations on product content.",
+      "I am also awaiting the client's decision to add secure payments, which will be an exciting challenge I look forward to.",
+    ],
+    solutions: [
+      "I was able to successfully implement server-actions, which allowed me to modify data on the server directly from the frontend when performing CRUD operations.",
+    ],
+  },
   {
     name: "divoxutils",
     image: divox3,
