@@ -82,6 +82,7 @@ export const projects: Project[] = [
       "Clerk/NextJS for user management and authentication",
       "Tailwind CSS for styling",
       "Google Maps JS API for map integration (customer-facing app)",
+      "Shadcn UI for well-designed, open source, accessible, and customizable components",
       "Vercel for hosting",
     ],
     links: {
