@@ -19,7 +19,7 @@ export const ProjectsList = [
     name: "Route 9 Landscape Products",
     image: route9,
     skills:
-      "The Route 9 Landscape Products web app is a platform designed to establish a strong online presence for a landscape products store. The platform includes a customer-facing application providing up-to-date inventory, detailed product information, and a robust admin application for managing content.",
+      "The Route 9 Landscape Products web application is a platform designed to establish a strong online presence for a landscape products store. The platform includes a customer-facing application providing up-to-date inventory, detailed product information, and a robust admin application for managing content.",
     link: "https://divoxutils.com/",
     github: "https://github.com/camziny/divoxutils",
   },

@@ -62,7 +62,7 @@ export const projects: Project[] = [
     name: "Route 9 Landscape Products",
     image: route9,
     description:
-      "Route 9 Landscape Products is an online platform designed to establish a strong online presence for a landscape products store. The platform includes a customer-facing application providing up-to-date inventory, detailed product information, and a robust admin application for managing content.",
+      "The Route 9 Landscape Products web application is an online platform designed to establish a strong online presence for a landscape products store. The platform includes a customer-facing application providing up-to-date inventory, detailed product information, and a robust admin application for managing content.",
     keyFeatures: [
       "Customer-Facing Application:",
       "Up-to-date Inventory: Provides real-time inventory updates, helping customers know the availability of products.",
