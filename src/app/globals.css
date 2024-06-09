@@ -76,3 +76,19 @@ body {
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 }
+
+@keyframes copied {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #475569;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.copied {
+  animation: copied 1s ease-in-out;
+}

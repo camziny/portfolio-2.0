@@ -1,4 +1,4 @@
-enum SkillType {
+export enum SkillType {
   Language = "Language",
   Backend = "Backend",
   Frontend = "Frontend",
@@ -8,7 +8,7 @@ enum SkillType {
   Other = "Other",
 }
 
-interface Skill {
+export interface Skill {
   name: string;
   type: SkillType;
 }
@@ -248,7 +248,11 @@ export const skills: Skill[] = [
   },
 ];
 
-export const fetchSkillData = (skillName: string): Skill | undefined => {
-  const skill = skills.find((s) => s.name === skillName);
-  return skill;
+export const fetchSkillData = (
+  skillName?: string
+): Skill | Skill[] | undefined => {
+  if (skillName) {
+    return skills.find((s) => s.name === skillName);
+  }
+  return skills;
 };

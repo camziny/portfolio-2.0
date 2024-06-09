@@ -8,6 +8,7 @@ import Navbar from "./navbar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Analytics } from "@vercel/analytics/react";
+import { ChakraProvider } from "@chakra-ui/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,15 +25,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} bg-gray-50 dark:bg-gray-900 ${switchThemeDuration}`}
-      >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar />
-          <main>{children}</main>
-          <ToastContainer />
-        </ThemeProvider>
-      </body>
+      <ChakraProvider>
+        <body
+          className={`${inter.className} bg-gray-50 dark:bg-gray-900 ${switchThemeDuration}`}
+        >
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <Navbar />
+            <main>{children}</main>
+            <ToastContainer />
+          </ThemeProvider>
+        </body>
+      </ChakraProvider>
     </html>
   );
 }
