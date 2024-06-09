@@ -16,6 +16,7 @@
     "@mui/icons-material": "^5.15.16",
     "@mui/material": "^5.15.16",
     "@nextui-org/react": "^2.2.10",
+    "@nextui-org/snippet": "^2.0.37",
     "@react-stately/toggle": "^3.7.2",
     "@vercel/analytics": "^1.2.2",
     "classnames": "^2.5.1",
