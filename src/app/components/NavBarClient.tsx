@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { FaHome } from "react-icons/fa";
-import { FaBriefcase, FaAddressCard } from "react-icons/fa";
+import { FaBriefcase, FaAddressCard, FaHatWizard } from "react-icons/fa";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import useScrollPosition from "./GetScrollPosition";
 import Experience from "./ExperienceClient";
