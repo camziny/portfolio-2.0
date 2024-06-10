@@ -1,5 +1,5 @@
 export enum SkillType {
-  Language = "Language",
+  Language = "Languages",
   Backend = "Backend",
   Frontend = "Frontend",
   Database = "Database",
@@ -40,10 +40,6 @@ export const skills: Skill[] = [
   },
   {
     name: "C#",
-    type: SkillType.Language,
-  },
-  {
-    name: "OOP",
     type: SkillType.Language,
   },
   {
@@ -112,6 +108,14 @@ export const skills: Skill[] = [
   },
   {
     name: "Postman",
+    type: SkillType.Backend,
+  },
+  {
+    name: "Microservices",
+    type: SkillType.Backend,
+  },
+  {
+    name: "Websockets",
     type: SkillType.Backend,
   },
   {
@@ -195,6 +199,10 @@ export const skills: Skill[] = [
     type: SkillType.Frontend,
   },
   {
+    name: "Sass/SCSS",
+    type: SkillType.Frontend,
+  },
+  {
     name: "Playwright",
     type: SkillType.Testing,
   },
@@ -208,6 +216,10 @@ export const skills: Skill[] = [
   },
   {
     name: "Selenium",
+    type: SkillType.Testing,
+  },
+  {
+    name: "Enzyme",
     type: SkillType.Testing,
   },
   {
@@ -243,7 +255,31 @@ export const skills: Skill[] = [
     type: SkillType.Other,
   },
   {
+    name: "OOP",
+    type: SkillType.Other,
+  },
+  {
     name: "Full-Stack Development",
+    type: SkillType.Other,
+  },
+  {
+    name: "CI/CD",
+    type: SkillType.Other,
+  },
+  {
+    name: "Webpack",
+    type: SkillType.Other,
+  },
+  {
+    name: "Babel",
+    type: SkillType.Other,
+  },
+  {
+    name: "Heroku",
+    type: SkillType.Other,
+  },
+  {
+    name: "Jira",
     type: SkillType.Other,
   },
 ];
