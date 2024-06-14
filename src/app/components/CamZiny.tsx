@@ -45,18 +45,20 @@ const CamZiny: React.FC = () => {
   ];
 
   return (
-    <div className="relative mt-16">
+    <div className="relative mt-16 px-4 sm:px-8">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
+        className="flex flex-col sm:flex-row items-center sm:items-start"
       >
         <motion.h1
           variants={itemVariants}
-          className="title text-cyan-600 text-2xl dark:text-cyan-400 font-bold"
+          className="title text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 text-5xl sm:text-6xl font-extrabold tracking-wide leading-tight whitespace-nowrap drop-shadow-lg"
         >
-          Hi, I&apos;m Cam Ziny
+          Hi, I&apos;m Cam&nbsp;Ziny
         </motion.h1>
+        <div className="mt-4 sm:mt-0 sm:ml-4"></div>
       </motion.div>
       <Card className="text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 rounded-lg p-4 mt-2 shadow-xl">
         <p className="text-lg leading-relaxed">
