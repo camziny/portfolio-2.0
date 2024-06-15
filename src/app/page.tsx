@@ -11,15 +11,17 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="mt-32  sm:mt-0 container mx-auto px-4">
-      {/* <div className="py-10 sm:py-0 flex justify-center sm:justify-end">
-        <div className="absolute top-5 sm:relative sm:top-0">
-          <ThreeDScene />
+    <div className="sm:mt-0 container mx-auto px-4">
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between">
+        <div className="order-2 lg:order-1 py-16 sm:py-8 md:py-4 lg:py-2 w-full lg:w-auto">
+          <CamZiny />
         </div>
-      </div> */}
-      {/* <div className="py-16 sm:py-0"> */}
-      <CamZiny />
-      {/* </div> */}
+        <div className="order-1 lg:order-2 py-10 lg:py-2 flex justify-center sm:justify-end w-full lg:w-auto h-64 sm:h-auto mt-0 sm:mt-0">
+          <div className="relative sm:relative top-0 sm:top-0 -mt-16 sm:mt-0">
+            <ThreeDScene />
+          </div>
+        </div>
+      </div>
       <section className="mt-12">
         <h2 className="text-center text-2xl font-bold text-gray-700 dark:text-white">
           Projects
