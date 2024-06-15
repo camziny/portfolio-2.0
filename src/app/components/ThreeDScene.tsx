@@ -10,20 +10,20 @@ const TexturedBox: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
     THREE.TextureLoader,
     isDarkMode
       ? [
-          "/data/images/dark_coding_image.png",
           "/data/images/browser_dark.png",
-          "/data/images/cam_ziny_code_dark.png",
           "/data/images/code_computer_dark.png",
-          "/data/images/database_dark.png",
+          "/data/images/cam_ziny_code_dark.png",
           "/data/images/laptop_dark.png",
+          "/data/images/dark_coding_image.png",
+          "/data/images/database_dark.png",
         ]
       : [
-          "/data/images/coding_image.png",
           "/data/images/browser.png",
-          "/data/images/cam_ziny_code.png",
           "/data/images/code_computer.png",
-          "/data/images/database.png",
+          "/data/images/cam_ziny_code.png",
           "/data/images/laptop.png",
+          "/data/images/coding_image.png",
+          "/data/images/database.png",
         ]
   );
 
@@ -31,7 +31,7 @@ const TexturedBox: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
 
   useFrame(() => {
     if (meshRef.current) {
-      meshRef.current.rotation.y += 0.007;
+      meshRef.current.rotation.y += 0.006;
       meshRef.current.rotation.x += 0.00001;
     }
   });

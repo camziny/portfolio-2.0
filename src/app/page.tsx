@@ -22,7 +22,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <section className="mt-12">
+      <section>
         <h2 className="text-center text-2xl font-bold text-gray-700 dark:text-white">
           Projects
         </h2>
