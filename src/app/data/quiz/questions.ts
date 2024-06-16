@@ -1,4 +1,4 @@
-import { Question } from "@/app/types/quizTypes";
+import { Question, Category } from "@/app/types/quizTypes";
 
 export const quizQuestions: Question[] = [
   {
@@ -9,6 +9,7 @@ export const quizQuestions: Question[] = [
       { text: "undefined", isCorrect: false },
       { text: "string", isCorrect: false },
     ],
+    category: Category.JavaScriptTypeScript,
   },
   {
     question: "Which of the following is a Python web framework?",
@@ -18,6 +19,7 @@ export const quizQuestions: Question[] = [
       { text: "React", isCorrect: false },
       { text: "Rails", isCorrect: false },
     ],
+    category: Category.Python,
   },
   {
     question: "What is the purpose of the `useEffect` hook in React?",
@@ -30,6 +32,7 @@ export const quizQuestions: Question[] = [
       },
       { text: "To handle event listeners.", isCorrect: false },
     ],
+    category: Category.React,
   },
   {
     question: "Which of the following is true about React props?",
@@ -42,15 +45,145 @@ export const quizQuestions: Question[] = [
       { text: "Props are used for managing local state.", isCorrect: false },
       { text: "Props cannot be passed to class components.", isCorrect: false },
     ],
+    category: Category.React,
   },
   {
-    question: "What is the result of `0.1 + 0.2 === 0.3` in JavaScript?",
+    question: "What is the purpose of the `key` prop in React?",
+    answers: [
+      {
+        text: "To provide a unique identifier for elements in a list.",
+        isCorrect: true,
+      },
+      { text: "To bind a value to an input element.", isCorrect: false },
+      { text: "To handle form submissions.", isCorrect: false },
+      { text: "To trigger re-renders.", isCorrect: false },
+    ],
+    category: Category.React,
+  },
+  {
+    question:
+      "Which hook is used to manage local component state in a functional component?",
+    answers: [
+      { text: "useEffect", isCorrect: false },
+      { text: "useContext", isCorrect: false },
+      { text: "useState", isCorrect: true },
+      { text: "useReducer", isCorrect: false },
+    ],
+    category: Category.React,
+  },
+  {
+    question: "What does the `useContext` hook do in React?",
+    answers: [
+      {
+        text: "It provides a way to pass data through the component tree without having to pass props down manually at every level.",
+        isCorrect: true,
+      },
+      {
+        text: "It schedules a state update to the nearest stateful ancestor.",
+        isCorrect: false,
+      },
+      { text: "It directly manipulates the DOM.", isCorrect: false },
+      {
+        text: "It allows you to manage side effects in functional components.",
+        isCorrect: false,
+      },
+    ],
+    category: Category.React,
+  },
+  {
+    question:
+      "In which phase of the React component lifecycle is the `componentDidMount` method called?",
+    answers: [
+      { text: "Initialization phase", isCorrect: false },
+      { text: "Mounting phase", isCorrect: true },
+      { text: "Updating phase", isCorrect: false },
+      { text: "Unmounting phase", isCorrect: false },
+    ],
+    category: Category.React,
+  },
+  {
+    question: "How do you create a context in React?",
+    answers: [
+      { text: "Using the `createContext` function.", isCorrect: true },
+      { text: "Using the `useReducer` function.", isCorrect: false },
+      { text: "Using the `useContext` function.", isCorrect: false },
+      { text: "Using the `useState` function.", isCorrect: false },
+    ],
+    category: Category.React,
+  },
+  {
+    question:
+      "What is the difference between controlled and uncontrolled components in React?",
+    answers: [
+      {
+        text: "Controlled components do not maintain their own state; uncontrolled components do.",
+        isCorrect: false,
+      },
+      {
+        text: "Controlled components rely on React state to manage form data, while uncontrolled components rely on the DOM.",
+        isCorrect: true,
+      },
+      {
+        text: "Controlled components are class components; uncontrolled components are functional components.",
+        isCorrect: false,
+      },
+      {
+        text: "Controlled components use refs; uncontrolled components do not.",
+        isCorrect: false,
+      },
+    ],
+    category: Category.React,
+  },
+  {
+    question: "What is the purpose of `React.Fragment`?",
+    answers: [
+      {
+        text: "To return multiple elements without adding extra nodes to the DOM.",
+        isCorrect: true,
+      },
+      { text: "To define a section of a component.", isCorrect: false },
+      { text: "To manage state in a functional component.", isCorrect: false },
+      {
+        text: "To handle side effects in a functional component.",
+        isCorrect: false,
+      },
+    ],
+    category: Category.React,
+  },
+  {
+    question:
+      "Which of the following methods is used to update the state in a class component?",
+    answers: [
+      { text: "updateState", isCorrect: false },
+      { text: "setState", isCorrect: true },
+      { text: "changeState", isCorrect: false },
+      { text: "applyState", isCorrect: false },
+    ],
+    category: Category.React,
+  },
+  {
+    question:
+      "What is the default value of a context if it is not provided by a `Provider`?",
+    answers: [
+      { text: "null", isCorrect: false },
+      { text: "undefined", isCorrect: false },
+      {
+        text: "The default value specified when creating the context.",
+        isCorrect: true,
+      },
+      { text: "An empty object", isCorrect: false },
+    ],
+    category: Category.React,
+  },
+  {
+    question: "What is the output of `0.1 + 0.2 === 0.3` in JavaScript?",
     answers: [
       { text: "True", isCorrect: false },
       { text: "False", isCorrect: true },
       { text: "Undefined", isCorrect: false },
       { text: "SyntaxError", isCorrect: false },
     ],
+    category: Category.JavaScriptTypeScript,
   },
   {
     question:
@@ -61,6 +194,7 @@ export const quizQuestions: Question[] = [
       { text: "JSON.objectify()", isCorrect: false },
       { text: "JSON.toObject()", isCorrect: false },
     ],
+    category: Category.JavaScriptTypeScript,
   },
   {
     question: "What does the `unknown` type represent in TypeScript?",
@@ -73,6 +207,7 @@ export const quizQuestions: Question[] = [
       },
       { text: "A type that represents an empty object.", isCorrect: false },
     ],
+    category: Category.JavaScriptTypeScript,
   },
   {
     question:
@@ -89,6 +224,105 @@ export const quizQuestions: Question[] = [
         isCorrect: false,
       },
     ],
+    category: Category.JavaScriptTypeScript,
+  },
+  {
+    question: "What is the purpose of the `let` keyword in JavaScript?",
+    answers: [
+      { text: "To declare a block-scoped variable.", isCorrect: true },
+      { text: "To declare a function-scoped variable.", isCorrect: false },
+      { text: "To declare a constant variable.", isCorrect: false },
+      { text: "To declare a global variable.", isCorrect: false },
+    ],
+    category: Category.JavaScriptTypeScript,
+  },
+  {
+    question:
+      "Which of the following is not a primitive data type in JavaScript?",
+    answers: [
+      { text: "String", isCorrect: false },
+      { text: "Number", isCorrect: false },
+      { text: "Object", isCorrect: true },
+      { text: "Boolean", isCorrect: false },
+    ],
+    category: Category.JavaScriptTypeScript,
+  },
+  {
+    question: "How can you create a class in TypeScript?",
+    answers: [
+      { text: "Using the `class` keyword.", isCorrect: true },
+      { text: "Using the `constructor` keyword.", isCorrect: false },
+      { text: "Using the `object` keyword.", isCorrect: false },
+      { text: "Using the `function` keyword.", isCorrect: false },
+    ],
+    category: Category.JavaScriptTypeScript,
+  },
+  {
+    question: "What is the purpose of the `super` keyword in TypeScript?",
+    answers: [
+      {
+        text: "To refer to the base class constructor or method.",
+        isCorrect: true,
+      },
+      { text: "To refer to a superclass instance.", isCorrect: false },
+      { text: "To create a new instance of a class.", isCorrect: false },
+      { text: "To define a private property.", isCorrect: false },
+    ],
+    category: Category.JavaScriptTypeScript,
+  },
+  {
+    question:
+      "Which of the following is used to handle asynchronous operations in JavaScript?",
+    answers: [
+      { text: "Promise", isCorrect: true },
+      { text: "Array", isCorrect: false },
+      { text: "Object", isCorrect: false },
+      { text: "String", isCorrect: false },
+    ],
+    category: Category.JavaScriptTypeScript,
+  },
+  {
+    question: "How do you define a tuple in TypeScript?",
+    answers: [
+      { text: "Using square brackets `[]`.", isCorrect: false },
+      { text: "Using parentheses `()`.", isCorrect: false },
+      { text: "Using curly braces `{}`.", isCorrect: false },
+      {
+        text: "Using an array with fixed types `[type1, type2, ...]`.",
+        isCorrect: true,
+      },
+    ],
+    category: Category.JavaScriptTypeScript,
+  },
+  {
+    question: "What is the purpose of the `readonly` modifier in TypeScript?",
+    answers: [
+      { text: "To declare a constant variable.", isCorrect: false },
+      {
+        text: "To declare a variable that can only be assigned once.",
+        isCorrect: true,
+      },
+      {
+        text: "To declare a variable with a mutable reference.",
+        isCorrect: false,
+      },
+      {
+        text: "To declare a variable that cannot be reassigned.",
+        isCorrect: false,
+      },
+    ],
+    category: Category.JavaScriptTypeScript,
+  },
+  {
+    question:
+      "Which method is used to remove the last element from an array in JavaScript?",
+    answers: [
+      { text: "shift()", isCorrect: false },
+      { text: "pop()", isCorrect: true },
+      { text: "splice()", isCorrect: false },
+      { text: "slice()", isCorrect: false },
+    ],
+    category: Category.JavaScriptTypeScript,
   },
   {
     question: "What is polymorphism in object-oriented programming?",
@@ -107,6 +341,7 @@ export const quizQuestions: Question[] = [
         isCorrect: false,
       },
     ],
+    category: Category.Java,
   },
   {
     question: "Which of the following is an example of encapsulation?",
@@ -122,6 +357,7 @@ export const quizQuestions: Question[] = [
       { text: "Creating a class hierarchy.", isCorrect: false },
       { text: "Overriding a method in a subclass.", isCorrect: false },
     ],
+    category: Category.Java,
   },
   {
     question:
@@ -132,6 +368,7 @@ export const quizQuestions: Question[] = [
       { text: "[1, 2] [2]", isCorrect: false },
       { text: "[1] [1, 2]", isCorrect: false },
     ],
+    category: Category.Python,
   },
   {
     question: "Which of the following is a mutable data type in Python?",
@@ -141,6 +378,7 @@ export const quizQuestions: Question[] = [
       { text: "list", isCorrect: true },
       { text: "int", isCorrect: false },
     ],
+    category: Category.Python,
   },
   {
     question: "What is the main purpose of the `final` keyword in Java?",
@@ -150,6 +388,7 @@ export const quizQuestions: Question[] = [
       { text: "To enable inheritance.", isCorrect: false },
       { text: "To create abstract classes.", isCorrect: false },
     ],
+    category: Category.Java,
   },
   {
     question: "Which method in Java is used to start a thread?",
@@ -159,5 +398,6 @@ export const quizQuestions: Question[] = [
       { text: "begin()", isCorrect: false },
       { text: "start()", isCorrect: true },
     ],
+    category: Category.Java,
   },
 ];
