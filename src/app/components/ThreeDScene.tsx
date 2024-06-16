@@ -29,10 +29,13 @@ const TexturedBox: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
 
   const meshRef = useRef<THREE.Mesh>(null!);
 
-  useFrame(() => {
+  const SPEED_Y = 0.006;
+  const SPEED_X = 0.00001;
+
+  useFrame((state, delta) => {
     if (meshRef.current) {
-      meshRef.current.rotation.y += 0.006;
-      meshRef.current.rotation.x += 0.00001;
+      meshRef.current.rotation.y += SPEED_Y * delta * 60;
+      meshRef.current.rotation.x += SPEED_X * delta * 60;
     }
   });
 
