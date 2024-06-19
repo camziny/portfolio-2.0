@@ -124,6 +124,7 @@ export default function QuizPage() {
   }
 
   const progressValue = ((currentQuestionIndex + 1) / questions.length) * 100;
+  const currentQuestion = questions[currentQuestionIndex];
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100 rounded-lg dark:bg-gray-900 px-4">
@@ -136,11 +137,17 @@ export default function QuizPage() {
         </div>
         {questions.length > 0 && (
           <div>
-            <h2 className="text-xl mb-6">
-              {questions[currentQuestionIndex].question}
+            <h2
+              className={`${
+                currentQuestion.category === Category.ArabicLetters
+                  ? "text-7xl"
+                  : "text-xl"
+              } mb-6 text-center`}
+            >
+              {currentQuestion.question}
             </h2>
             <div className="grid gap-4">
-              {questions[currentQuestionIndex].answers.map((answer, index) => (
+              {currentQuestion.answers.map((answer, index) => (
                 <button
                   key={index}
                   onClick={() => handleAnswerClick(index, answer.isCorrect)}
