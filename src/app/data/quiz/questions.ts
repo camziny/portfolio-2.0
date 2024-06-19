@@ -400,4 +400,294 @@ export const quizQuestions: Question[] = [
     ],
     category: Category.Java,
   },
+  {
+    question: "ز",
+    answers: [
+      { text: "ra", isCorrect: false },
+      { text: "dal", isCorrect: false },
+      { text: "zay", isCorrect: true },
+      { text: "dhal", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ا",
+    answers: [
+      { text: "alif", isCorrect: true },
+      { text: "ba", isCorrect: false },
+      { text: "ta", isCorrect: false },
+      { text: "tha", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ب",
+    answers: [
+      { text: "jeem", isCorrect: false },
+      { text: "ba", isCorrect: true },
+      { text: "ha", isCorrect: false },
+      { text: "kha", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ت",
+    answers: [
+      { text: "tha", isCorrect: false },
+      { text: "ta", isCorrect: true },
+      { text: "ya", isCorrect: false },
+      { text: "nun", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ث",
+    answers: [
+      { text: "jeem", isCorrect: false },
+      { text: "tha", isCorrect: true },
+      { text: "ha", isCorrect: false },
+      { text: "kha", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ج",
+    answers: [
+      { text: "ha", isCorrect: false },
+      { text: "jeem", isCorrect: true },
+      { text: "kha", isCorrect: false },
+      { text: "dal", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ح",
+    answers: [
+      { text: "jeem", isCorrect: false },
+      { text: "ha", isCorrect: true },
+      { text: "kha", isCorrect: false },
+      { text: "dal", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "خ",
+    answers: [
+      { text: "jeem", isCorrect: false },
+      { text: "ha", isCorrect: false },
+      { text: "kha", isCorrect: true },
+      { text: "dal", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "د",
+    answers: [
+      { text: "dal", isCorrect: true },
+      { text: "dhal", isCorrect: false },
+      { text: "ra", isCorrect: false },
+      { text: "zay", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ذ",
+    answers: [
+      { text: "dal", isCorrect: false },
+      { text: "dhal", isCorrect: true },
+      { text: "ra", isCorrect: false },
+      { text: "zay", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ر",
+    answers: [
+      { text: "dal", isCorrect: false },
+      { text: "dhal", isCorrect: false },
+      { text: "ra", isCorrect: true },
+      { text: "zay", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ز",
+    answers: [
+      { text: "dal", isCorrect: false },
+      { text: "dhal", isCorrect: false },
+      { text: "ra", isCorrect: false },
+      { text: "zay", isCorrect: true },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "س",
+    answers: [
+      { text: "sin", isCorrect: true },
+      { text: "shin", isCorrect: false },
+      { text: "sad", isCorrect: false },
+      { text: "dad", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ش",
+    answers: [
+      { text: "sin", isCorrect: false },
+      { text: "shin", isCorrect: true },
+      { text: "sad", isCorrect: false },
+      { text: "dad", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ص",
+    answers: [
+      { text: "sin", isCorrect: false },
+      { text: "shin", isCorrect: false },
+      { text: "sad", isCorrect: true },
+      { text: "dad", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ض",
+    answers: [
+      { text: "sin", isCorrect: false },
+      { text: "shin", isCorrect: false },
+      { text: "sad", isCorrect: false },
+      { text: "dad", isCorrect: true },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ط",
+    answers: [
+      { text: "ta", isCorrect: false },
+      { text: "tha", isCorrect: false },
+      { text: "ta'", isCorrect: true },
+      { text: "tha'", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ظ",
+    answers: [
+      { text: "tha", isCorrect: false },
+      { text: "zay", isCorrect: false },
+      { text: "tha'", isCorrect: true },
+      { text: "ta'", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ع",
+    answers: [
+      { text: "ayn", isCorrect: true },
+      { text: "ghayn", isCorrect: false },
+      { text: "fa", isCorrect: false },
+      { text: "qaf", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "غ",
+    answers: [
+      { text: "ayn", isCorrect: false },
+      { text: "ghayn", isCorrect: true },
+      { text: "fa", isCorrect: false },
+      { text: "qaf", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ف",
+    answers: [
+      { text: "ayn", isCorrect: false },
+      { text: "ghayn", isCorrect: false },
+      { text: "fa", isCorrect: true },
+      { text: "qaf", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ق",
+    answers: [
+      { text: "ayn", isCorrect: false },
+      { text: "ghayn", isCorrect: false },
+      { text: "fa", isCorrect: false },
+      { text: "qaf", isCorrect: true },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ك",
+    answers: [
+      { text: "kaf", isCorrect: true },
+      { text: "lam", isCorrect: false },
+      { text: "mim", isCorrect: false },
+      { text: "nun", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ل",
+    answers: [
+      { text: "kaf", isCorrect: false },
+      { text: "lam", isCorrect: true },
+      { text: "mim", isCorrect: false },
+      { text: "nun", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "م",
+    answers: [
+      { text: "kaf", isCorrect: false },
+      { text: "lam", isCorrect: false },
+      { text: "mim", isCorrect: true },
+      { text: "nun", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ن",
+    answers: [
+      { text: "kaf", isCorrect: false },
+      { text: "lam", isCorrect: false },
+      { text: "mim", isCorrect: false },
+      { text: "nun", isCorrect: true },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ه",
+    answers: [
+      { text: "waw", isCorrect: false },
+      { text: "ya", isCorrect: false },
+      { text: "hamza", isCorrect: false },
+      { text: "ha", isCorrect: true },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "و",
+    answers: [
+      { text: "waw", isCorrect: true },
+      { text: "ya", isCorrect: false },
+      { text: "hamza", isCorrect: false },
+      { text: "ha", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
+  {
+    question: "ي",
+    answers: [
+      { text: "waw", isCorrect: false },
+      { text: "ya", isCorrect: true },
+      { text: "hamza", isCorrect: false },
+      { text: "ha", isCorrect: false },
+    ],
+    category: Category.ArabicLetters,
+  },
 ];

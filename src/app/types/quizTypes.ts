@@ -10,6 +10,7 @@ export enum Category {
   Python = "Python",
   Nodejs = "Node.js",
   Databases = "Databases",
+  ArabicLetters = "Arabic Letters",
 }
 
 export interface Question {
