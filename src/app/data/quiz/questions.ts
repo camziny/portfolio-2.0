@@ -401,16 +401,6 @@ export const quizQuestions: Question[] = [
     category: Category.Java,
   },
   {
-    question: "ز",
-    answers: [
-      { text: "ra", isCorrect: false },
-      { text: "dal", isCorrect: false },
-      { text: "zay", isCorrect: true },
-      { text: "dhal", isCorrect: false },
-    ],
-    category: Category.ArabicLetters,
-  },
-  {
     question: "ا",
     answers: [
       { text: "alif", isCorrect: true },
@@ -419,6 +409,11 @@ export const quizQuestions: Question[] = [
       { text: "tha", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "ا",
+      medial: "ـاـ",
+      final: "ـا",
+    },
   },
   {
     question: "ب",
@@ -429,6 +424,11 @@ export const quizQuestions: Question[] = [
       { text: "kha", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "بـ",
+      medial: "ـبـ",
+      final: "ـب",
+    },
   },
   {
     question: "ت",
@@ -439,6 +439,11 @@ export const quizQuestions: Question[] = [
       { text: "nun", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "تـ",
+      medial: "ـتـ",
+      final: "ـت",
+    },
   },
   {
     question: "ث",
@@ -449,6 +454,11 @@ export const quizQuestions: Question[] = [
       { text: "kha", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "ثـ",
+      medial: "ـثـ",
+      final: "ـث",
+    },
   },
   {
     question: "ج",
@@ -459,6 +469,11 @@ export const quizQuestions: Question[] = [
       { text: "dal", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "جـ",
+      medial: "ـجـ",
+      final: "ـج",
+    },
   },
   {
     question: "ح",
@@ -469,6 +484,11 @@ export const quizQuestions: Question[] = [
       { text: "dal", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "حـ",
+      medial: "ـحـ",
+      final: "ـح",
+    },
   },
   {
     question: "خ",
@@ -479,6 +499,11 @@ export const quizQuestions: Question[] = [
       { text: "dal", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "خـ",
+      medial: "ـخـ",
+      final: "ـخ",
+    },
   },
   {
     question: "د",
@@ -489,6 +514,11 @@ export const quizQuestions: Question[] = [
       { text: "zay", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "د",
+      medial: "ـد",
+      final: "ـد",
+    },
   },
   {
     question: "ذ",
@@ -499,6 +529,11 @@ export const quizQuestions: Question[] = [
       { text: "zay", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "ذ",
+      medial: "ـذ",
+      final: "ـذ",
+    },
   },
   {
     question: "ر",
@@ -509,6 +544,11 @@ export const quizQuestions: Question[] = [
       { text: "zay", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "ر",
+      medial: "ـر",
+      final: "ـر",
+    },
   },
   {
     question: "ز",
@@ -519,6 +559,11 @@ export const quizQuestions: Question[] = [
       { text: "zay", isCorrect: true },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "ز",
+      medial: "ـز",
+      final: "ـز",
+    },
   },
   {
     question: "س",
@@ -529,6 +574,11 @@ export const quizQuestions: Question[] = [
       { text: "dad", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "سـ",
+      medial: "ـسـ",
+      final: "ـس",
+    },
   },
   {
     question: "ش",
@@ -539,6 +589,11 @@ export const quizQuestions: Question[] = [
       { text: "dad", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "شـ",
+      medial: "ـشـ",
+      final: "ـش",
+    },
   },
   {
     question: "ص",
@@ -549,6 +604,11 @@ export const quizQuestions: Question[] = [
       { text: "dad", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "صـ",
+      medial: "ـصـ",
+      final: "ـص",
+    },
   },
   {
     question: "ض",
@@ -559,6 +619,11 @@ export const quizQuestions: Question[] = [
       { text: "dad", isCorrect: true },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "ضـ",
+      medial: "ـضـ",
+      final: "ـض",
+    },
   },
   {
     question: "ط",
@@ -569,6 +634,11 @@ export const quizQuestions: Question[] = [
       { text: "tha'", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "طـ",
+      medial: "ـطـ",
+      final: "ـط",
+    },
   },
   {
     question: "ظ",
@@ -579,6 +649,11 @@ export const quizQuestions: Question[] = [
       { text: "ta'", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "ظـ",
+      medial: "ـظـ",
+      final: "ـظ",
+    },
   },
   {
     question: "ع",
@@ -589,6 +664,11 @@ export const quizQuestions: Question[] = [
       { text: "qaf", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "عـ",
+      medial: "ـعـ",
+      final: "ـع",
+    },
   },
   {
     question: "غ",
@@ -599,6 +679,11 @@ export const quizQuestions: Question[] = [
       { text: "qaf", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "غـ",
+      medial: "ـغـ",
+      final: "ـغ",
+    },
   },
   {
     question: "ف",
@@ -609,6 +694,11 @@ export const quizQuestions: Question[] = [
       { text: "qaf", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "فـ",
+      medial: "ـفـ",
+      final: "ـف",
+    },
   },
   {
     question: "ق",
@@ -619,6 +709,11 @@ export const quizQuestions: Question[] = [
       { text: "qaf", isCorrect: true },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "قـ",
+      medial: "ـقـ",
+      final: "ـق",
+    },
   },
   {
     question: "ك",
@@ -629,6 +724,11 @@ export const quizQuestions: Question[] = [
       { text: "nun", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "كـ",
+      medial: "ـكـ",
+      final: "ـك",
+    },
   },
   {
     question: "ل",
@@ -639,6 +739,11 @@ export const quizQuestions: Question[] = [
       { text: "nun", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "لـ",
+      medial: "ـلـ",
+      final: "ـل",
+    },
   },
   {
     question: "م",
@@ -649,6 +754,11 @@ export const quizQuestions: Question[] = [
       { text: "nun", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "مـ",
+      medial: "ـمـ",
+      final: "ـم",
+    },
   },
   {
     question: "ن",
@@ -659,6 +769,11 @@ export const quizQuestions: Question[] = [
       { text: "nun", isCorrect: true },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "نـ",
+      medial: "ـنـ",
+      final: "ـن",
+    },
   },
   {
     question: "ه",
@@ -669,6 +784,11 @@ export const quizQuestions: Question[] = [
       { text: "ha", isCorrect: true },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "هـ",
+      medial: "ـهـ",
+      final: "ـه",
+    },
   },
   {
     question: "و",
@@ -679,6 +799,11 @@ export const quizQuestions: Question[] = [
       { text: "ha", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "و",
+      medial: "ـو",
+      final: "ـو",
+    },
   },
   {
     question: "ي",
@@ -689,5 +814,10 @@ export const quizQuestions: Question[] = [
       { text: "ha", isCorrect: false },
     ],
     category: Category.ArabicLetters,
+    forms: {
+      initial: "يـ",
+      medial: "ـيـ",
+      final: "ـي",
+    },
   },
 ];

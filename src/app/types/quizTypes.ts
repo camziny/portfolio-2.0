@@ -13,8 +13,15 @@ export enum Category {
   ArabicLetters = "Arabic Letters",
 }
 
+export interface ArabicForms {
+  initial: string;
+  medial: string;
+  final: string;
+}
+
 export interface Question {
   question: string;
   answers: Answer[];
   category: Category;
+  forms?: ArabicForms;
 }
