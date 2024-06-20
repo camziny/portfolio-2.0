@@ -146,6 +146,29 @@ export default function QuizPage() {
             >
               {currentQuestion.question}
             </h2>
+            {currentQuestion.category === Category.ArabicLetters &&
+              currentQuestion.forms && (
+                <div className="mb-6 text-center">
+                  <p>
+                    Initial:{" "}
+                    <span className="text-3xl">
+                      {currentQuestion.forms.initial}
+                    </span>
+                  </p>
+                  <p>
+                    Medial:{" "}
+                    <span className="text-3xl">
+                      {currentQuestion.forms.medial}
+                    </span>
+                  </p>
+                  <p>
+                    Final:{" "}
+                    <span className="text-3xl">
+                      {currentQuestion.forms.final}
+                    </span>
+                  </p>
+                </div>
+              )}
             <div className="grid gap-4">
               {currentQuestion.answers.map((answer, index) => (
                 <button
