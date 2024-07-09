@@ -6,6 +6,7 @@ import zfit from "../images/zfit.png";
 import tripLogo from "../images/tripLogo.png";
 import Image, { StaticImageData } from "next/image";
 import route9 from "../images/route 9 landscape.png";
+import tech from "../images/tech-news.png";
 
 interface Project {
   name: string;
@@ -101,37 +102,41 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: "divoxutils",
-    image: divox3,
+    name: "Tech News Aggregator",
+    image: tech,
     description:
-      "divoxutils is a specialized tool designed for the Dark Age of Camelot gaming community. It offers a unique blend of features tailored to enhance the gaming experience for enthusiasts of this classic MMORPG.",
+      "Tech News Aggregator is a web application designed to provide users with the latest and most relevant tech news articles from various reliable sources. The app offers a user-friendly interface, search functionality, and SEO optimization to enhance the user experience.",
     keyFeatures: [
-      "Character Lists: Users can compile all of their Dark Age of Camelot characters into a single, manageable list.",
-      "Leaderboards: See where you stand in both 'All Time' and 'Last Week' categories, offering competitive insight into your game standing.",
-      "Group Builder: A novel feature allowing users to create in-game group setups by adding other users and selecting characters for each participant.",
-      "Discord Bot: Seamlessly integrate with your Discord server, providing access to a range of commands that fetch information and statistics about users and their characters.",
-      "User Authentication: Discord SSO with Clerk to ensure ease of use and secure access for our users.",
+      "Article List: Displays a list of articles with titles, authors, and publication dates.",
+      "Search Functionality: Allows users to filter articles by title.",
+      "Responsive UI: Optimized for various devices to ensure a seamless user experience.",
+      "Server-side Rendering: Enhances SEO and performance by rendering pages on the server.",
+      "Unique URLs: Each article has a unique URL with proper meta tags for better SEO.",
+      "Pagination: Supports pagination for easy navigation through articles.",
+      "Sorting: Users can sort articles by date or author.",
+      "Automated Testing: Comprehensive tests written using Playwright to ensure the application's reliability and performance.",
     ],
     technologies: [
-      "NextJS & TypeScript",
-      "Clerk/NextJS for user management and authentication",
-      "Vercel for hosting",
-      "Prisma for database management",
-      "PostgreSQL for data storage",
-      "Playwright for testing",
+      "Next.js 14",
+      "TypeScript",
+      "GraphQL",
+      "Playwright",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Vercel",
     ],
     links: {
-      demo: "https://divoxutils.com",
-      source: "https://github.com/camziny/divoxutils",
+      demo: "https://tech-news-aggregator-xi.vercel.app/",
+      source: "https://github.com/camziny/article-app",
     },
     purpose:
-      "To provide a comprehensive suite of tools for Dark Age of Camelot players to enhance their gaming experience and community engagement.",
-    role: "Sole developer and project owner: Managed all aspects of the 'divoxutils' project from conception to deployment.",
+      "To provide a centralized platform for tech enthusiasts to stay updated with the latest news articles from various reliable sources.",
+    role: "Sole developer and project owner: Managed all aspects of the Tech News Aggregator project from conception to deployment.",
     technicalHurdles: [
-      "Reducing request times and preventing timeout errors when loading large user lists, which became a significant issue as some users have lists with over 100 characters.",
+      "Learning and implementing GraphQL for the first time, including setting up and integrating with a GraphQL API.",
     ],
     solutions: [
-      "Modified the database schema for optimized data handling and implemented cron jobs to periodically update and pre-process data, significantly reducing load times and preventing timeout errors.",
+      "Spent time understanding GraphQL concepts and best practices, which resulted in a successful integration with GraphQL, enabling efficient data fetching and handling.",
     ],
   },
   {

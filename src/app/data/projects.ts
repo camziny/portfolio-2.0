@@ -5,6 +5,7 @@ import humanOrAiLogo from "./images/humanOrAiLogo.png";
 import zfit from "./images/zfit.png";
 import tripLogo from "./images/tripLogo.png";
 import route9 from "./images/route 9 landscape 3.png";
+import tech from "./images/tech-news.png";
 
 export const ProjectsList = [
   {
@@ -20,8 +21,16 @@ export const ProjectsList = [
     image: route9,
     skills:
       "The Route 9 Landscape Products web application is a platform designed to establish a strong online presence for a landscape products store. The platform includes a customer-facing application providing up-to-date inventory, detailed product information, and a robust admin application for managing content.",
-    link: "https://divoxutils.com/",
-    github: "https://github.com/camziny/divoxutils",
+    link: "https://r9-landscape.vercel.app/",
+    github: "https://github.com/camziny/r9-landscape",
+  },
+  {
+    name: "Tech News Aggregator",
+    image: tech,
+    skills:
+      "The Tech News Aggregator is a platform designed to provide users with the latest and most relevant technology news from various reputable sources. The platform features a user-friendly interface for browsing articles, powerful search and sorting capabilities, and SEO optimization to enhance discoverability. Additionally, the application includes unique URLs for each article and server-side rendering for improved performance and SEO.",
+    link: "https://tech-news-aggregator-xi.vercel.app/",
+    github: "https://github.com/camziny/article-app",
   },
   {
     name: "Sight.See.Share",
