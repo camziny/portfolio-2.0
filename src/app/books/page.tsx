@@ -14,11 +14,11 @@ export default function BooksPage() {
           Recently Read Books
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300">
-          This is a collection of books I've read recently. Click "Learn More"
-          to read descriptions and my thoughts on each book.
+          This is a collection of books I&apos;ve read recently. Click
+          &quot;Learn More&quot; to read descriptions and my thoughts on each
+          book.
         </p>
       </header>
-
       <div className="mt-4 flex flex-wrap justify-center gap-4">
         {BooksList.map((book: any) => (
           <BookCard key={book.title} book={book} />
