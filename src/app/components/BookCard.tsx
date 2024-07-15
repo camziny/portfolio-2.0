@@ -18,6 +18,22 @@ interface Book {
   thoughts: string;
   link: string;
 }
+const infoIcon = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    className="w-6 h-6"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zM12 8.25h.008v.008H12V8.25z"
+    />
+  </svg>
+);
 
 const BookCard = ({
   book: { title, image, author, description, thoughts, link },
@@ -25,7 +41,7 @@ const BookCard = ({
   book: Book;
 }) => {
   return (
-    <Card className="max-w-lg bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden transition-shadow duration-300">
+    <Card className="w-80 bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden transition-shadow duration-300">
       <CardBody className="p-6 flex flex-row justify-between items-center bg-white dark:bg-gray-800">
         <div className="flex-1">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
@@ -60,9 +76,9 @@ const BookCard = ({
         <Link
           href={`books/${title}`}
           passHref
-          className="text-gray-600 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-400 font-semibold focus:outline-none focus:ring focus:ring-cyan-300 rounded-full p-2 flex items-center"
+          className="inline-flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-500 focus:outline-none focus:ring focus:ring-cyan-200 rounded-full p-2 transition-colors duration-300"
         >
-          Learn More
+          {infoIcon}
         </Link>
       </CardFooter>
     </Card>

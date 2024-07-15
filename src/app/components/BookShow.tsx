@@ -43,8 +43,8 @@ const BookShow: React.FC<BookProps> = ({ book }) => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-gray-100 dark:bg-gray-900  shadow-lg rounded-lg">
-      <div className="flex items-right text-cyan-600 hover:text-cyan-500 dark:text-cyan-400 dark:hover:text-cyan-500 text-3xl font-bold mb-8">
+    <div className="max-w-4xl mx-auto p-6 md:p-8 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
+      <div className="flex items-center text-cyan-600 hover:text-cyan-500 dark:text-cyan-400 dark:hover:text-cyan-500 text-2xl font-bold mb-6">
         <Link href="/books">
           <FaArrowLeft />
         </Link>
@@ -53,29 +53,34 @@ const BookShow: React.FC<BookProps> = ({ book }) => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
+        className="mb-6 text-center"
       >
-        <div className="flex justify-center mb-5">
-          <motion.h1
-            variants={itemVariants}
-            className="text-3xl font-bold text-cyan-600 dark:text-cyan-500 mb-4"
-          >
-            {book.title}
-          </motion.h1>
-        </div>
+        <motion.h1
+          variants={itemVariants}
+          className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4"
+        >
+          {book.title}
+        </motion.h1>
+        <h2 className="text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-4">
+          {book.author}
+        </h2>
       </motion.div>
-      <div className="mb-4 flex justify-center">
+      <div className="mb-8 flex justify-center">
         <Image
           src={book.image}
           alt={book.title}
           width={300}
-          height={100}
+          height={450}
           objectFit="cover"
-          className="rounded-lg"
+          className="rounded-lg shadow-lg"
         />
       </div>
-      <p className="text-gray-600 mb-4 dark:text-gray-300">
-        {book.description}
-      </p>
+      <div className="mb-6">
+        <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+          My Thoughts
+        </h3>
+        <p className="text-gray-600 dark:text-gray-300">{book.thoughts}</p>
+      </div>
     </div>
   );
 };
