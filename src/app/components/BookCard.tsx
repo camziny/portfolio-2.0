@@ -37,8 +37,10 @@ const infoIcon = (
 
 const BookCard = ({
   book: { title, image, author, description, thoughts, link },
+  currentlyReading,
 }: {
   book: Book;
+  currentlyReading?: boolean;
 }) => {
   return (
     <Card className="w-80 bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden transition-shadow duration-300">
@@ -50,6 +52,11 @@ const BookCard = ({
           <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2">
             {author}
           </h3>
+          {currentlyReading && (
+            <span className="text-sm font-medium text-cyan-600 dark:text-cyan-400">
+              Currently Reading
+            </span>
+          )}
         </div>
         <div className="relative w-32 h-48 ml-4">
           <Image
