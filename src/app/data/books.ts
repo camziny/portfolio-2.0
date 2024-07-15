@@ -2,6 +2,10 @@ import Image, { StaticImageData } from "next/image";
 import howtodothework from "./images/howtodothework.jpg";
 import running_on_empty from "./images/running_on_empty.jpg";
 import its_not_me_its_you from "./images/its_not_me_its_you.webp";
+import secure_love from "./images/secure_love.jpg";
+import mating_in_captivity from "./images/mating_in_captivity.jpg";
+import the_state_of_affairs from "./images/the_state_of_affairs.jpg";
+import the_5_love_languages from "./images/the_5_love_languages.jpg";
 
 interface Book {
   title: string;
@@ -16,17 +20,13 @@ export const BooksList = [
     title: "How to Do the Work",
     author: "Dr. Nicole LePera",
     image: howtodothework,
-    description: `As a clinical psychologist, Dr. Nicole LePera often found herself frustrated by the limitations of traditional psychotherapy. Wanting more for her patients—and for herself—she began a journey to develop a united philosophy of mental, physical and spiritual wellness that equips people with the interdisciplinary tools necessary to heal themselves. After experiencing the life-changing results herself, she began to share what she'd learned with others—and soon "The Holistic Psychologist" was born.
-  
-    Now, Dr. LePera is ready to share her much-requested protocol with the world. In How to Do the Work, she offers both a manifesto for SelfHealing as well as an essential guide to creating a more vibrant, authentic, and joyful life. Drawing on the latest research from a diversity of scientific fields and healing modalities, Dr. LePera helps us recognize how adverse experiences and trauma in childhood live with us, resulting in whole body dysfunction—activating harmful stress responses that keep us stuck engaging in patterns of codependency, emotional immaturity, and trauma bonds. Unless addressed, these self-sabotaging behaviors can quickly become cyclical, leaving people feeling unhappy, unfulfilled, and unwell.
-  
-    In How to Do the Work, Dr. LePera offers listeners the support and tools that will allow them to break free from destructive behaviors to reclaim and recreate their lives. Nothing short of a paradigm shift, this is a celebration of empowerment that will forever change the way we approach mental wellness and self-care.`,
-    thoughts: `This is a very powerful book that helps the reader understand the immense power of the mind. It guides you to uncover the root causes of self-sabotaging patterns and become more conscious of how childhood conditioning impacts your mental and physical health. Dr. LePera provides insights and tools to develop positive patterns that improve well-being, ultimately helping you feel happier, healthier, and more in control of your life.`,
+    description: "",
+    thoughts: `This is a very powerful book that helps the reader understand the power of the mind. It guides you to uncover the root causes of self-sabotaging patterns and become more conscious of how childhood conditioning impacts your mental and physical health. Dr. LePera provides insights and tools to develop positive patterns that improve well-being, ultimately helping you feel happier, healthier, and more in control of your life.`,
     link: "https://www.amazon.com/How-Do-Work-Recognize-Patterns/dp/B092394734/ref=sr_1_1?crid=17RHRFSDMA8SD&dib=eyJ2IjoiMSJ9.Wrzv-uWwwF8d4F6XRtEPnwUwQnr87dXmQD6U4gn2WUZFByEbi9yPhfPQjUgkgHN9-mM0FxScCryODYNDnXcFeXa7cpig6812xkkPh4EbnTbEwX8iofwJ2EduCjmQCQ_dtHC7R61FulMxebkkzY77fQ13XV7J2Gw81-PTfc3R1VblLqxh6ZwASaOygGyQ7p-DyN2aDdZIO4i05L4zmUNnzS8rvoz7r3iL4sijkPtn9fQ.6ZXaUG0QMqDrXQ3Hf2f7pgXm8rVDscz79F0VCuiD4GI&dib_tag=se&keywords=how+to+do+the+work&qid=1720813129&sprefix=how+to+do+the+work%2Caps%2C79&sr=8-1",
   },
   {
     title: "Running on Empty",
-    author: "Dr. Jonice Webb",
+    author: "Jonice Webb, PhD",
     image: running_on_empty,
     description: "",
     thoughts: `Running on Empty focuses on children who grow up emotionally neglected. Dr. Webb's scientific approach is both enlightening and engaging. I particularly liked how she goes over many different examples in a case study-like format, making the concepts more relatable and easier to understand. The book discusses different parenting styles and the effects they can have on a child, providing deep insights into how childhood emotional neglect shapes adult life. Additionally, it offers practical strategies and alternative ways of thinking and growing once you've identified how you might have been emotionally neglected. This book is an invaluable resource for anyone seeking to understand how their past can affect their present-day behaviors.`,
@@ -39,6 +39,38 @@ export const BooksList = [
     description: "",
     thoughts: `This book provides a unique perspective from two married therapists who analyze their own relationship and past relationships. They offer detailed accounts of their journey together, discussing day-to-day relationship challenges. The book emphasizes the importance of self-growth, communication, and understanding in fostering a healthy, long-term partnership. As I neared the end, I found myself not wanting the book to end.`,
     link: "https://www.amazon.com/Its-Not-Me-You-Relationship/dp/0063206315/ref=sr_1_1?crid=1HYODSXH4RLLN&dib=eyJ2IjoiMSJ9.8SNDLLG864y_4F27TC305H1DIzkVm02ZAoF_YN8UEVBZSMXns7HuqiMDyo0Y7FdpXwyevo7vDbnhF2TpQTL6Te5KnX_R2a35AO-coJjFnXPJ0J_vfjLzSeIdWFOVE5WRCE96NMxq5haVjxuMXhYFUzr9YUfxOBi6h-qzfR4YmKsHt0wd1eGpKIaK-o1bAZNJWeCmec_vGyEsUsBxUxeB_7sBUKs4aoyrPBCFjwovKU0.lqQGEnAdN5tOnjC7CeiD_3pKoSlvIfp_VYY_trNqBns&dib_tag=se&keywords=it%27s+not+me+it%27s+you&qid=1721066902&sprefix=it%27s+not+me+it%27s%2Caps%2C85&sr=8-1",
+  },
+  {
+    title: "Secure Love",
+    author: "Julie Menanno",
+    image: secure_love,
+    description: "",
+    thoughts: `Secure Love does an excellent job of helping readers understand both themselves and their partners in relationships. Julie Menanno breaks down common behaviors and explains how to appreciate both perspectives. The book focuses on attachment styles and how different styles influence behavior. Menanno's concept of looking through the lens of attachment allows readers to interpret their partner's actions more deeply. This is a great read for those looking to improve their relationships by addressing and understanding attachment needs.`,
+    link: "https://www.amazon.com/Secure-Love-Create-Relationship-Lifetime/dp/1668012863/ref=sr_1_1?dib=eyJ2IjoiMSJ9.YA417hGgs4DP9Zi9lNJeiVRqHA2deDgzCsVtY-KwhDNtJ8fM-hs0-TbSf4VY8NmZfww0OiLLw57KHs3xCdT1bvH476z80RPAoGno8xAVmMp8ANEXUdlrJoL50u-3ovjWj-T9nW9yCoQkWXvB-3wAweOQldvPdvbu07417Wq5iq66LsoDenVPLybZwQZ-pWJp4HhbAHXQCrZFxgyh-Mzp8WUGo-y77ogNMt0MOAg9mI4.TG8GfNPznsH3LyaSdfrMjjyBjFSrASNuMtU5joKOI-o&dib_tag=se&hvadid=656260501629&hvdev=c&hvlocphy=9002000&hvnetw=g&hvqmt=e&hvrand=6704096486433775881&hvtargid=kwd-2022423946768&hydadcr=22565_13493330&keywords=secure+love+julie+menanno&qid=1721067824&sr=8-1",
+  },
+  {
+    title: "Mating in Captivity",
+    author: "Esther Perel",
+    image: mating_in_captivity,
+    description: "",
+    thoughts: `Mating in Captivity by Esther Perel offers insightful and practical advice for rekindling sexual passion in long-term relationships. Perel, drawing on over twenty years of experience as a couples therapist, explains the barriers that can diminish desire and provides strategies to overcome them. The book emphasizes understanding how childhood experiences shape adult views on sex, the importance of prioritizing intimacy even with busy lives and kids, and the necessity of acknowledging the risk of infidelity to safeguard against it. Perel's guidance helps couples maintain both emotional and physical intimacy, which makes this a great read for anyone looking to enhance their relationship.`,
+    link: "https://www.amazon.com/Mating-Captivity-Unlocking-Erotic-Intelligence/dp/0060753641/ref=sr_1_1?dib=eyJ2IjoiMSJ9.bXIETwz6rg35EJfbpa4eyYLsPY8MJBndRK-jFPZx9O896wQRAHiwY7xwa4RbYQfjCfOCEEVJXMNyHl79xtP6YTIqCWzcpX4ZXDaJQnvXW9j1QXSXZmW1BUoRyWpEsVw7ARy40rMKiaN3njvrI_80K0-XTFt7Q_T82aj7oxIJCqn-Guljm0pP1UmcRZMCfCPSiIdFuoppcvqYk7XVNFO_5CtlcLGG9K8Hjo-XBER5smE.czcwQp1v0waNoghfLCp25vucj9aYZx8bH52siaHlx1s&dib_tag=se&hvadid=598611025806&hvdev=c&hvlocphy=9002000&hvnetw=g&hvqmt=e&hvrand=15785908691450779839&hvtargid=kwd-2305557232&hydadcr=15553_13558561&keywords=mating+in+captivity+esther+perel&qid=1721068287&sr=8-1",
+  },
+  {
+    title: "The State of Affairs",
+    author: "Esther Perel",
+    image: the_state_of_affairs,
+    description: "",
+    thoughts: `The State of Affairs by Esther Perel offers a nuanced exploration of infidelity, challenging the biases and discomfort that often accompany the topic. Perel's compassionate approach helps readers understand the many dimensions of infidelity without justifying it. The real-life anecdotes and incisive analysis provide valuable insights into the underlying emotions and motivations behind affairs. This book creates a safe space for re-examining our thoughts on infidelity, making it an essential read for anyone looking to gain empathy and insight into the complexities of relationships.`,
+    link: "https://www.amazon.com/State-Affairs-Rethinking-Infidelity/dp/0062322591/ref=sr_1_1?dib=eyJ2IjoiMSJ9.TbDUaVxdw7L3pwPtSTliohvFFDvv-HwFcglO8d410NQzvGQUY2HWh_iRwSRDLXvm0gBX9SsM-pj2VwoAfqCH6qeb1u77pQWaRwOAFwzRKLWHgvU621mICDWoXcbb5W5HX62mFdClJzBgeESoVBv5Q-eJ8pX7_BIhEudqm5LLvN7AGeoRu1rTieQtvHAstQ0wpJVhPtzDiF4xn2W5HuAjgU5y1w4yFxBeHaQv4--MoUM.Iqunl832yK9jQJJLOWLf6KCEX1h2jEFvRHB_mAI1I4U&dib_tag=se&hvadid=598656948628&hvdev=c&hvlocphy=9002000&hvnetw=g&hvqmt=e&hvrand=9418302432024001867&hvtargid=kwd-865596004775&hydadcr=15552_13558506&keywords=a+state+of+affairs+esther+perel&qid=1721068582&sr=8-1",
+  },
+  {
+    title: "The 5 Love Languages",
+    author: "Gary Chapman",
+    image: the_5_love_languages,
+    description: "",
+    thoughts: `This book provides insights into maintaining emotional love and connection in relationships. Chapman explains that conflicts often arise from differences in how partners communicate and perceive love. By identifying and understanding the five love languages—Words of Affirmation, Quality Time, Receiving Gifts, Acts of Service, and Physical Touch—you can learn to better express affection in a way that resonates with your partner. This book servers as a guide for anyone looking to deepen their emotional connection and ensure both partners feel genuinely loved and appreciated.`,
+    link: "https://www.amazon.com/Love-Languages-Secret-that-Lasts/dp/080241270X/ref=sr_1_1?dib=eyJ2IjoiMSJ9.MeElUaCPU9PbSpr3CMLRv-fPcy742BvHuOaAjgTt4_I3Y6ykgpn5Y0rmRrHYrvNN4HAas-wZ-S11MO6flVDLJXJORjNSlw6NHOQAZl0yyGP6ksXk81ZkFfHyOmfqPnpJxv8EMTy_esBXR6M4SjFnnmPwA9rSWHK_lHcrQhe00dW92alI_H4DTB_UoLiz9HQDAkrvo-uBy3o2VF9TxNJ8Un31LdDNlN2oujncu5PA-vM.IXV9KdQGk7gAJpCB7Wy8jxh_0JPDRTnYMV_DgWNFnKI&dib_tag=se&hvadid=616990762754&hvdev=c&hvlocphy=9002000&hvnetw=g&hvqmt=e&hvrand=1052908644207036688&hvtargid=kwd-2112545889&hydadcr=24633_13611805&keywords=5+love+languages+book&qid=1721069143&sr=8-1",
   },
 ];
 

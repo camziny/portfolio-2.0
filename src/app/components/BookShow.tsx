@@ -2,7 +2,6 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
-import { Button } from "@nextui-org/button";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 
@@ -17,9 +16,10 @@ interface Book {
 
 interface BookProps {
   book: Book;
+  currentlyReading?: boolean;
 }
 
-const BookShow: React.FC<BookProps> = ({ book }) => {
+const BookShow: React.FC<BookProps> = ({ book, currentlyReading }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -43,7 +43,7 @@ const BookShow: React.FC<BookProps> = ({ book }) => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 md:p-8 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
+    <div className="max-w-4xl mx-auto p-6 md:p-8 bg-white dark:bg-gray-900 shadow-lg rounded-lg">
       <div className="flex items-center text-cyan-600 hover:text-cyan-500 dark:text-cyan-400 dark:hover:text-cyan-500 text-2xl font-bold mb-6">
         <Link href="/books">
           <FaArrowLeft />
@@ -64,6 +64,11 @@ const BookShow: React.FC<BookProps> = ({ book }) => {
         <h2 className="text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-4">
           {book.author}
         </h2>
+        {currentlyReading && (
+          <span className="text-sm font-medium text-cyan-800 dark:text-cyan-100 bg-cyan-200 dark:bg-cyan-700 rounded-full px-3 py-1">
+            Currently Reading
+          </span>
+        )}
       </motion.div>
       <div className="mb-8 flex justify-center">
         <Image
@@ -76,9 +81,11 @@ const BookShow: React.FC<BookProps> = ({ book }) => {
         />
       </div>
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
-          My Thoughts
-        </h3>
+        <p className="text-gray-600 dark:text-gray-300 mb-4">
+          {book.description}
+        </p>
+      </div>
+      <div className="mb-6">
         <p className="text-gray-600 dark:text-gray-300">{book.thoughts}</p>
       </div>
     </div>
