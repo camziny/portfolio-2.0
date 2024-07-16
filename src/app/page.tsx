@@ -3,7 +3,7 @@ import ProjectCard from "./components/ProjectCard";
 import { ProjectsList } from "./data/projects";
 import CamZiny from "./components/CamZiny";
 import Contact from "./components/Contact";
-import ThreeDScene from "./components/ThreeDScene";
+import Scene from "./components/Scene";
 
 export const metadata = {
   title: "Home - Cam Ziny",
@@ -11,14 +11,14 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="sm:mt-0 container mx-auto px-4">
-      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between">
-        <div className="order-2 lg:order-1 py-16 sm:py-8 md:py-4 lg:py-2 w-full lg:w-auto">
+    <div className="min-h-screen flex flex-col justify-between">
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between space-y-8 lg:space-y-0 lg:space-x-16 px-4 lg:px-16 py-8">
+        <div className="order-2 lg:order-1 w-full lg:w-auto">
           <CamZiny />
         </div>
-        <div className="order-1 lg:order-2 py-10 lg:py-2 flex justify-center sm:justify-end w-full lg:w-auto h-64 sm:h-auto mt-0 sm:mt-0">
-          <div className="relative sm:relative top-0 sm:top-0 -mt-16 sm:mt-0">
-            <ThreeDScene />
+        <div className="order-1 lg:order-2 flex flex-col items-center w-full lg:w-auto">
+          <div className="relative w-full h-[460px] p-4 bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg">
+            <Scene />
           </div>
         </div>
       </div>
