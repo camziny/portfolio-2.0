@@ -11,8 +11,8 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col justify-between">
-      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between space-y-8 lg:space-y-0 lg:space-x-16 px-4 lg:px-16 py-8">
+    <div className="min-h-screen flex flex-col justify-between px-4 lg:px-16">
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between space-y-8 lg:space-y-0 lg:space-x-16 py-8">
         <div className="order-2 lg:order-1 w-full lg:w-auto">
           <CamZiny />
         </div>
@@ -22,7 +22,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <section>
+      <section className="px-4 lg:px-16 mt-8 lg:mt-16">
         <h2 className="text-center text-2xl font-bold text-gray-700 dark:text-white">
           Projects
         </h2>

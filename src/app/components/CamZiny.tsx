@@ -1,7 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import useScrollPosition from "./GetScrollPosition";
-import useRange from "./UseRange";
+import React from "react";
 import { Card } from "@nextui-org/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
@@ -54,7 +52,7 @@ const CamZiny: React.FC = () => {
       >
         <motion.h1
           variants={itemVariants}
-          className="title text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 text-5xl sm:text-6xl font-extrabold tracking-wide leading-tight whitespace-nowrap drop-shadow-lg"
+          className="title text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-wide leading-tight whitespace-normal sm:whitespace-nowrap drop-shadow-lg"
         >
           Hi, I&apos;m Cam&nbsp;Ziny
         </motion.h1>
