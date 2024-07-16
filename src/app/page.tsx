@@ -16,8 +16,8 @@ export default function Home() {
         <div className="order-2 lg:order-1 w-full lg:w-auto">
           <CamZiny />
         </div>
-        <div className="order-1 lg:order-2 flex justify-center sm:justify-end w-full lg:w-auto">
-          <div className="relative w-full h-[400px] overflow-auto p-4 bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg">
+        <div className="order-1 lg:order-2 flex flex-col items-center w-full lg:w-auto">
+          <div className="relative w-full h-[460px] p-4 bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg">
             <Scene />
           </div>
         </div>
