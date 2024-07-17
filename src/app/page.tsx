@@ -4,7 +4,6 @@ import { ProjectsList } from "./data/projects";
 import CamZiny from "./components/CamZiny";
 import Contact from "./components/Contact";
 import Scene from "./components/Scene";
-import ScrollMessage from "./components/ScrollMessage";
 
 export const metadata = {
   title: "Home - Cam Ziny",
@@ -13,14 +12,13 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col justify-between px-4 lg:px-16">
-      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between space-y-8 lg:space-y-0 lg:space-x-16 py-8">
-        <div className="order-2 lg:order-1 w-full lg:w-auto">
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between space-y-8 lg:space-y-0 lg:space-x-8 py-8">
+        <div className="order-2 lg:order-1 w-full lg:w-1/2">
           <CamZiny />
         </div>
-        <div className="order-1 lg:order-2 flex flex-col items-center w-full lg:w-auto">
-          <div className="relative w-full h-[460px] p-4 bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg">
+        <div className="order-1 lg:order-2 flex flex-col items-center w-full lg:w-1/2">
+          <div className="relative w-full h-[460px] p-4">
             <Scene />
-            <ScrollMessage />
           </div>
         </div>
       </div>
