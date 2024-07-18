@@ -10,8 +10,9 @@ interface Book {
   image: StaticImageData;
   author: string;
   description: string;
-  thoughts: string;
+  thoughts: string[];
   link: string;
+  currentlyReading: boolean;
 }
 
 interface BookProps {
@@ -86,7 +87,19 @@ const BookShow: React.FC<BookProps> = ({ book, currentlyReading }) => {
         </p>
       </div>
       <div className="mb-6">
-        <p className="text-gray-600 dark:text-gray-300">{book.thoughts}</p>
+        <div className=" bg-gray-100 dark:bg-gray-800 rounded-md p-4">
+          <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+            My Thoughts
+          </h3>
+          <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
+            {book.thoughts.map((thought, index) => (
+              <li key={index} className="flex items-start">
+                <span className="inline-block w-2 h-2 mt-1 mr-2 bg-cyan-600 dark:bg-cyan-400 rounded-full flex-shrink-0"></span>
+                <span>{thought}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

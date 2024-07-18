@@ -15,9 +15,11 @@ interface Book {
   image: StaticImageData;
   author: string;
   description: string;
-  thoughts: string;
+  thoughts: string[];
   link: string;
+  currentlyReading: boolean;
 }
+
 const infoIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -36,11 +38,9 @@ const infoIcon = (
 );
 
 const BookCard = ({
-  book: { title, image, author, description, thoughts, link },
-  currentlyReading,
+  book: { title, image, author, description, thoughts, link, currentlyReading },
 }: {
   book: Book;
-  currentlyReading?: boolean;
 }) => {
   return (
     <Card className="w-80 bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden transition-shadow duration-300">
@@ -53,7 +53,7 @@ const BookCard = ({
             {author}
           </h3>
           {currentlyReading && (
-            <span className="text-sm font-medium text-cyan-600 dark:text-cyan-400">
+            <span className="text-xs font-semibold text-cyan-800 dark:text-cyan-100  rounded-full px-3 py-1">
               Currently Reading
             </span>
           )}
