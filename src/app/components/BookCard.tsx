@@ -15,9 +15,11 @@ interface Book {
   image: StaticImageData;
   author: string;
   description: string;
-  thoughts: string;
+  thoughts: string[];
   link: string;
+  currentlyReading: boolean;
 }
+
 const infoIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -36,11 +38,9 @@ const infoIcon = (
 );
 
 const BookCard = ({
-  book: { title, image, author, description, thoughts, link },
-  currentlyReading,
+  book: { title, image, author, description, thoughts, link, currentlyReading },
 }: {
   book: Book;
-  currentlyReading?: boolean;
 }) => {
   return (
     <Card className="w-80 bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden transition-shadow duration-300">
@@ -53,7 +53,7 @@ const BookCard = ({
             {author}
           </h3>
           {currentlyReading && (
-            <span className="text-sm font-medium text-cyan-600 dark:text-cyan-400">
+            <span className="text-xs font-semibold text-cyan-800 dark:text-cyan-100  rounded-full px-3 py-1">
               Currently Reading
             </span>
           )}
@@ -78,12 +78,12 @@ const BookCard = ({
           rel="noopener noreferrer"
         >
           <FiExternalLink className="mr-2" />
-          <span className="font-semibold">Buy on Amazon</span>
+          <span className="font-semibold"></span>
         </Link>
         <Link
           href={`books/${title}`}
           passHref
-          className="inline-flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-500 focus:outline-none focus:ring focus:ring-cyan-200 rounded-full p-2 transition-colors duration-300"
+          className="inline-flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-500 focus:outline-none rounded-full p-2 transition-colors duration-300"
         >
           {infoIcon}
         </Link>

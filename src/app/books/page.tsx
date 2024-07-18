@@ -18,13 +18,9 @@ export default function BooksPage() {
           reading.
         </p>
       </header>
-      <div className="mt-4 flex flex-wrap justify-center gap-8">
-        {BooksList.map((book, index) => (
-          <BookCard
-            key={book.title}
-            book={book}
-            currentlyReading={index === BooksList.length - 1}
-          />
+      <div className="mt-4 flex flex-wrap justify-center gap-4">
+        {BooksList.map((book) => (
+          <BookCard key={book.title} book={book} />
         ))}
       </div>
     </div>
