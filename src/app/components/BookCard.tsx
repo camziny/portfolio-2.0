@@ -78,12 +78,12 @@ const BookCard = ({
           rel="noopener noreferrer"
         >
           <FiExternalLink className="mr-2" />
-          <span className="font-semibold">Buy on Amazon</span>
+          <span className="font-semibold"></span>
         </Link>
         <Link
           href={`books/${title}`}
           passHref
-          className="inline-flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-500 focus:outline-none focus:ring focus:ring-cyan-200 rounded-full p-2 transition-colors duration-300"
+          className="inline-flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-500 focus:outline-none rounded-full p-2 transition-colors duration-300"
         >
           {infoIcon}
         </Link>
