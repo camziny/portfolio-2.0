@@ -58,11 +58,11 @@ const BookShow: React.FC<BookProps> = ({ book, currentlyReading }) => {
       >
         <motion.h1
           variants={itemVariants}
-          className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4"
+          className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4"
         >
           {book.title}
         </motion.h1>
-        <h2 className="text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-4">
+        <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-4">
           {book.author}
         </h2>
         {currentlyReading && (
@@ -75,8 +75,8 @@ const BookShow: React.FC<BookProps> = ({ book, currentlyReading }) => {
         <Image
           src={book.image}
           alt={book.title}
-          width={300}
-          height={450}
+          width={200}
+          height={200}
           objectFit="cover"
           className="rounded-lg shadow-lg"
         />
@@ -87,7 +87,7 @@ const BookShow: React.FC<BookProps> = ({ book, currentlyReading }) => {
         </p>
       </div>
       <div className="mb-6">
-        <div className=" bg-gray-100 dark:bg-gray-800 rounded-md p-4">
+        <div className="rounded-md p-4">
           <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
             My Thoughts
           </h3>
