@@ -282,6 +282,22 @@ export const skills: Skill[] = [
     name: "Jira",
     type: SkillType.Other,
   },
+  {
+    name: "Framer Motion",
+    type: SkillType.Frontend,
+  },
+  {
+    name: "GraphQL",
+    type: SkillType.Frontend,
+  },
+  {
+    name: "Three.js",
+    type: SkillType.Frontend,
+  },
+  {
+    name: "React Three Fiber",
+    type: SkillType.Frontend,
+  },
 ];
 
 export const fetchSkillData = (
