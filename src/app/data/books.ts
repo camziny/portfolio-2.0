@@ -6,6 +6,7 @@ import secure_love from "./images/secure_love.jpg";
 import mating_in_captivity from "./images/mating_in_captivity.jpg";
 import the_state_of_affairs from "./images/the_state_of_affairs.jpg";
 import the_5_love_languages from "./images/the_5_love_languages.jpg";
+import the_love_rx from "./images/the_love_rx.jpg";
 
 interface Book {
   title: string;
@@ -119,6 +120,15 @@ export const BooksList = [
       "Serves as a guide for anyone looking to deepen their emotional connection and ensure both partners feel genuinely loved and appreciated.",
     ],
     link: "https://www.amazon.com/Love-Languages-Secret-that-Lasts/dp/080241270X/ref=sr_1_1?dib=eyJ2IjoiMSJ9.MeElUaCPU9PbSpr3CMLRv-fPcy742BvHuOaAjgTt4_I3Y6ykgpn5Y0rmRrHYrvNN4HAas-wZ-S11MO6flVDLJXJORjNSlw6NHOQAZl0yyGP6ksXk81ZkFfHyOmfqPnpJxv8EMTy_esBXR6M4SjFnnmPwA9rSWHK_lHcrQhe00dW92alI_H4DTB_UoLiz9HQDAkrvo-uBy3o2VF9TxNJ8Un31LdDNlN2oujncu5PA-vM.IXV9KdQGk7gAJpCB7Wy8jxh_0JPDRTnYMV_DgWNFnKI&dib_tag=se&hvadid=616990762754&hvdev=c&hvlocphy=9002000&hvnetw=g&hvqmt=e&hvrand=1052908644207036688&hvtargid=kwd-2112545889&hydadcr=24633_13611805&keywords=5+love+languages+book&qid=1721069143&sr=8-1",
+    currentlyReading: false,
+  },
+  {
+    title: "The Love Prescription",
+    author: "John Gottman and Julie Schwartz",
+    image: the_love_rx,
+    description: "",
+    thoughts: ["Coming Soon"],
+    link: "https://www.amazon.com/Love-Prescription-Seven-Intimacy-Connection/dp/0143136631",
     currentlyReading: true,
   },
 ];
