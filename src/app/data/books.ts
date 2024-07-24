@@ -37,7 +37,7 @@ export const BooksList = [
     image: running_on_empty,
     description: "",
     thoughts: [
-      "Running on Empty focuses on children who grow up emotionally neglected.",
+      "Focuses on children who grow up emotionally neglected.",
       "Its scientific approach is both enlightening and engaging.",
       "Provides many examples in a case study-like format, making the concepts more relatable.",
       "Discusses different parenting styles and their effects on a child.",
