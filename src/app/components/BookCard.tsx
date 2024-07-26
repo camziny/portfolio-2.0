@@ -53,9 +53,11 @@ const BookCard = ({
             {author}
           </h3>
           {currentlyReading && (
-            <span className="text-xs font-semibold text-cyan-800 dark:text-cyan-100  rounded-full px-3 py-1">
-              Currently Reading
-            </span>
+            <div className="flex justify-center items-center">
+              <span className="text-xs font-semibold text-cyan-800 dark:text-cyan-100 rounded-full px-3 py-1">
+                Currently Reading
+              </span>
+            </div>
           )}
         </div>
         <div className="relative w-32 h-48 ml-4">
