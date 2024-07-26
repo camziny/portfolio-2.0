@@ -7,7 +7,7 @@ import mating_in_captivity from "./images/mating_in_captivity.jpg";
 import the_state_of_affairs from "./images/the_state_of_affairs.jpg";
 import the_5_love_languages from "./images/the_5_love_languages.jpg";
 import the_love_rx from "./images/the_love_rx.jpg";
-
+import seven_principles from "./images/seven_principles.jpg";
 interface Book {
   title: string;
   image: StaticImageData;
@@ -140,7 +140,7 @@ export const BooksList = [
   {
     title: "The Seven Principles for Making Marriage Work",
     author: "John Gottman",
-    image: the_love_rx,
+    image: seven_principles,
     description: "",
     thoughts: ["Coming Soon"],
     link: "https://www.amazon.com/Seven-Principles-Making-Marriage-Work/dp/0553447718",
