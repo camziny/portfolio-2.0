@@ -142,9 +142,15 @@ export const BooksList = [
     author: "John Gottman",
     image: seven_principles,
     description: "",
-    thoughts: ["Coming Soon"],
+    thoughts: [
+      "Highlights the importance of a strong friendship as the foundation of a successful marriage.",
+      "Emphasizes the significance of knowing your partner deeply through 'love maps' and maintaining an ongoing connection.",
+      "Provides actionable steps for resolving conflicts and managing perpetual problems within a relationship.",
+      "Discusses the 'Four Horsemen' of negative interactions and how to counteract them to maintain a healthy marriage.",
+      "Encourages couples to create shared meaning and rituals to strengthen their bond and enrich their relationship.",
+    ],
     link: "https://www.amazon.com/Seven-Principles-Making-Marriage-Work/dp/0553447718",
-    currentlyReading: true,
+    currentlyReading: false,
   },
 ];
 
