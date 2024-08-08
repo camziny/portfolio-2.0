@@ -8,6 +8,8 @@ import the_state_of_affairs from "./images/the_state_of_affairs.jpg";
 import the_5_love_languages from "./images/the_5_love_languages.jpg";
 import the_love_rx from "./images/the_love_rx.jpg";
 import seven_principles from "./images/seven_principles.jpg";
+import single_on_purpose from "./images/single_on_purpose.jpg";
+
 interface Book {
   title: string;
   image: StaticImageData;
@@ -151,6 +153,15 @@ export const BooksList = [
     ],
     link: "https://www.amazon.com/Seven-Principles-Making-Marriage-Work/dp/0553447718",
     currentlyReading: false,
+  },
+  {
+    title: "Single on Purpose",
+    author: "John Kim",
+    image: single_on_purpose,
+    description: "",
+    thoughts: ["Coming soon"],
+    link: "https://www.amazon.com/Single-Purpose-Redefine-Everything-Yourself/dp/0062980734",
+    currentlyReading: true,
   },
 ];
 
