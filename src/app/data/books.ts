@@ -159,9 +159,16 @@ export const BooksList = [
     author: "John Kim",
     image: single_on_purpose,
     description: "",
-    thoughts: ["Coming soon"],
+    thoughts: [
+      "Emphasizes the journey of self-discovery and finding fulfillment.",
+      "Stresses the need to take responsibility, break unhealthy patterns, and rebuild a positive relationship with oneself.",
+      "Introduces the concept of 'dating yourself' to cultivate self-love and independence.",
+      "Explores Radical Acceptance, encouraging readers to embrace life as it is.",
+      "Challenges societal norms of seeking validation through relationships, promoting a life centered on meaning, joy, and engagement.",
+    ],
+
     link: "https://www.amazon.com/Single-Purpose-Redefine-Everything-Yourself/dp/0062980734",
-    currentlyReading: true,
+    currentlyReading: false,
   },
 ];
 
