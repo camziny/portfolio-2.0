@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
+import { TextEffectPerChar } from "@/utils/textEffectPerChar";
+
 interface Project {
   name: string;
   image: StaticImageData;
@@ -61,12 +63,10 @@ const ProjectShow: React.FC<ProjectProps> = ({ project }) => {
         animate="visible"
       >
         <div className="flex justify-center mb-5">
-          <motion.h1
-            variants={itemVariants}
+          <TextEffectPerChar
+            text={project.name}
             className="text-3xl font-bold text-cyan-600 dark:text-cyan-500 mb-4"
-          >
-            {project.name}
-          </motion.h1>
+          />
         </div>
       </motion.div>
       <div className="mb-4 flex justify-center">

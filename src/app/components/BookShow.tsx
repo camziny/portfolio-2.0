@@ -4,6 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
+import { TextEffectPerChar } from "@/utils/textEffectPerChar";
 
 interface Book {
   title: string;
@@ -56,12 +57,10 @@ const BookShow: React.FC<BookProps> = ({ book, currentlyReading }) => {
         animate="visible"
         className="mb-6 text-center"
       >
-        <motion.h1
-          variants={itemVariants}
-          className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4"
-        >
-          {book.title}
-        </motion.h1>
+        <TextEffectPerChar
+          text={book.title}
+          className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4"
+        />
         <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-4">
           {book.author}
         </h2>
