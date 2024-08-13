@@ -9,6 +9,7 @@ import the_5_love_languages from "./images/the_5_love_languages.jpg";
 import the_love_rx from "./images/the_love_rx.jpg";
 import seven_principles from "./images/seven_principles.jpg";
 import single_on_purpose from "./images/single_on_purpose.jpg";
+import Attached from "./images/Attached.jpg";
 
 interface Book {
   title: string;
@@ -166,9 +167,17 @@ export const BooksList = [
       "Explores Radical Acceptance, encouraging readers to embrace life as it is.",
       "Challenges societal norms of seeking validation through relationships, promoting a life centered on meaning, joy, and engagement.",
     ],
-
     link: "https://www.amazon.com/Single-Purpose-Redefine-Everything-Yourself/dp/0062980734",
     currentlyReading: false,
+  },
+  {
+    title: "Attached",
+    author: "Amire Levine and Rachel Heller",
+    image: Attached,
+    description: "",
+    thoughts: ["Coming Soon"],
+    link: "https://www.amazon.com/Attached-Science-Adult-Attachment-YouFind/dp/1585429139/ref=sr_1_1?dib=eyJ2IjoiMSJ9.W2Hu0CFeu4eu-473CFxL4jBcuXpB0HfXkB7_4grJKwqHH-U5nyAQ2_4To42BDPlHH7mAKEMNwhrigzDjqBwg1R6GhNYwNX_g8OlC02PCNjT3FbsCRbS9TaqmwpUlbWxcX40fh1QgKmimem8NquR57BN66VTm_cBNTX_sOHkHr9UYdaB1qQpQH-fz8GtvgjrMKJRAwIFeiIliCy5FhoepjPaF2VW76jeg28SZZo_oLrs.Gne3tkPGNgDXl9M0Xx41jgQBisGWFNgfGVOXm2OsxI0&dib_tag=se&hvadid=281011131015&hvdev=c&hvlocphy=9001854&hvnetw=g&hvqmt=e&hvrand=16779611567248771436&hvtargid=kwd-405488365567&hydadcr=22536_9636732&keywords=the+book+attached&qid=1723581644&sr=8-1",
+    currentlyReading: true,
   },
 ];
 
