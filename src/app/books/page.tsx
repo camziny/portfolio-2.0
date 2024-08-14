@@ -1,12 +1,24 @@
 import React from "react";
 import BookCard from "../components/BookCard";
 import { BooksList } from "../data/books";
+import FilterBar from "../components/FilterBar";
+import { Book, BooksPageProps } from "../types/BookTypes";
 
 export const metadata = {
   title: "Books - Cam Ziny",
 };
 
-export default function BooksPage() {
+export default function BooksPage({ searchParams }: BooksPageProps) {
+  const yearFilter = searchParams.year ? parseInt(searchParams.year) : null;
+
+  const filteredBooks: Book[] = yearFilter
+    ? BooksList.filter((book) => book.yearRead === yearFilter)
+    : BooksList;
+
+  const years: number[] = Array.from(
+    new Set(BooksList.map((book) => book.yearRead))
+  );
+
   return (
     <div className="sm:mt-0 container mx-auto px-4">
       <header className="text-center my-6">
@@ -17,9 +29,10 @@ export default function BooksPage() {
           This is a collection of books I&apos;ve read recently and am currently
           reading.
         </p>
+        <FilterBar years={years} />
       </header>
       <div className="mt-4 flex flex-wrap justify-center gap-4">
-        {BooksList.map((book) => (
+        {filteredBooks.map((book) => (
           <BookCard key={book.title} book={book} />
         ))}
       </div>

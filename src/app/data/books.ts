@@ -19,6 +19,7 @@ interface Book {
   thoughts: string[];
   link: string;
   currentlyReading: boolean;
+  yearRead: number;
 }
 export const BooksList = [
   {
@@ -33,6 +34,7 @@ export const BooksList = [
     ],
     link: "https://www.amazon.com/How-Do-Work-Recognize-Patterns/dp/B092394734/ref=sr_1_1?crid=17RHRFSDMA8SD&dib=eyJ2IjoiMSJ9.Wrzv-uWwwF8d4F6XRtEPnwUwQnr87dXmQD6U4gn2WUZFByEbi9yPhfPQjUgkgHN9-mM0FxScCryODYNDnXcFeXa7cpig6812xkkPh4EbnTbEwX8iofwJ2EduCjmQCQ_dtHC7R61FulMxebkkzY77fQ13XV7J2Gw81-PTfc3R1VblLqxh6ZwASaOygGyQ7p-DyN2aDdZIO4i05L4zmUNnzS8rvoz7r3iL4sijkPtn9fQ.6ZXaUG0QMqDrXQ3Hf2f7pgXm8rVDscz79F0VCuiD4GI&dib_tag=se&keywords=how+to+do+the+work&qid=1720813129&sprefix=how+to+do+the+work%2Caps%2C79&sr=8-1",
     currentlyReading: false,
+    yearRead: 2024,
   },
   {
     title: "Running on Empty",
@@ -50,6 +52,7 @@ export const BooksList = [
     ],
     link: "https://www.amazon.com/Running-Empty-Overcome-Childhood-Emotional/dp/161448242X/ref=sr_1_1?dib=eyJ2IjoiMSJ9.9BXvQ3Wuz3q-cvNpKn2fpMtUJi8CrQpDG2pQITuqDaRA0KQci8YPZt1H2QohFYekvzuSyAjfn1y7Qr6BcSWaekiNp2INZ0guZWzQZ3dSdYgB9c68LrUEYNEImMf-pxtvPZYQIVSH3BHeFmxF_tKNjrADuyApgiuO1WEMUyBGG8N_il-37Q-9fmBQVfMl8ypbZ4WS3qjc3ZDAH9ipV5F2NZB2hMywlV_tRyAi1-geOa4.hewB9RXMQegnqizXeJOg2FvEiFFRzl-OIalQGC-Xm_o&dib_tag=se&hvadid=174250644676&hvdev=c&hvlocphy=9002000&hvnetw=g&hvqmt=e&hvrand=18209283510957391610&hvtargid=kwd-39565110&hydadcr=24659_9648993&keywords=running+on+empty&qid=1721065900&sr=8-1",
     currentlyReading: false,
+    yearRead: 2024,
   },
   {
     title: "It's Not Me, It's You",
@@ -64,6 +67,7 @@ export const BooksList = [
     ],
     link: "https://www.amazon.com/Its-Not-Me-You-Relationship/dp/0063206315/ref=sr_1_1?crid=1HYODSXH4RLLN&dib=eyJ2IjoiMSJ9.8SNDLLG864y_4F27TC305H1DIzkVm02ZAoF_YN8UEVBZSMXns7HuqiMDyo0Y7FdpXwyevo7vDbnhF2TpQTL6Te5KnX_R2a35AO-coJjFnXPJ0J_vfjLzSeIdWFOVE5WRCE96NMxq5haVjxuMXhYFUzr9YUfxOBi6h-qzfR4YmKsHt0wd1eGpKIaK-o1bAZNJWeCmec_vGyEsUsBxUxeB_7sBUKs4aoyrPBCFjwovKU0.lqQGEnAdN5tOnjC7CeiD_3pKoSlvIfp_VYY_trNqBns&dib_tag=se&keywords=it%27s+not+me+it%27s+you&qid=1721066902&sprefix=it%27s+not+me+it%27s%2Caps%2C85&sr=8-1",
     currentlyReading: false,
+    yearRead: 2024,
   },
   {
     title: "Secure Love",
@@ -80,6 +84,7 @@ export const BooksList = [
 
     link: "https://www.amazon.com/Secure-Love-Create-Relationship-Lifetime/dp/1668012863/ref=sr_1_1?dib=eyJ2IjoiMSJ9.YA417hGgs4DP9Zi9lNJeiVRqHA2deDgzCsVtY-KwhDNtJ8fM-hs0-TbSf4VY8NmZfww0OiLLw57KHs3xCdT1bvH476z80RPAoGno8xAVmMp8ANEXUdlrJoL50u-3ovjWj-T9nW9yCoQkWXvB-3wAweOQldvPdvbu07417Wq5iq66LsoDenVPLybZwQZ-pWJp4HhbAHXQCrZFxgyh-Mzp8WUGo-y77ogNMt0MOAg9mI4.TG8GfNPznsH3LyaSdfrMjjyBjFSrASNuMtU5joKOI-o&dib_tag=se&hvadid=656260501629&hvdev=c&hvlocphy=9002000&hvnetw=g&hvqmt=e&hvrand=6704096486433775881&hvtargid=kwd-2022423946768&hydadcr=22565_13493330&keywords=secure+love+julie+menanno&qid=1721067824&sr=8-1",
     currentlyReading: false,
+    yearRead: 2024,
   },
   {
     title: "Mating in Captivity",
@@ -96,6 +101,7 @@ export const BooksList = [
     ],
     link: "https://www.amazon.com/Mating-Captivity-Unlocking-Erotic-Intelligence/dp/0060753641/ref=sr_1_1?dib=eyJ2IjoiMSJ9.bXIETwz6rg35EJfbpa4eyYLsPY8MJBndRK-jFPZx9O896wQRAHiwY7xwa4RbYQfjCfOCEEVJXMNyHl79xtP6YTIqCWzcpX4ZXDaJQnvXW9j1QXSXZmW1BUoRyWpEsVw7ARy40rMKiaN3njvrI_80K0-XTFt7Q_T82aj7oxIJCqn-Guljm0pP1UmcRZMCfCPSiIdFuoppcvqYk7XVNFO_5CtlcLGG9K8Hjo-XBER5smE.czcwQp1v0waNoghfLCp25vucj9aYZx8bH52siaHlx1s&dib_tag=se&hvadid=598611025806&hvdev=c&hvlocphy=9002000&hvnetw=g&hvqmt=e&hvrand=15785908691450779839&hvtargid=kwd-2305557232&hydadcr=15553_13558561&keywords=mating+in+captivity+esther+perel&qid=1721068287&sr=8-1",
     currentlyReading: false,
+    yearRead: 2024,
   },
   {
     title: "The State of Affairs",
@@ -111,6 +117,7 @@ export const BooksList = [
     ],
     link: "https://www.amazon.com/State-Affairs-Rethinking-Infidelity/dp/0062322591/ref=sr_1_1?dib=eyJ2IjoiMSJ9.TbDUaVxdw7L3pwPtSTliohvFFDvv-HwFcglO8d410NQzvGQUY2HWh_iRwSRDLXvm0gBX9SsM-pj2VwoAfqCH6qeb1u77pQWaRwOAFwzRKLWHgvU621mICDWoXcbb5W5HX62mFdClJzBgeESoVBv5Q-eJ8pX7_BIhEudqm5LLvN7AGeoRu1rTieQtvHAstQ0wpJVhPtzDiF4xn2W5HuAjgU5y1w4yFxBeHaQv4--MoUM.Iqunl832yK9jQJJLOWLf6KCEX1h2jEFvRHB_mAI1I4U&dib_tag=se&hvadid=598656948628&hvdev=c&hvlocphy=9002000&hvnetw=g&hvqmt=e&hvrand=9418302432024001867&hvtargid=kwd-865596004775&hydadcr=15552_13558506&keywords=a+state+of+affairs+esther+perel&qid=1721068582&sr=8-1",
     currentlyReading: false,
+    yearRead: 2024,
   },
   {
     title: "The 5 Love Languages",
@@ -124,6 +131,7 @@ export const BooksList = [
     ],
     link: "https://www.amazon.com/Love-Languages-Secret-that-Lasts/dp/080241270X/ref=sr_1_1?dib=eyJ2IjoiMSJ9.MeElUaCPU9PbSpr3CMLRv-fPcy742BvHuOaAjgTt4_I3Y6ykgpn5Y0rmRrHYrvNN4HAas-wZ-S11MO6flVDLJXJORjNSlw6NHOQAZl0yyGP6ksXk81ZkFfHyOmfqPnpJxv8EMTy_esBXR6M4SjFnnmPwA9rSWHK_lHcrQhe00dW92alI_H4DTB_UoLiz9HQDAkrvo-uBy3o2VF9TxNJ8Un31LdDNlN2oujncu5PA-vM.IXV9KdQGk7gAJpCB7Wy8jxh_0JPDRTnYMV_DgWNFnKI&dib_tag=se&hvadid=616990762754&hvdev=c&hvlocphy=9002000&hvnetw=g&hvqmt=e&hvrand=1052908644207036688&hvtargid=kwd-2112545889&hydadcr=24633_13611805&keywords=5+love+languages+book&qid=1721069143&sr=8-1",
     currentlyReading: false,
+    yearRead: 2024,
   },
   {
     title: "The Love Prescription",
@@ -139,6 +147,7 @@ export const BooksList = [
     ],
     link: "https://www.amazon.com/Love-Prescription-Seven-Intimacy-Connection/dp/0143136631",
     currentlyReading: false,
+    yearRead: 2024,
   },
   {
     title: "The Seven Principles for Making Marriage Work",
@@ -154,6 +163,7 @@ export const BooksList = [
     ],
     link: "https://www.amazon.com/Seven-Principles-Making-Marriage-Work/dp/0553447718",
     currentlyReading: false,
+    yearRead: 2024,
   },
   {
     title: "Single on Purpose",
@@ -169,6 +179,7 @@ export const BooksList = [
     ],
     link: "https://www.amazon.com/Single-Purpose-Redefine-Everything-Yourself/dp/0062980734",
     currentlyReading: false,
+    yearRead: 2024,
   },
   {
     title: "Attached",
@@ -178,6 +189,7 @@ export const BooksList = [
     thoughts: ["Coming Soon"],
     link: "https://www.amazon.com/Attached-Science-Adult-Attachment-YouFind/dp/1585429139/ref=sr_1_1?dib=eyJ2IjoiMSJ9.W2Hu0CFeu4eu-473CFxL4jBcuXpB0HfXkB7_4grJKwqHH-U5nyAQ2_4To42BDPlHH7mAKEMNwhrigzDjqBwg1R6GhNYwNX_g8OlC02PCNjT3FbsCRbS9TaqmwpUlbWxcX40fh1QgKmimem8NquR57BN66VTm_cBNTX_sOHkHr9UYdaB1qQpQH-fz8GtvgjrMKJRAwIFeiIliCy5FhoepjPaF2VW76jeg28SZZo_oLrs.Gne3tkPGNgDXl9M0Xx41jgQBisGWFNgfGVOXm2OsxI0&dib_tag=se&hvadid=281011131015&hvdev=c&hvlocphy=9001854&hvnetw=g&hvqmt=e&hvrand=16779611567248771436&hvtargid=kwd-405488365567&hydadcr=22536_9636732&keywords=the+book+attached&qid=1723581644&sr=8-1",
     currentlyReading: true,
+    yearRead: 2024,
   },
 ];
 
