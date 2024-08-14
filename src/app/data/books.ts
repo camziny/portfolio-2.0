@@ -172,7 +172,7 @@ export const BooksList = [
   },
   {
     title: "Attached",
-    author: "Amire Levine and Rachel Heller",
+    author: "Amir Levine and Rachel Heller",
     image: Attached,
     description: "",
     thoughts: ["Coming Soon"],
