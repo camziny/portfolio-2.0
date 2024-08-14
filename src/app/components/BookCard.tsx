@@ -9,16 +9,7 @@ import {
 import Image, { StaticImageData } from "next/image";
 import { FiExternalLink } from "react-icons/fi";
 import Link from "next/link";
-
-interface Book {
-  title: string;
-  image: StaticImageData;
-  author: string;
-  description: string;
-  thoughts: string[];
-  link: string;
-  currentlyReading: boolean;
-}
+import { Book } from "../types/BookTypes";
 
 const infoIcon = (
   <svg
@@ -38,7 +29,16 @@ const infoIcon = (
 );
 
 const BookCard = ({
-  book: { title, image, author, description, thoughts, link, currentlyReading },
+  book: {
+    title,
+    image,
+    author,
+    description,
+    thoughts,
+    link,
+    currentlyReading,
+    yearRead,
+  },
 }: {
   book: Book;
 }) => {
