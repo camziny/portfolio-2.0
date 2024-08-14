@@ -46,7 +46,6 @@ const FilterBar: React.FC<FilterBarProps> = ({ years }) => {
           Year Read
         </FormLabel>
         <Select
-          placeholder="All Years"
           value={yearFilter || ""}
           onChange={handleYearChange}
           size="lg"
