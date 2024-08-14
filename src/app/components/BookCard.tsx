@@ -64,8 +64,8 @@ const BookCard = ({
           <Image
             alt={`Cover image of ${title}`}
             src={image}
-            layout="fill"
-            objectFit="cover"
+            fill={true}
+            style={{ objectFit: "cover" }}
             className="rounded-lg"
           />
         </div>
