@@ -59,7 +59,11 @@ const FilterBar: React.FC<FilterBarProps> = ({ years }) => {
           className="dark:bg-gray-800 dark:text-gray-200"
         >
           {years.map((year) => (
-            <option key={year} value={year}>
+            <option
+              key={year}
+              value={year}
+              className="dark:bg-gray-800 dark:text-gray-200"
+            >
               {year}
             </option>
           ))}
