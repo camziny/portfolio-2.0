@@ -6,7 +6,7 @@ import TimelineItem from "./TimelineItem";
 const ExperienceClient = () => {
   const items = [
     {
-      title: "2023",
+      title: "2023 - Present",
       cardTitle: "Dart Co.",
       cardSubtitle: "Software Developer",
       year: "2023",
@@ -28,11 +28,19 @@ const ExperienceClient = () => {
       ],
     },
     {
-      title: "2023",
-      cardTitle: "Chingu",
-      cardSubtitle: "Full-Stack Software Developer",
+      title: "2023 - Present",
+      cardTitle: "Innovators for Purpose",
+      cardSubtitle: "Instructor, Fundamentals of Web Development",
       icon: <FaBriefcase className="text-3xl text-black dark:text-white" />,
-      skills: ["Node.js", "Express", "React", "PostgreSQL", "TypeScript"],
+      skills: [
+        "Node.js",
+        "Express",
+        "EJS",
+        "SQLite",
+        "JavaScript",
+        "Python",
+        "Godot",
+      ],
     },
     {
       title: "2023",
@@ -51,18 +59,10 @@ const ExperienceClient = () => {
     },
     {
       title: "2023",
-      cardTitle: "Innovators for Purpose",
-      cardSubtitle: "Instructor, Fundamentals of Web Development",
+      cardTitle: "Chingu",
+      cardSubtitle: "Full-Stack Software Developer",
       icon: <FaBriefcase className="text-3xl text-black dark:text-white" />,
-      skills: [
-        "Node.js",
-        "Express",
-        "EJS",
-        "SQLite",
-        "JavaScript",
-        "Python",
-        "Godot",
-      ],
+      skills: ["Node.js", "Express", "React", "PostgreSQL", "TypeScript"],
     },
     {
       title: "2023",
