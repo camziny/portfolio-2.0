@@ -10,6 +10,7 @@ import the_love_rx from "./images/the_love_rx.jpg";
 import seven_principles from "./images/seven_principles.jpg";
 import single_on_purpose from "./images/single_on_purpose.jpg";
 import Attached from "./images/Attached.jpg";
+import not_just_friends from "./images/not_just_friends.jpg";
 
 interface Book {
   title: string;
@@ -186,8 +187,23 @@ export const BooksList = [
     author: "Amir Levine and Rachel Heller",
     image: Attached,
     description: "",
-    thoughts: ["Coming Soon"],
+    thoughts: [
+      "Introduces the concept of attachment styles and their profound impact on relationships.",
+      "Encourages recognizing both your own and your partner's attachment styles to foster healthier relationships.",
+      "Offers practical advice on improving your attachment style and navigating relationships with different styles.",
+      "I'd recommend this book to everyone, but especially to those who are already vaguely familiar with attachment styles.",
+    ],
     link: "https://www.amazon.com/Attached-Science-Adult-Attachment-YouFind/dp/1585429139/ref=sr_1_1?dib=eyJ2IjoiMSJ9.W2Hu0CFeu4eu-473CFxL4jBcuXpB0HfXkB7_4grJKwqHH-U5nyAQ2_4To42BDPlHH7mAKEMNwhrigzDjqBwg1R6GhNYwNX_g8OlC02PCNjT3FbsCRbS9TaqmwpUlbWxcX40fh1QgKmimem8NquR57BN66VTm_cBNTX_sOHkHr9UYdaB1qQpQH-fz8GtvgjrMKJRAwIFeiIliCy5FhoepjPaF2VW76jeg28SZZo_oLrs.Gne3tkPGNgDXl9M0Xx41jgQBisGWFNgfGVOXm2OsxI0&dib_tag=se&hvadid=281011131015&hvdev=c&hvlocphy=9001854&hvnetw=g&hvqmt=e&hvrand=16779611567248771436&hvtargid=kwd-405488365567&hydadcr=22536_9636732&keywords=the+book+attached&qid=1723581644&sr=8-1",
+    currentlyReading: false,
+    yearRead: 2024,
+  },
+  {
+    title: "Not Just Friends",
+    author: "Shirley Glass",
+    image: not_just_friends,
+    description: "",
+    thoughts: ["Coming Soon"],
+    link: "https://www.amazon.com/Not-Just-Friends-Rebuilding-Recovering/dp/0743225503",
     currentlyReading: true,
     yearRead: 2024,
   },
