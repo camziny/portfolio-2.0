@@ -202,7 +202,10 @@ export const BooksList = [
     author: "Shirley Glass",
     image: not_just_friends,
     description: "",
-    thoughts: ["Coming Soon"],
+    thoughts: [
+      "Offers a comprehensive guide on navigating marital infidelity, covering every stage from suspicion and discovery to healing. It also provides insightful, practical advice on preventing cheating and, if it occurs, on how to recover and heal.",
+      "More coming soon",
+    ],
     link: "https://www.amazon.com/Not-Just-Friends-Rebuilding-Recovering/dp/0743225503",
     currentlyReading: true,
     yearRead: 2024,
