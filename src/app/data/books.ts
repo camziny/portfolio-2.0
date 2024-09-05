@@ -203,7 +203,7 @@ export const BooksList = [
     image: not_just_friends,
     description: "",
     thoughts: [
-      "Offers a comprehensive guide on navigating marital infidelity, covering every stage from suspicion and discovery to healing. It also provides insightful, practical advice on preventing cheating and, if it occurs, on how to recover and heal.",
+      "Walks you through the whole process of dealing with infidelity—from the first signs and finding out, to healing and moving forward. It also gives real, practical advice on how to prevent cheating and how to recover if it happens.",
       "More coming soon",
     ],
     link: "https://www.amazon.com/Not-Just-Friends-Rebuilding-Recovering/dp/0743225503",
