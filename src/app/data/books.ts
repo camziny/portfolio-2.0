@@ -204,6 +204,7 @@ export const BooksList = [
     description: "",
     thoughts: [
       "Walks you through the whole process of dealing with infidelity—from the first signs and finding out, to healing and moving forward. It also gives real, practical advice on how to prevent cheating and how to recover if it happens.",
+      "The author's insightful approach not only helps rebuild trust but also offers a fresh perspective on how to strengthen relationships after infidelity.",
       "More coming soon",
     ],
     link: "https://www.amazon.com/Not-Just-Friends-Rebuilding-Recovering/dp/0743225503",
