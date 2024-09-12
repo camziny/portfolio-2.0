@@ -58,7 +58,7 @@ const CamZiny: React.FC = () => {
         </motion.h1>
         <div className="mt-4 sm:mt-0 sm:ml-4"></div>
       </motion.div>
-      <Card className="text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 rounded-lg p-4 mt-2 shadow-xl">
+      <Card className="text-gray-800 dark:text-gray-200 rounded-lg p-4 mt-2 shadow-md">
         <p className="text-lg leading-relaxed">
           I&apos;m a software developer with a passion for creating web
           applications that enhance user experiences. My expertise lies in
