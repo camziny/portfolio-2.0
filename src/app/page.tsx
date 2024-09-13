@@ -13,8 +13,9 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col justify-between mt-16 lg:mt-24">
       <div className="relative w-full">
-        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-cyan-100 via-gray-100 to-gray-200 dark:from-cyan-900 dark:via-gray-800 dark:to-gray-900 z-0"></div>
-        <div className="relative flex flex-col lg:flex-row items-center justify-center lg:justify-between space-y-8 lg:space-y-0 lg:space-x-8 py-8 px-4 lg:px-16 rounded-xl shadow-lg z-10">
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-cyan-100 via-gray-100 to-transparent dark:from-cyan-900 dark:via-gray-800 dark:to-transparent z-0"></div>
+
+        <div className="relative flex flex-col lg:flex-row items-center justify-center lg:justify-between space-y-8 lg:space-y-0 lg:space-x-8 py-8 px-4 lg:px-16 rounded-xl z-10">
           <div className="order-2 lg:order-1 w-full lg:w-1/2 ">
             <CamZiny />
           </div>
