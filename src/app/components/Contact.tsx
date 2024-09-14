@@ -33,9 +33,9 @@ const Contact = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-8 md:p-12 my-10 bg-white bg-gray-200 dark:bg-gray-700 rounded-lg shadow-xl">
-      <form ref={form} onSubmit={sendEmail} className="flex flex-col space-y-4">
-        <h1 className="text-xl font-semibold text-gray-900 dark:text-white">
+    <div className="max-w-lg mx-auto p-8 md:p-12 my-10 bg-gradient-to-br from-cyan-100 via-gray-100 to-white dark:from-cyan-900 dark:via-gray-800 dark:to-gray-900 rounded-lg shadow-xl">
+      <form ref={form} onSubmit={sendEmail} className="flex flex-col space-y-6">
+        <h1 className="text-2xl font-semibold text-gray-900 dark:text-white text-center">
           Contact Me
         </h1>
         <label
@@ -49,7 +49,7 @@ const Contact = () => {
           id="email"
           name="email"
           required
-          className="px-4 py-2 border rounded-md text-gray-800 bg-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-600 focus:ring-cyan-500 focus:border-cyan-500"
+          className="px-4 py-2 border rounded-md text-gray-800 bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:ring-cyan-500 focus:border-cyan-500"
         />
         <label
           htmlFor="message"
@@ -62,13 +62,13 @@ const Contact = () => {
           name="message"
           required
           rows={4}
-          className="px-4 py-2 border rounded-md text-gray-800 bg-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-600 focus:ring-cyan-500 focus:border-cyan-500"
+          className="px-4 py-2 border rounded-md text-gray-800 bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:ring-cyan-500 focus:border-cyan-500"
         ></textarea>
         <button
           type="submit"
-          className="py-2 px-4 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-md shadow"
+          className="py-2 px-4 text-white bg-gradient-to-br from-cyan-300 via-cyan-400 to-cyan-500 dark:from-cyan-800 dark:via-cyan-900 dark:to-gray-900 font-semibold hover:bg-cyan-600 dark:hover:bg-cyan-700 rounded-md p-1 transition-colors duration-300 shadow-md"
         >
-          Send
+          Send Message
         </button>
       </form>
     </div>

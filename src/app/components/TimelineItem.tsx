@@ -71,7 +71,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
             {item.skills.map((skill, skillIndex) => (
               <Chip
                 key={skillIndex}
-                className="inline-block bg-cyan-500 dark:bg-cyan-600 px-3 py-1 rounded-md text-sm text-white mr-2 mb-1"
+                className="inline-block bg-gradient-to-br from-cyan-100 via-gray-100 to-white dark:from-cyan-900 dark:via-gray-800 dark:to-gray-900 px-3 py-1 rounded-md text-sm text-gray-800 dark:text-gray-200 mr-2 mb-1"
               >
                 {skill}
               </Chip>
