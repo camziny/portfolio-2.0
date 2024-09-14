@@ -42,11 +42,10 @@ const ProjectCard = ({
 
   return (
     <Card className="max-w-md bg-white dark:bg-gray-700 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-      <div className="text-center p-4 bg-gradient-to-r from-cyan-500 to-cyan-400 dark:from-cyan-600 dark:to-cyan-500">
+      <div className="text-center p-4 bg-gradient-to-br from-cyan-100 via-gray-100 to-white dark:from-cyan-900 dark:via-gray-800 dark:to-gray-900">
         <Link href={`project/${name}`}>
           <p className="text-lg font-bold text-gray-100">{name}</p>
           <div className="relative w-24 h-24 overflow-hidden mx-auto mt-2 rounded-full shadow-md bg-gray-100 dark:bg-gray-700 aspect-square">
-            {" "}
             <Image
               alt={`Image of ${name} project`}
               src={image}
@@ -85,8 +84,13 @@ const ProjectCard = ({
       <Divider />
       <CardFooter className="flex justify-between items-center p-4 bg-white dark:bg-gray-700">
         <div className="flex-1"></div>
-        <div className="flex-1 flex justify-center text-gray-600 bg-cyan-400/70 dark:bg-cyan-500/70 dark:text-gray-100 font-semibold hover:bg-cyan-400 rounded-md p-1 dark:hover:bg-cyan-500">
-          <Link href={`project/${name}`}>Learn More</Link>
+        <div className="flex-1 flex justify-center text-white bg-gradient-to-br from-cyan-300 via-cyan-400 to-cyan-500 dark:from-cyan-800 dark:via-cyan-900 dark:to-gray-900 font-semibold hover:bg-cyan-600 dark:hover:bg-cyan-700 rounded-md p-1 transition-colors duration-300 shadow-md">
+          <Link
+            href={`project/${name}`}
+            className="text-white dark:text-gray-100"
+          >
+            Learn More
+          </Link>
         </div>
         <div className="flex-1 flex justify-end">
           <Link
