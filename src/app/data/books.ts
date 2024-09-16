@@ -11,6 +11,7 @@ import seven_principles from "./images/seven_principles.jpg";
 import single_on_purpose from "./images/single_on_purpose.jpg";
 import Attached from "./images/Attached.jpg";
 import not_just_friends from "./images/not_just_friends.jpg";
+import tuesdays_with_morrie from "./images/tuesdays_with_morrie.jpg";
 
 interface Book {
   title: string;
@@ -208,6 +209,16 @@ export const BooksList = [
       "Offers advice for both the betrayed and the unfaithful, helping each person understand how infidelity happens and providing practical steps for healing, whether you're staying together or moving on.",
     ],
     link: "https://www.amazon.com/Not-Just-Friends-Rebuilding-Recovering/dp/0743225503",
+    currentlyReading: false,
+    yearRead: 2024,
+  },
+  {
+    title: "Tuesdays with Morrie",
+    author: "Mitch Albom",
+    image: tuesdays_with_morrie,
+    description: "",
+    thoughts: ["Coming soon"],
+    link: "https://www.amazon.com/Tuesdays-Morrie-Greatest-Lesson-Anniversary/dp/076790592X",
     currentlyReading: true,
     yearRead: 2024,
   },
