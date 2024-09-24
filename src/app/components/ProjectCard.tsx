@@ -1,11 +1,5 @@
 "use client";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Divider,
-} from "@nextui-org/react";
+import { Card, CardBody, CardFooter } from "@nextui-org/react";
 import Image, { StaticImageData } from "next/image";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import { useState } from "react";
@@ -41,11 +35,13 @@ const ProjectCard = ({
   };
 
   return (
-    <Card className="max-w-md bg-white dark:bg-gray-700 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-      <div className="text-center p-4 bg-gradient-to-br from-cyan-100 via-gray-100 to-white dark:from-cyan-900 dark:via-gray-800 dark:to-gray-900">
+    <Card className="max-w-md bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
+      <div className="text-center p-6 bg-gradient-to-br from-cyan-100 via-gray-100 to-white dark:from-cyan-900 dark:via-gray-800 dark:to-gray-900">
         <Link href={`project/${name}`}>
-          <p className="text-lg font-bold text-gray-100">{name}</p>
-          <div className="relative w-24 h-24 overflow-hidden mx-auto mt-2 rounded-full shadow-md bg-gray-100 dark:bg-gray-700 aspect-square">
+          <p className="text-lg font-bold text-gray-800 dark:text-gray-100">
+            {name}
+          </p>
+          <div className="relative w-24 h-24 overflow-hidden mx-auto mt-4 rounded-full shadow-md bg-gray-100 dark:bg-gray-700 aspect-square">
             <Image
               alt={`Image of ${name} project`}
               src={image}
@@ -57,20 +53,19 @@ const ProjectCard = ({
           </div>
         </Link>
       </div>
-      <Divider />
-      <CardBody className="p-4 flex flex-col min-h-[150px] bg-white dark:bg-gray-700">
+      <CardBody className="p-4 bg-white dark:bg-gray-800">
         <motion.div
           initial="collapsed"
           animate={showMore ? "open" : "collapsed"}
           variants={variants}
-          className="overflow-hidden"
+          className="overflow-hidden text-gray-700 dark:text-gray-300"
         >
-          <p className="text-gray-700 dark:text-gray-300">{skills}</p>
+          <p>{skills}</p>
         </motion.div>
         {skills.length > 100 && (
           <button
             onClick={() => setShowMore(!showMore)}
-            className="mt-2 text-sm text-cyan-600 hover:text-cyan-700 transition-colors duration-300 ease-in-out flex items-center justify-center"
+            className="mt-2 text-sm text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors duration-300 ease-in-out flex items-center justify-center"
             aria-expanded={showMore}
           >
             {showMore ? (
@@ -81,21 +76,17 @@ const ProjectCard = ({
           </button>
         )}
       </CardBody>
-      <Divider />
-      <CardFooter className="flex justify-between items-center p-4 bg-white dark:bg-gray-700">
-        <div className="flex-1"></div>
-        <div className="flex-1 flex justify-center text-white bg-gradient-to-br from-cyan-300 via-cyan-400 to-cyan-500 dark:from-cyan-800 dark:via-cyan-900 dark:to-gray-900 font-semibold hover:bg-cyan-600 dark:hover:bg-cyan-700 rounded-md p-1 transition-colors duration-300 shadow-md">
+      <CardFooter className="flex justify-between items-center p-4 bg-white dark:bg-gray-800">
+        <Link
+          href={`project/${name}`}
+          className="text-white bg-cyan-600 hover:bg-cyan-700 dark:bg-cyan-700 dark:hover:bg-cyan-600 focus:outline-none focus:ring focus:ring-cyan-300 font-medium rounded-md text-sm px-4 py-2"
+        >
+          Learn More
+        </Link>
+        <div className="flex space-x-2">
           <Link
-            href={`project/${name}`}
-            className="text-white dark:text-gray-100"
-          >
-            Learn More
-          </Link>
-        </div>
-        <div className="flex-1 flex justify-end">
-          <Link
-            className="text-cyan-600 hover:text-cyan-700 focus:outline-none focus:ring focus:ring-cyan-300 rounded-full p-2"
             href={link}
+            className="text-gray-600 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 focus:outline-none focus:ring focus:ring-cyan-300 rounded-full p-2"
             aria-label="External link to project"
             target="_blank"
           >
@@ -103,7 +94,7 @@ const ProjectCard = ({
           </Link>
           <Link
             href={github}
-            className="text-cyan-600 hover:text-cyan-700 focus:outline-none focus:ring focus:ring-cyan-300 rounded-full p-2 ml-2"
+            className="text-gray-600 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 focus:outline-none focus:ring focus:ring-cyan-300 rounded-full p-2"
             aria-label="GitHub repository link"
             target="_blank"
           >
