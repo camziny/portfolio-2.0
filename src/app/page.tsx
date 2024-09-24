@@ -26,10 +26,15 @@ export default function Home() {
         </div>
       </div>
       <section className="px-4 lg:px-16 mt-8 lg:mt-16">
-        <h2 className="text-center text-2xl font-bold text-gray-700 dark:text-white">
-          Projects
-        </h2>
-        <div className="mt-4 flex flex-wrap justify-center gap-4">
+        <div className="text-center">
+          <h2 className="text-3xl font-extrabold text-gray-800 dark:text-white">
+            Projects
+          </h2>
+          <div className="mt-4 flex justify-center">
+            <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded"></div>
+          </div>
+        </div>
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
           {ProjectsList.map((project: any) => (
             <ProjectCard key={project.name} project={project} />
           ))}
