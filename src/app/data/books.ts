@@ -217,9 +217,11 @@ export const BooksList = [
     author: "Mitch Albom",
     image: tuesdays_with_morrie,
     description: "",
-    thoughts: ["Coming soon"],
+    thoughts: [
+      "This book is about the author visiting his old professor, Morrie, after finding out he's terminally ill and doesn't have much time left. Throughout their meetings, Morrie shares his thoughts on everything from forgiveness, emotions, relationships, aging, and money. Even though the book is about Morrie's dying process, it's really more about how to live. Morrie's wisdom gets you to rethink your own values and what's important in life. It's definitely an emotional read, but overall, super inspiring and thought-provoking.",
+    ],
     link: "https://www.amazon.com/Tuesdays-Morrie-Greatest-Lesson-Anniversary/dp/076790592X",
-    currentlyReading: true,
+    currentlyReading: false,
     yearRead: 2024,
   },
 ];
