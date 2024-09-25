@@ -4,6 +4,7 @@ import { ProjectsList } from "./data/projects";
 import CamZiny from "./components/CamZiny";
 import Contact from "./components/Contact";
 import Scene from "./components/Scene";
+import { FiFolder } from "react-icons/fi";
 
 export const metadata = {
   title: "Home - Cam Ziny",
@@ -27,11 +28,11 @@ export default function Home() {
       </div>
       <section className="px-4 lg:px-16 mt-8 lg:mt-16">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-gray-800 dark:text-white">
+          <h2 className="text-3xl font-extrabold text-gray-800 dark:text-white flex items-center justify-center">
             Projects
           </h2>
           <div className="mt-4 flex justify-center">
-            <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded"></div>
+            <div className="w-64 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full animate-gradient-shift bg-[length:300%_100%]"></div>
           </div>
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
