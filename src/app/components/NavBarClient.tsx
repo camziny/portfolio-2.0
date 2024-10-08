@@ -25,7 +25,7 @@ const NavBarClient = () => {
   };
 
   return (
-    <nav className="p-8 md:p-5 text-gray-900 dark:text-white sticky top-0 z-50 bg-white/50 dark:bg-gray-900/50 backdrop-blur-md">
+    <nav className="p-8 md:p-2 text-gray-900 dark:text-white sticky top-0 z-50 bg-white/50 dark:bg-gray-900/50 backdrop-blur-md">
       <div className="container mx-auto flex flex-wrap justify-between items-center">
         <div className="flex items-center">
           <div className="flex items-center space-x-4">
