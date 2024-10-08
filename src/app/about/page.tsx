@@ -6,8 +6,8 @@ export const metadata = {
 
 const About = () => {
   return (
-    <div className="bg-gray-100 min-h-screen p-4 sm:p-6 dark:bg-gray-800">
-      <div className="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg mt-20 dark:bg-gray-700 dark:text-gray-100">
+    <div className="bg-gray-100 min-h-screen p-4 sm:p-6 dark:bg-gray-900">
+      <div className="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg mt-20 dark:bg-gray-800 dark:text-gray-100">
         <div className="flex items-center">
           <h2 className="text-3xl sm:text-4xl font-semibold text-gray-800 mb-4 dark:text-gray-100">
             About Me
