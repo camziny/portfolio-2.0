@@ -12,6 +12,7 @@ import single_on_purpose from "./images/single_on_purpose.jpg";
 import Attached from "./images/Attached.jpg";
 import not_just_friends from "./images/not_just_friends.jpg";
 import tuesdays_with_morrie from "./images/tuesdays_with_morrie.jpg";
+import adult_children from "./images/adult_children.jpg";
 
 interface Book {
   title: string;
@@ -222,6 +223,16 @@ export const BooksList = [
     ],
     link: "https://www.amazon.com/Tuesdays-Morrie-Greatest-Lesson-Anniversary/dp/076790592X",
     currentlyReading: false,
+    yearRead: 2024,
+  },
+  {
+    title: "Adult Children of Emoitionally Immature Parents",
+    author: "Lindsay C. Gibson",
+    image: adult_children,
+    description: "",
+    thoughts: ["coming soon"],
+    link: "https://www.amazon.com/Adult-Children-Emotionally-Immature-Parents/dp/1626251703",
+    currentlyReading: true,
     yearRead: 2024,
   },
 ];
