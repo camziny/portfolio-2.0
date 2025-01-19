@@ -22,7 +22,7 @@ const ExperienceClient = () => {
         "TypeScript",
         "Tailwind CSS",
         "Vercel",
-        "AWS",
+        "",
       ],
     },
     {
