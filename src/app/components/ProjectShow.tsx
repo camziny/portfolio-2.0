@@ -2,10 +2,10 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
-import { Button } from "@nextui-org/button";
+import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
-import { TextEffectPerChar } from "@/utils/textEffectPerChar";
+import { TextEffectPerChar } from "@/utils/textEffects";
 
 interface Project {
   name: string;
@@ -63,10 +63,9 @@ const ProjectShow: React.FC<ProjectProps> = ({ project }) => {
         animate="visible"
       >
         <div className="flex justify-center mb-5">
-          <TextEffectPerChar
-            text={project.name}
-            className="text-3xl font-bold text-cyan-600 dark:text-cyan-500 mb-4"
-          />
+          <TextEffectPerChar className="text-3xl font-bold text-cyan-600 dark:text-cyan-500 mb-4">
+            {project.name}
+          </TextEffectPerChar>
         </div>
       </motion.div>
       <div className="mb-4 flex justify-center">
