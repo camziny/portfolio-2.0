@@ -21,6 +21,8 @@ const ProjectCard = ({
   project: Project;
 }) => {
   const [showMore, setShowMore] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
   const variants = {
     open: {
       maxHeight: "20rem",
@@ -35,74 +37,99 @@ const ProjectCard = ({
   };
 
   return (
-    <Card className="max-w-md bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
-      <div className="text-center p-6 bg-gradient-to-br from-cyan-100 via-gray-100 to-white dark:from-cyan-900 dark:via-gray-800 dark:to-gray-900">
-        <Link href={`project/${name}`}>
-          <p className="text-lg font-bold text-gray-800 dark:text-gray-100">
-            {name}
-          </p>
-          <div className="relative w-24 h-24 overflow-hidden mx-auto mt-4 rounded-full shadow-md bg-gray-100 dark:bg-gray-700 aspect-square">
-            <Image
-              alt={`Image of ${name} project`}
-              src={image}
-              layout="fill"
-              objectFit="cover"
-              objectPosition="center"
-              className="rounded-full"
-            />
+    <motion.div
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.3 }}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+    >
+      <Card className="max-w-md backdrop-blur-md bg-white/95 dark:bg-gray-800/95 rounded-xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50">
+        <div className="relative group">
+          <div className="text-center p-6 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
+            <Link href={`project/${name}`}>
+              <motion.div
+                initial={false}
+                animate={isHovered ? { scale: 1.05 } : { scale: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <p className="text-xl font-bold text-gray-800 dark:text-gray-100">
+                  {name}
+                </p>
+                <div className="relative w-32 h-32 overflow-hidden mx-auto mt-4 rounded-2xl shadow-md group-hover:shadow-lg transition-all duration-300">
+                  <Image
+                    alt={`Image of ${name} project`}
+                    src={image}
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                    className="rounded-2xl transform group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </motion.div>
+            </Link>
           </div>
-        </Link>
-      </div>
-      <CardBody className="p-4 bg-white dark:bg-gray-800">
-        <motion.div
-          initial="collapsed"
-          animate={showMore ? "open" : "collapsed"}
-          variants={variants}
-          className="overflow-hidden text-gray-700 dark:text-gray-300"
-        >
-          <p>{skills}</p>
-        </motion.div>
-        {skills.length > 100 && (
-          <button
-            onClick={() => setShowMore(!showMore)}
-            className="mt-2 text-sm text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors duration-300 ease-in-out flex items-center justify-center"
-            aria-expanded={showMore}
-          >
-            {showMore ? (
-              <FaArrowUp className="text-lg" />
-            ) : (
-              <FaArrowDown className="text-lg" />
-            )}
-          </button>
-        )}
-      </CardBody>
-      <CardFooter className="flex justify-between items-center p-4 bg-white dark:bg-gray-800">
-        <Link
-          href={`project/${name}`}
-          className="text-white bg-cyan-600 hover:bg-cyan-700 dark:bg-cyan-700 dark:hover:bg-cyan-600 focus:outline-none focus:ring focus:ring-cyan-300 font-medium rounded-md text-sm px-4 py-2"
-        >
-          Learn More
-        </Link>
-        <div className="flex space-x-2">
-          <Link
-            href={link}
-            className="text-gray-600 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 focus:outline-none focus:ring focus:ring-cyan-300 rounded-full p-2"
-            aria-label="External link to project"
-            target="_blank"
-          >
-            <FiExternalLink className="text-xl" />
-          </Link>
-          <Link
-            href={github}
-            className="text-gray-600 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 focus:outline-none focus:ring focus:ring-cyan-300 rounded-full p-2"
-            aria-label="GitHub repository link"
-            target="_blank"
-          >
-            <FiGithub className="text-xl" />
-          </Link>
         </div>
-      </CardFooter>
-    </Card>
+
+        <CardBody className="p-4 bg-transparent">
+          <motion.div
+            initial="collapsed"
+            animate={showMore ? "open" : "collapsed"}
+            variants={variants}
+            className="overflow-hidden text-gray-600 dark:text-gray-300"
+          >
+            <p className="leading-relaxed">{skills}</p>
+          </motion.div>
+          {skills.length > 100 && (
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setShowMore(!showMore)}
+              className="mt-2 text-sm text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300 ease-in-out flex items-center justify-center w-full"
+              aria-expanded={showMore}
+            >
+              {showMore ? (
+                <FaArrowUp className="text-lg" />
+              ) : (
+                <FaArrowDown className="text-lg" />
+              )}
+            </motion.button>
+          )}
+        </CardBody>
+
+        <CardFooter className="flex justify-between items-center p-4 bg-transparent">
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              href={`project/${name}`}
+              className="text-white bg-gray-800 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 transition-all duration-300"
+            >
+              Learn More
+            </Link>
+          </motion.div>
+          <div className="flex space-x-3">
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href={link}
+                className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-full p-2 transition-colors duration-300"
+                aria-label="External link to project"
+                target="_blank"
+              >
+                <FiExternalLink className="text-xl" />
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href={github}
+                className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-full p-2 transition-colors duration-300"
+                aria-label="GitHub repository link"
+                target="_blank"
+              >
+                <FiGithub className="text-xl" />
+              </Link>
+            </motion.div>
+          </div>
+        </CardFooter>
+      </Card>
+    </motion.div>
   );
 };
 
