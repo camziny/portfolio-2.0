@@ -23,10 +23,7 @@ const About = () => {
         </p>
         <p className="text-base sm:text-lg text-gray-700 mb-4 dark:text-gray-200">
           My enjoyment of this experience, combined with my deep interest in
-          technology, led me to make a career switch to software engineering. I
-          am currently pursuing software development roles at an innovative
-          company. Open to remote roles or hybrid / onsite roles in the Greater
-          Boston Area.
+          technology, led me to make a career switch to software engineering.
         </p>
       </div>
     </div>
