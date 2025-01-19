@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { TimelineItemProps } from "../types/TimelineItemTypes";
-import { Chip } from "@nextui-org/chip";
+import { Chip } from "@nextui-org/react";
 import { motion } from "framer-motion";
 
 const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
