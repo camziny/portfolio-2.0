@@ -1,94 +1,129 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { FaHome } from "react-icons/fa";
-import { FaBriefcase, FaAddressCard, FaHatWizard } from "react-icons/fa";
+import { FaHome, FaBriefcase, FaAddressCard } from "react-icons/fa";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import useScrollPosition from "./GetScrollPosition";
-import Experience from "./ExperienceClient";
-import { useState } from "react";
-import {
-  Button,
-  Menu,
-  MenuItem,
-  MenuTrigger,
-  Popover,
-} from "react-aria-components";
+import { motion, AnimatePresence } from "framer-motion";
 
 const NavBarClient = () => {
   const isScrolled = useScrollPosition() > 50;
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+  const menuItems = [
+    { href: "/", label: "Home", icon: FaHome },
+    { href: "/about", label: "About", icon: FaAddressCard },
+    { href: "/experience", label: "Experience", icon: FaBriefcase },
+  ];
+
+  const navbarVariants = {
+    hidden: { y: -100 },
+    visible: { y: 0, transition: { duration: 0.3, ease: "easeOut" } },
+  };
+
+  const menuVariants = {
+    closed: {
+      opacity: 0,
+      scale: 0.95,
+      transition: { duration: 0.2 }
+    },
+    open: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.2 }
+    },
   };
 
   return (
-    <nav className="p-8 md:p-2 text-gray-900 dark:text-white sticky top-0 z-50 bg-white/50 dark:bg-gray-900/50 backdrop-blur-md">
-      <div className="container mx-auto flex flex-wrap justify-between items-center">
-        <div className="flex items-center">
-          <div className="flex items-center space-x-4">
-            <div className="hidden md:flex space-x-4 items-center">
-              <Link href="/">
-                {" "}
-                <div className="flex items-center px-3 py-2 rounded hover:bg-gray-400 dark:hover:bg-gray-700 transition-colors cursor-pointer">
-                  <span className="text-lg font-medium mr-2">Home</span>
-                  <FaHome className="text-xl text-cyan-600 dark:text-cyan-400" />
-                </div>
+    <motion.nav
+      initial="hidden"
+      animate="visible"
+      variants={navbarVariants}
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-lg"
+          : "bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm"
+      }`}
+    >
+      <div className="container mx-auto px-4 py-3">
+        <div className="flex justify-between items-center">
+          <div className="hidden md:flex space-x-1">
+            {menuItems.map((item) => (
+              <Link href={item.href} key={item.label}>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex items-center px-4 py-2 rounded-lg
+                           hover:bg-gray-100 dark:hover:bg-gray-800
+                           transition-all duration-200 group"
+                >
+                  <span className="text-gray-800 dark:text-gray-200 font-medium mr-2 
+                                 group-hover:text-cyan-600 dark:group-hover:text-cyan-400
+                                 transition-colors duration-200">
+                    {item.label}
+                  </span>
+                  <item.icon className="text-xl text-cyan-600 dark:text-cyan-400" />
+                </motion.div>
               </Link>
-              <Link href="/about">
-                <div className="flex items-center px-3 py-2 rounded hover:bg-gray-400 dark:hover:bg-gray-700 transition-colors cursor-pointer">
-                  <span className="text-lg font-medium mr-2">About</span>
-                  <FaAddressCard className="text-xl text-cyan-600 dark:text-cyan-400" />
-                </div>
-              </Link>
-              <Link href="/experience">
-                <div className="flex items-center px-3 py-2 rounded hover:bg-gray-400 dark:hover:bg-gray-700 transition-colors cursor-pointer">
-                  <span className="text-lg font-medium mr-2">Experience</span>
-                  <FaBriefcase className="text-xl text-cyan-600 dark:text-cyan-400" />
-                </div>
-              </Link>
-            </div>
+            ))}
+          </div>
+          <div className="md:hidden">
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800
+                       hover:bg-gray-200 dark:hover:bg-gray-700
+                       transition-colors duration-200"
+              aria-label="Toggle menu"
+            >
+              <div className="w-6 h-5 flex flex-col justify-between">
+                <span className={`h-0.5 w-full bg-gray-600 dark:bg-gray-300 transform transition-all duration-300
+                              ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+                <span className={`h-0.5 bg-gray-600 dark:bg-gray-300 transform transition-all duration-300
+                              ${isMenuOpen ? 'w-0' : 'w-full'}`} />
+                <span className={`h-0.5 w-full bg-gray-600 dark:bg-gray-300 transform transition-all duration-300
+                              ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+              </div>
+            </motion.button>
+          </div>
+          <div className="flex items-center">
+            <ThemeSwitcher />
           </div>
         </div>
-        <div className="md:hidden fixed top-2 left-0 z-50">
-          <MenuTrigger>
-            <Button
-              aria-label="Menu"
-              className="text-2xl ml-2 bg-transparent hover:bg-gray-200 dark:hover:bg-gray-700 p-2 rounded"
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={menuVariants}
+              className="md:hidden absolute left-0 right-0 mt-2 mx-4 p-2
+                       bg-white dark:bg-gray-800 rounded-lg shadow-xl
+                       border border-gray-200 dark:border-gray-700"
             >
-              ☰
-            </Button>
-            <Popover className="bg-gray-100 text-gray-800 dark:bg-gray-800 shadow-lg mt-2 rounded-lg">
-              <Menu className="flex flex-col space-y-1 w-48">
-                <MenuItem href="/">
-                  <div className="flex items-center justify-between px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-200">
-                    Home
-                    <FaHome className="text-xl text-cyan-600 dark:text-cyan-400" />
-                  </div>
-                </MenuItem>
-                <MenuItem href="/about">
-                  <div className="flex items-center justify-between px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-200">
-                    About
-                    <FaAddressCard className="text-xl text-cyan-600 dark:text-cyan-400" />
-                  </div>
-                </MenuItem>
-                <MenuItem href="/experience">
-                  <div className="flex items-center justify-between px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-200">
-                    Experience
-                    <FaBriefcase className="text-xl text-cyan-600 dark:text-cyan-400" />
-                  </div>
-                </MenuItem>
-              </Menu>
-            </Popover>
-          </MenuTrigger>
-        </div>
+              {menuItems.map((item) => (
+                <Link href={item.href} key={item.label}>
+                  <motion.div
+                    whileHover={{ x: 4 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center justify-between px-4 py-3 rounded-lg
+                             hover:bg-gray-100 dark:hover:bg-gray-700
+                             transition-all duration-200"
+                  >
+                    <span className="text-gray-800 dark:text-gray-200 font-medium">
+                      {item.label}
+                    </span>
+                    <item.icon className="text-xl text-cyan-600 dark:text-cyan-400" />
+                  </motion.div>
+                </Link>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-      <div className="fixed top-5 right-5 z-50">
-        <ThemeSwitcher />
-      </div>
-    </nav>
+    </motion.nav>
   );
 };
 

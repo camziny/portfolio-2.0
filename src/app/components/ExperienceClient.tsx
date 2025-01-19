@@ -122,7 +122,7 @@ const ExperienceClient = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center py-5 bg-gray-50 dark:bg-gray-900">
+    <div className="flex flex-col items-center py-5 pt-24 bg-gray-50 dark:bg-gray-900">
       <div className="relative w-full max-w-4xl px-4">
         <div className="absolute inset-0 md:flex justify-center hidden">
           <div className="w-1 bg-gray-300 dark:bg-gray-700 h-full"></div>
