@@ -14,7 +14,7 @@ const FilterBar: React.FC<FilterBarProps> = ({ years }) => {
 
   const handleYearChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedYear = event.target.value;
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(searchParams.toString());
 
     if (selectedYear) {
       params.set("year", selectedYear);
