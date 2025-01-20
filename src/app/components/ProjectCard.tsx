@@ -100,11 +100,12 @@ const ProjectCard = ({
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               href={`project/${name}`}
-              className="bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700
-                        dark:from-cyan-600 dark:to-cyan-700 dark:hover:from-cyan-500 dark:hover:to-cyan-600
-                        text-white font-medium rounded-lg text-sm px-5 py-2.5 
-                        transition-all duration-300 shadow-md hover:shadow-lg
-                        focus:outline-none focus:ring-2 focus:ring-cyan-300 dark:focus:ring-cyan-800"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg 
+                        bg-gradient-to-br from-white to-cyan-50 dark:from-gray-800 dark:to-cyan-900/20
+                        hover:from-cyan-50 hover:to-cyan-100 dark:hover:from-gray-800 dark:hover:to-cyan-900/40
+                        border border-cyan-100 dark:border-cyan-900/50
+                        text-gray-700 dark:text-gray-200
+                        transition-all duration-300 shadow-sm hover:shadow"
             >
               Learn More
             </Link>
@@ -113,10 +114,13 @@ const ProjectCard = ({
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href={link}
-                className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 
-                          bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700
-                          rounded-full p-2 transition-all duration-300 shadow-sm hover:shadow
-                          focus:outline-none focus:ring-2 focus:ring-cyan-300 dark:focus:ring-cyan-800"
+                className="flex items-center gap-2 p-2 rounded-lg
+                          bg-gradient-to-br from-white to-cyan-50 dark:from-gray-800 dark:to-cyan-900/20
+                          hover:from-cyan-50 hover:to-cyan-100 dark:hover:from-gray-800 dark:hover:to-cyan-900/40
+                          border border-cyan-100 dark:border-cyan-900/50
+                          text-gray-600 dark:text-gray-300 
+                          hover:text-cyan-600 dark:hover:text-cyan-400
+                          transition-all duration-300 shadow-sm hover:shadow"
                 aria-label="External link to project"
                 target="_blank"
               >
@@ -126,10 +130,13 @@ const ProjectCard = ({
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href={github}
-                className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400
-                          bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700
-                          rounded-full p-2 transition-all duration-300 shadow-sm hover:shadow
-                          focus:outline-none focus:ring-2 focus:ring-cyan-300 dark:focus:ring-cyan-800"
+                className="flex items-center gap-2 p-2 rounded-lg
+                          bg-gradient-to-br from-white to-cyan-50 dark:from-gray-800 dark:to-cyan-900/20
+                          hover:from-cyan-50 hover:to-cyan-100 dark:hover:from-gray-800 dark:hover:to-cyan-900/40
+                          border border-cyan-100 dark:border-cyan-900/50
+                          text-gray-600 dark:text-gray-300 
+                          hover:text-cyan-600 dark:hover:text-cyan-400
+                          transition-all duration-300 shadow-sm hover:shadow"
                 aria-label="GitHub repository link"
                 target="_blank"
               >
