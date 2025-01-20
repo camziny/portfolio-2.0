@@ -1,38 +1,74 @@
 "use client";
-import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { FiSun, FiMoon } from "react-icons/fi";
 
-export const ThemeSwitcher = () => {
-  const { theme, setTheme } = useTheme();
+export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return null;
-  }
+  if (!mounted) return null;
 
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
+  const isDark = theme === "dark";
 
   return (
-    <label className="flex items-center cursor-pointer">
-      <FiSun className="text-lg text-gray-600 dark:text-white" />
-      <div
-        onClick={toggleTheme}
-        className={`ml-2 w-10 h-5 flex items-center flex-shrink-0 p-1 rounded-full duration-300 ease-in-out ${
-          theme === "dark"
-            ? "bg-gray-700 justify-end"
-            : "bg-gray-300 justify-start"
-        }`}
-      >
-        <div className="w-4 h-4 bg-white rounded-full shadow-md"></div>
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      className={`relative rounded-full w-16 h-8 flex items-center
+                 ${isDark ? 'bg-gray-700' : 'bg-gray-100'}
+                 transition-colors duration-500 ease-in-out`}
+      aria-label="Toggle theme"
+    >
+      <div className="absolute inset-0 w-full h-full flex justify-between items-center px-2">
+        <span className={`transition-opacity duration-200 
+                       ${isDark ? 'opacity-40 text-gray-400' : 'opacity-70 text-cyan-500'}`}>
+          <FiSun className="w-4 h-4" />
+        </span>
+        <span className={`transition-opacity duration-200 
+                       ${isDark ? 'opacity-70 text-cyan-500' : 'opacity-40 text-gray-400'}`}>
+          <FiMoon className="w-4 h-4" />
+        </span>
       </div>
-      <FiMoon className=" text-lg ml-2 text-gray-600 dark:text-white" />
-    </label>
+      <motion.div
+        className={`absolute w-6 h-6 rounded-full 
+                   ${isDark ? 'bg-cyan-500' : 'bg-cyan-500'}
+                   shadow-md flex items-center justify-center`}
+        initial={{ x: isDark ? 32 : 2 }}
+        animate={{ 
+          x: isDark ? 32 : 2,
+          rotate: isDark ? 360 : 0 
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 20,
+        }}
+      >
+        <motion.div
+          animate={{
+            rotateZ: isDark ? 360 : 0,
+            scale: 1
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 200,
+            damping: 10,
+          }}
+        >
+          {isDark ? (
+            <FiMoon className="text-white w-4 h-4" />
+          ) : (
+            <FiSun className="text-white w-4 h-4" />
+          )}
+        </motion.div>
+      </motion.div>
+    </motion.button>
   );
-};
+}

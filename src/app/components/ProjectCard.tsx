@@ -100,7 +100,11 @@ const ProjectCard = ({
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               href={`project/${name}`}
-              className="text-white bg-gray-800 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 transition-all duration-300"
+              className="bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700
+                        dark:from-cyan-600 dark:to-cyan-700 dark:hover:from-cyan-500 dark:hover:to-cyan-600
+                        text-white font-medium rounded-lg text-sm px-5 py-2.5 
+                        transition-all duration-300 shadow-md hover:shadow-lg
+                        focus:outline-none focus:ring-2 focus:ring-cyan-300 dark:focus:ring-cyan-800"
             >
               Learn More
             </Link>
@@ -109,7 +113,10 @@ const ProjectCard = ({
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href={link}
-                className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-full p-2 transition-colors duration-300"
+                className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 
+                          bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700
+                          rounded-full p-2 transition-all duration-300 shadow-sm hover:shadow
+                          focus:outline-none focus:ring-2 focus:ring-cyan-300 dark:focus:ring-cyan-800"
                 aria-label="External link to project"
                 target="_blank"
               >
@@ -119,7 +126,10 @@ const ProjectCard = ({
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href={github}
-                className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-full p-2 transition-colors duration-300"
+                className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400
+                          bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700
+                          rounded-full p-2 transition-all duration-300 shadow-sm hover:shadow
+                          focus:outline-none focus:ring-2 focus:ring-cyan-300 dark:focus:ring-cyan-800"
                 aria-label="GitHub repository link"
                 target="_blank"
               >
