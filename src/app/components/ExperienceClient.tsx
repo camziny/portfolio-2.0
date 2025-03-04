@@ -1,9 +1,22 @@
 "use client";
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
 import TimelineItem from "./TimelineItem";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const ExperienceClient = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+  
+  const progressHeight = useTransform(
+    scrollYProgress,
+    [0, 0.85],
+    ["0%", "100%"]
+  );
+
   const items = [
     {
       title: "2025 - Present",
@@ -122,16 +135,36 @@ const ExperienceClient = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center py-5 pt-24 bg-gray-50 dark:bg-gray-900">
+    <div className="flex flex-col items-center py-5 pt-24 bg-gray-50 dark:bg-gray-900" ref={containerRef}>
+      <h2 className="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-gray-100">
+        Experience
+      </h2>
+      
       <div className="relative w-full max-w-4xl px-4">
         <div className="absolute inset-0 md:flex justify-center hidden">
-          <div className="w-1 bg-gray-300 dark:bg-gray-700 h-full"></div>
+          <div className="w-[3px] bg-gradient-to-b from-gray-100 via-gray-200 to-gray-100 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 rounded-full overflow-hidden shadow-sm h-full">
+            <div className="absolute top-0 left-0 right-0 bottom-0 opacity-20 bg-white dark:bg-cyan-900 blur-sm"></div>
+            <motion.div 
+              className="w-full origin-top rounded-full bg-gradient-to-b from-cyan-400 via-blue-500 to-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)]"
+              style={{ height: progressHeight }}
+            />
+          </div>
         </div>
-        <div className="absolute w-0.5 bg-gray-300 dark:bg-gray-700 h-full left-4 md:hidden"></div>
+        
+        <div className="absolute w-[3px] bg-gradient-to-b from-gray-100 via-gray-200 to-gray-100 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 rounded-full overflow-hidden shadow-sm h-full left-4 md:hidden">
+          <div className="absolute top-0 left-0 right-0 bottom-0 opacity-20 bg-white dark:bg-cyan-900 blur-sm"></div>
+          <motion.div 
+            className="w-full origin-top rounded-full bg-gradient-to-b from-cyan-400 via-blue-500 to-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)]"
+            style={{ height: progressHeight }}
+          />
+        </div>
+        
         {items.map((item, index) => (
           <TimelineItem key={index} item={item} index={index} />
         ))}
       </div>
+      
+      <div className="h-32 md:h-64"></div>
     </div>
   );
 };
