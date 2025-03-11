@@ -74,6 +74,9 @@ importers:
       next-themes:
         specifier: ^0.3.0
         version: 0.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      p5:
+        specifier: ^1.11.3
+        version: 1.11.3
       react:
         specifier: ^18
         version: 18.3.1
@@ -107,6 +110,9 @@ importers:
       three-stdlib:
         specifier: ^2.30.4
         version: 2.35.7(three@0.165.0)
+      vanta:
+        specifier: ^0.5.24
+        version: 0.5.24
     devDependencies:
       '@types/next':
         specifier: ^9.0.0
@@ -3059,6 +3065,9 @@ packages:
     resolution: {integrity: sha512-LaNjtRWUBY++zB5nE/NwcaoMylSPk+S+ZHNB1TzdbMJMny6dynpAGt7X/tl/QYq3TIeE6nxHppbo2LGymrG5Pw==}
     engines: {node: '>=10'}
 
+  p5@1.11.3:
+    resolution: {integrity: sha512-5eiyuZ3Pvo6ucr3nr8AzD+qwpoleiIEF2a2HmiO6PJM1tnbD0LmLlckZyYGJATs0tdmRjc37Muh6KPS4d1FHHg==}
+
   package-json-from-dist@1.0.1:
     resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
 
@@ -3778,6 +3787,9 @@ packages:
   uuid@9.0.1:
     resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
     hasBin: true
+
+  vanta@0.5.24:
+    resolution: {integrity: sha512-fvieEbHy1ZS23zrcX+topzqAgA4Uct1enngOEWLFBgs9TtOf6RDFOYatH7KSVdrABzQDMCQ5myQy+nTSZZwLzg==}
 
   webgl-constants@1.1.1:
     resolution: {integrity: sha512-LkBXKjU5r9vAW7Gcu3T5u+5cvSvh5WwINdr0C+9jpzVB41cjQAP5ePArDtk/WHYdVj0GefCgM73BA7FlIiNtdg==}
@@ -8015,6 +8027,8 @@ snapshots:
     dependencies:
       p-limit: 3.1.0
 
+  p5@1.11.3: {}
+
   package-json-from-dist@1.0.1: {}
 
   parallax-controller@1.7.1:
@@ -8888,6 +8902,8 @@ snapshots:
   utility-types@3.11.0: {}
 
   uuid@9.0.1: {}
+
+  vanta@0.5.24: {}
 
   webgl-constants@1.1.1: {}
 
