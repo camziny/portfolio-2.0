@@ -1,12 +1,23 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import Aurora from "@/utils/aurora";
-import LiquidChrome from "@/utils/liquidChrome";
+import dynamic from "next/dynamic";
+
+const Aurora = dynamic(() => import("@/utils/aurora"), { ssr: false });
+const LiquidChrome = dynamic(() => import("@/utils/liquidChrome"), { ssr: false });
 
 const AnimatedBackground: React.FC = () => {
   const { resolvedTheme } = useTheme();
   const isDarkMode = resolvedTheme === "dark";
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return <div className="absolute inset-0 w-full h-full z-0"></div>;
+  }
 
   const darkModeColors = ["#2D80E0", "#0A5E85", "#001E66"];
   
@@ -30,7 +41,7 @@ const AnimatedBackground: React.FC = () => {
           amplitude={0.35}
           frequencyX={2.0}
           frequencyY={1.3}
-          className="w-full h-full opacity-75" // Slightly more transparent
+          className="w-full h-full opacity-75" 
         />
       )}
     </div>

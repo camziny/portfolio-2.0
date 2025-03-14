@@ -6,7 +6,6 @@ import Contact from "./components/Contact";
 import Scene from "./components/Scene";
 import { motion } from "framer-motion";
 import UnderlineMotion from "./components/UnderlineMotion";
-import AnimatedBackground from "./components/AnimatedBackground";
 
 export const metadata = {
   title: "Home - Cam Ziny",
@@ -16,7 +15,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col justify-between mt-16 lg:mt-24">
       <div className="relative w-full">
-        <AnimatedBackground />
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-transparent via-cyan-100/50 to-transparent dark:from-transparent dark:via-cyan-900/40 dark:to-gray-900 z-0"></div>
         <div className="relative flex flex-col lg:flex-row items-center justify-center lg:justify-between space-y-8 lg:space-y-0 lg:space-x-8 py-8 px-4 lg:px-16 rounded-xl z-10">
           <div className="order-2 lg:order-1 w-full lg:w-1/2 ">
             <CamZiny />
