@@ -4,6 +4,7 @@ import { Card } from "@nextui-org/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { motion } from "framer-motion";
+import BlurText from "@/utils/blurText";
 
 const CamZiny: React.FC = () => {
   const containerVariants = {
@@ -54,10 +55,12 @@ const CamZiny: React.FC = () => {
       >
         <motion.div variants={itemVariants} className="text-center sm:text-left">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
-            <span className="text-gray-600 dark:text-gray-100">Hi, I&apos;m </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600 dark:from-cyan-400 dark:to-blue-500">
-              Cam Ziny
-            </span>
+            <BlurText 
+              text="Hi, I'm Cam Ziny" 
+              className="text-gray-600 dark:text-gray-100 inline-block mr-2"
+              delay={200}
+              direction="top"
+            />
           </h1>
         </motion.div>
 
@@ -69,7 +72,6 @@ const CamZiny: React.FC = () => {
                 applications that enhance user experiences. My expertise lies in
                 developing robust, scalable solutions using modern technologies.
               </p>
-              
               <div className="flex flex-wrap justify-center sm:justify-start gap-4 pt-2">
                 {links.map((item, index) => (
                   <motion.a
