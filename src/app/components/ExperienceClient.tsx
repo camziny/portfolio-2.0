@@ -21,8 +21,8 @@ const ExperienceClient = () => {
     {
       title: "2025 - Present",
       cardTitle: "Epipelagic Ventures",
-      cardSubtitle: "Software Developer",
-      icon: <FaBriefcase className="text-2xl text-gray-600 dark:text-gray-300" />,
+      cardSubtitle: "Software Engineer",
+      icon: <FaBriefcase />,
       skills: [
         "React",
         "React Native",
@@ -31,121 +31,109 @@ const ExperienceClient = () => {
         "PostgreSQL",
         "TypeScript",
         "Tailwind CSS",
-        "Vercel",
         "AWS",
       ],
     },
     {
       title: "2023 - Present",
       cardTitle: "Innovators for Purpose",
-      cardSubtitle: "Instructor, Fundamentals of Web Development",
-      icon: <FaBriefcase className="text-2xl text-gray-600 dark:text-gray-300" />,
+      cardSubtitle: "Instructor, Web Development",
+      icon: <FaBriefcase />,
       skills: [
         "Node.js",
         "Express",
-        "EJS",
-        "SQLite",
         "JavaScript",
         "Python",
-        "Godot",
+        "SQLite",
       ],
     },
     {
       title: "2023 - 2024",
       cardTitle: "Dart Co.",
       cardSubtitle: "Software Developer",
-      icon: <FaBriefcase className="text-2xl text-gray-600 dark:text-gray-300" />,
+      icon: <FaBriefcase />,
       skills: [
-        "Node.js",
         "React",
         "Vue.js",
+        "Node.js",
         "Docker",
         "PostgreSQL",
-        "JavaScript",
         "TypeScript",
-        "Nginx",
-        "Wordpress",
-        "jQuery",
-        "Tailwind CSS",
       ],
     },
     {
       title: "2023",
       cardTitle: "myTindy",
       cardSubtitle: "Software Developer",
-      icon: <FaBriefcase className="text-2xl text-gray-600 dark:text-gray-300" />,
+      icon: <FaBriefcase />,
       skills: [
-        "Node.js",
-        "Express",
         "React Native",
+        "Node.js",
         "MongoDB",
         "TypeScript",
-        "Shopify API",
         "AWS",
       ],
     },
     {
       title: "2023",
       cardTitle: "Chingu",
-      cardSubtitle: "Full-Stack Software Developer",
-      icon: <FaBriefcase className="text-2xl text-gray-600 dark:text-gray-300" />,
-      skills: ["Node.js", "Express", "React", "PostgreSQL", "TypeScript"],
+      cardSubtitle: "Full-Stack Developer",
+      icon: <FaBriefcase />,
+      skills: ["React", "Node.js", "PostgreSQL", "TypeScript"],
     },
     {
       title: "2023",
       cardTitle: "Scale AI",
-      cardSubtitle: "AI Trainer, Computer Science and Software Development",
-      icon: <FaBriefcase className="text-2xl text-gray-600 dark:text-gray-300" />,
-      skills: ["JavaScript", "Python", "C", "C++", "C#", "Java"],
+      cardSubtitle: "AI Trainer",
+      icon: <FaBriefcase />,
+      skills: ["Python", "JavaScript", "C++", "Java"],
     },
     {
       title: "2022",
       cardTitle: "Launch Academy",
-      cardSubtitle: "Apprentice Full-Stack Developer",
-      icon: <FaBriefcase className="text-2xl text-gray-600 dark:text-gray-300" />,
+      cardSubtitle: "Apprentice Developer",
+      icon: <FaBriefcase />,
       skills: [
-        "Node.js",
-        "Express",
         "React",
+        "Node.js",
         "PostgreSQL",
         "JavaScript",
-        "AWS",
       ],
     },
     {
       title: "2015 - 2022",
       cardTitle: "Natick Eye Associates",
       cardSubtitle: "Practice Manager",
-      icon: <FaBriefcase className="text-2xl text-gray-600 dark:text-gray-300" />,
+      icon: <FaBriefcase />,
       skills: [],
     },
     {
       title: "2010 - 2014",
       cardTitle: "Sacred Heart University",
       cardSubtitle: "Business Administration",
-      icon: <FaGraduationCap className="text-2xl text-gray-600 dark:text-gray-300" />,
+      icon: <FaGraduationCap />,
       skills: [],
     },
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 py-20 pt-28" ref={containerRef}>
-      <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-20 pt-28" ref={containerRef}>
+      <div className="max-w-3xl mx-auto px-4">
+        <h2 className="text-2xl font-bold text-center mb-12 text-gray-900 dark:text-white">
           Experience
         </h2>
         
         <div className="relative">
           <div className="absolute hidden md:block left-1/2 transform -translate-x-1/2 w-px h-full bg-gray-200 dark:bg-gray-700">
             <motion.div 
-              className="w-full origin-top bg-cyan-500 dark:bg-cyan-400"
+              className="w-full origin-top bg-cyan-500"
               style={{ height: progressHeight }}
             />
           </div>
           
           <div className="absolute md:hidden left-4 w-px h-full bg-gray-200 dark:bg-gray-700">
             <motion.div 
-              className="w-full origin-top bg-cyan-500 dark:bg-cyan-400"
+              className="w-full origin-top bg-cyan-500"
               style={{ height: progressHeight }}
             />
           </div>
@@ -155,7 +143,7 @@ const ExperienceClient = () => {
           ))}
         </div>
         
-        <div className="h-16"></div>
+        <div className="h-8"></div>
       </div>
     </div>
   );

@@ -44,37 +44,32 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
       }`}
     >
       <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2">
-        <div className="w-2 h-2 rounded-full bg-cyan-500 dark:bg-cyan-400"></div>
+        <div className="w-2 h-2 rounded-full bg-cyan-500"></div>
       </div>
       
       <div className="absolute left-4 md:hidden transform -translate-x-1/2">
-        <div className="w-2 h-2 rounded-full bg-cyan-500 dark:bg-cyan-400"></div>
+        <div className="w-2 h-2 rounded-full bg-cyan-500"></div>
       </div>
       
       <div
-        className={`w-full md:w-1/2 mb-8 ${
+        className={`w-full md:w-1/2 mb-6 ${
           index % 2 === 0 ? "md:pl-8" : "md:pr-8"
         }`}
       >
-        <motion.div
-          whileHover={{ y: -2 }}
-          transition={{ duration: 0.2 }}
-          className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 
-                     hover:border-gray-300 dark:hover:border-gray-600 transition-colors"
-        >
-          <div className="p-5">
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 p-2 bg-gray-100 dark:bg-gray-700 rounded-lg">
+        <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+          <div className="p-4">
+            <div className="flex items-start gap-3">
+              <div className="flex-shrink-0 p-2 bg-gray-100 dark:bg-gray-700 rounded text-gray-500 dark:text-gray-400">
                 {item.icon}
               </div>
               <div className="flex-grow min-w-0">
-                <h3 className="font-semibold text-gray-900 dark:text-white">
+                <h3 className="font-medium text-gray-900 dark:text-white text-sm">
                   {item.cardTitle}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm mt-0.5">
+                <p className="text-gray-500 dark:text-gray-400 text-xs mt-0.5">
                   {item.cardSubtitle}
                 </p>
-                <p className="text-cyan-600 dark:text-cyan-400 text-sm font-medium mt-2">
+                <p className="text-cyan-600 dark:text-cyan-400 text-xs font-medium mt-1.5">
                   {item.title}
                 </p>
               </div>
@@ -82,13 +77,13 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
           </div>
           
           {item.skills.length > 0 && (
-            <div className="px-5 pb-4">
-              <div className="flex flex-wrap gap-1.5">
+            <div className="px-4 pb-3">
+              <div className="flex flex-wrap gap-1">
                 {item.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="px-2 py-0.5 text-xs rounded bg-gray-100 dark:bg-gray-700 
-                             text-gray-600 dark:text-gray-300"
+                    className="px-1.5 py-0.5 text-[10px] rounded bg-gray-100 dark:bg-gray-700 
+                             text-gray-500 dark:text-gray-400"
                   >
                     {skill}
                   </span>
@@ -96,7 +91,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
               </div>
             </div>
           )}
-        </motion.div>
+        </div>
       </div>
     </motion.div>
   );

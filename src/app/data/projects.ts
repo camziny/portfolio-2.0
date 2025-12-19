@@ -12,7 +12,7 @@ export const ProjectsList = [
     name: "divoxutils",
     image: divox2,
     skills:
-      "Divoxutils is a web application inspired by the legacy of daocutils and other notable predecessors like gimpchimp. Designed to fill the gap left by daocutils, it serves as a dynamic hub for Dark Age of Camelot enthusiasts. Built using Next.js, PostgreSQL, Prisma, and TypeScript, and deployed on Vercel, this project combines robust technology with a passion for gaming.",
+      "divoxutils is a specialized tool designed for the Dark Age of Camelot gaming community. It offers a unique blend of features tailored to enhance the gaming experience for enthusiasts of this classic MMORPG.",
     link: "https://divoxutils.com/",
     github: "https://github.com/camziny/divoxutils",
   },
