@@ -21,9 +21,8 @@ const About = () => {
                 priority
               />
             </div>
-            <h1 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Cam Ziny</h1>
-            <p className="text-cyan-600 dark:text-cyan-400 text-sm font-medium mb-4">Software Engineer</p>
-            
+            <h1 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Cam Ziny</h1>
+            <div className="w-12 h-0.5 bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full mb-4"></div>
             <div className="flex space-x-4 text-xl text-gray-500 dark:text-gray-400 mb-6">
               <a 
                 href="https://linkedin.com/in/cameron-ziny" 
@@ -47,26 +46,6 @@ const About = () => {
               >
                 <FaEnvelope />
               </a>
-            </div>
-            
-            <div className="w-full">
-              <h3 className="text-sm font-semibold mb-3 text-gray-700 dark:text-gray-300 uppercase tracking-wider">Focus Areas</h3>
-              <div className="flex flex-wrap gap-2 justify-center">
-                {[
-                  "Full Stack Development", 
-                  "API Design",
-                  "Cloud Architecture",
-                  "Database Design",
-                  "LLMs & AI",
-                ].map((skill) => (
-                  <span 
-                    key={skill} 
-                    className="px-2 py-1 bg-white dark:bg-gray-800 rounded text-xs text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
           
