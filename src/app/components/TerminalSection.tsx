@@ -1,44 +1,217 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 
+type Token = {
+  text: string;
+  type: "keyword" | "type" | "string" | "property" | "punctuation" | "indent";
+};
+
+type CodeLine = Token[];
+
 export default function TerminalSection() {
+  const [commandTyped, setCommandTyped] = useState(0);
+  const [showCode, setShowCode] = useState(false);
   const [activeLines, setActiveLines] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
   const [showLinks, setShowLinks] = useState(false);
   const [isTypingComplete, setIsTypingComplete] = useState(false);
 
-  const terminalLines = [
-    { type: "type-alias" },
-    { type: "blank" },
-    { type: "type-start" },
-    { type: "type-prop", indent: 1, key: "name", value: "string" },
-    { type: "type-prop", indent: 1, key: "role", value: "string" },
-    { type: "type-prop", indent: 1, key: "location", value: "string" },
-    { type: "type-prop", indent: 1, key: "summary", value: "string" },
-    { type: "type-prop-socials", indent: 1 },
-    { type: "type-end" },
-    { type: "blank" },
-    { type: "const-start" },
-    { type: "property", indent: 1, key: "name", value: '"Cam Ziny"' },
-    { type: "property", indent: 1, key: "role", value: '"Software Engineer"' },
-    { type: "property", indent: 1, key: "location", value: '"Boston, MA"' },
-    { type: "template-start", indent: 1, key: "summary" },
-    { type: "template-content", indent: 2, content: "Software engineer with a passion for creating" },
-    { type: "template-content", indent: 2, content: "quality web applications. My expertise lies in" },
-    { type: "template-content", indent: 2, content: "developing robust, scalable solutions." },
-    { type: "template-end", indent: 1 },
-    { type: "socials-obj-start", indent: 1 },
-    { type: "socials-entry", indent: 2, key: "linkedin", value: "https://linkedin.com/in/cameron-ziny" },
-    { type: "socials-entry", indent: 2, key: "github", value: "https://github.com/camziny" },
-    { type: "socials-entry", indent: 2, key: "email", value: "mailto:cameronziny@gmail.com" },
-    { type: "socials-obj-end", indent: 1 },
-    { type: "const-end" },
-    { type: "blank" },
-    { type: "keys-foreach" },
-    { type: "keys-foreach-body", indent: 1 },
-    { type: "keys-foreach-end" },
-  ];
+  const command = "cat -n cam-ziny.ts";
+
+  const codeLines: CodeLine[] = useMemo(() => [
+    [
+      { text: "type ", type: "keyword" },
+      { text: "SocialPlatform", type: "type" },
+      { text: " = ", type: "punctuation" },
+      { text: "'linkedin'", type: "string" },
+      { text: " | ", type: "punctuation" },
+      { text: "'github'", type: "string" },
+      { text: " | ", type: "punctuation" },
+      { text: "'email'", type: "string" },
+      { text: ";", type: "punctuation" },
+    ],
+    [],
+    [
+      { text: "type ", type: "keyword" },
+      { text: "Human", type: "type" },
+      { text: " = {", type: "punctuation" },
+    ],
+    [
+      { text: "  ", type: "indent" },
+      { text: "readonly ", type: "keyword" },
+      { text: "name", type: "property" },
+      { text: ": ", type: "punctuation" },
+      { text: "string", type: "type" },
+      { text: ";", type: "punctuation" },
+    ],
+    [
+      { text: "  ", type: "indent" },
+      { text: "readonly ", type: "keyword" },
+      { text: "role", type: "property" },
+      { text: ": ", type: "punctuation" },
+      { text: "string", type: "type" },
+      { text: ";", type: "punctuation" },
+    ],
+    [
+      { text: "  ", type: "indent" },
+      { text: "readonly ", type: "keyword" },
+      { text: "location", type: "property" },
+      { text: ": ", type: "punctuation" },
+      { text: "string", type: "type" },
+      { text: ";", type: "punctuation" },
+    ],
+    [
+      { text: "  ", type: "indent" },
+      { text: "readonly ", type: "keyword" },
+      { text: "summary", type: "property" },
+      { text: ": ", type: "punctuation" },
+      { text: "string", type: "type" },
+      { text: ";", type: "punctuation" },
+    ],
+    [
+      { text: "  ", type: "indent" },
+      { text: "readonly ", type: "keyword" },
+      { text: "socials", type: "property" },
+      { text: ": ", type: "punctuation" },
+      { text: "Readonly", type: "type" },
+      { text: "<", type: "punctuation" },
+      { text: "Record", type: "type" },
+      { text: "<", type: "punctuation" },
+      { text: "SocialPlatform", type: "type" },
+      { text: ", ", type: "punctuation" },
+      { text: "string", type: "type" },
+      { text: ">>", type: "punctuation" },
+      { text: ";", type: "punctuation" },
+    ],
+    [
+      { text: "};", type: "punctuation" },
+    ],
+    [],
+    [
+      { text: "const ", type: "keyword" },
+      { text: "camZiny", type: "property" },
+      { text: ": ", type: "punctuation" },
+      { text: "Human", type: "type" },
+      { text: " = {", type: "punctuation" },
+    ],
+    [
+      { text: "  ", type: "indent" },
+      { text: "name", type: "property" },
+      { text: ": ", type: "punctuation" },
+      { text: "\"Cam Ziny\"", type: "string" },
+      { text: ",", type: "punctuation" },
+    ],
+    [
+      { text: "  ", type: "indent" },
+      { text: "role", type: "property" },
+      { text: ": ", type: "punctuation" },
+      { text: "\"Software Engineer\"", type: "string" },
+      { text: ",", type: "punctuation" },
+    ],
+    [
+      { text: "  ", type: "indent" },
+      { text: "location", type: "property" },
+      { text: ": ", type: "punctuation" },
+      { text: "\"Boston, MA\"", type: "string" },
+      { text: ",", type: "punctuation" },
+    ],
+    [
+      { text: "  ", type: "indent" },
+      { text: "summary", type: "property" },
+      { text: ": ", type: "punctuation" },
+      { text: "`", type: "string" },
+    ],
+    [
+      { text: "    ", type: "indent" },
+      { text: "Software engineer with a passion for creating", type: "string" },
+    ],
+    [
+      { text: "    ", type: "indent" },
+      { text: "quality web applications. My expertise lies in", type: "string" },
+    ],
+    [
+      { text: "    ", type: "indent" },
+      { text: "developing robust, scalable solutions.", type: "string" },
+    ],
+    [
+      { text: "  ", type: "indent" },
+      { text: "`", type: "string" },
+      { text: ",", type: "punctuation" },
+    ],
+    [
+      { text: "  ", type: "indent" },
+      { text: "socials", type: "property" },
+      { text: ": {", type: "punctuation" },
+    ],
+    [
+      { text: "    ", type: "indent" },
+      { text: "linkedin", type: "property" },
+      { text: ": ", type: "punctuation" },
+      { text: "\"https://linkedin.com/in/cameron-ziny\"", type: "string" },
+      { text: ",", type: "punctuation" },
+    ],
+    [
+      { text: "    ", type: "indent" },
+      { text: "github", type: "property" },
+      { text: ": ", type: "punctuation" },
+      { text: "\"https://github.com/camziny\"", type: "string" },
+      { text: ",", type: "punctuation" },
+    ],
+    [
+      { text: "    ", type: "indent" },
+      { text: "email", type: "property" },
+      { text: ": ", type: "punctuation" },
+      { text: "\"mailto:cameronziny@gmail.com\"", type: "string" },
+      { text: ",", type: "punctuation" },
+    ],
+    [
+      { text: "  ", type: "indent" },
+      { text: "},", type: "punctuation" },
+    ],
+    [
+      { text: "} ", type: "punctuation" },
+      { text: "as const", type: "keyword" },
+      { text: ";", type: "punctuation" },
+    ],
+    [],
+    [
+      { text: "(", type: "punctuation" },
+      { text: "Object", type: "type" },
+      { text: ".", type: "punctuation" },
+      { text: "keys", type: "type" },
+      { text: "(", type: "punctuation" },
+      { text: "camZiny", type: "property" },
+      { text: ".", type: "punctuation" },
+      { text: "socials", type: "property" },
+      { text: ") ", type: "punctuation" },
+      { text: "as ", type: "keyword" },
+      { text: "SocialPlatform", type: "type" },
+      { text: "[]).", type: "punctuation" },
+      { text: "forEach", type: "type" },
+      { text: "((", type: "punctuation" },
+      { text: "platform", type: "property" },
+      { text: ") ", type: "punctuation" },
+      { text: "=> ", type: "keyword" },
+      { text: "{", type: "punctuation" },
+    ],
+    [
+      { text: "  ", type: "indent" },
+      { text: "renderLink", type: "type" },
+      { text: "(", type: "punctuation" },
+      { text: "platform", type: "property" },
+      { text: ", ", type: "punctuation" },
+      { text: "camZiny", type: "property" },
+      { text: ".", type: "punctuation" },
+      { text: "socials", type: "property" },
+      { text: "[", type: "punctuation" },
+      { text: "platform", type: "property" },
+      { text: "]);", type: "punctuation" },
+    ],
+    [
+      { text: "});", type: "punctuation" },
+    ],
+  ], []);
 
   useEffect(() => {
     const cursorInterval = setInterval(() => {
@@ -49,23 +222,41 @@ export default function TerminalSection() {
 
   useEffect(() => {
     const startDelay = setTimeout(() => {
-      let currentLine = 0;
-      const typeInterval = setInterval(() => {
-        currentLine++;
-        setActiveLines(currentLine);
+      const commandInterval = setInterval(() => {
+        setCommandTyped((prev) => {
+          const next = prev + 1;
+          if (next >= command.length) {
+            clearInterval(commandInterval);
+            setTimeout(() => setShowCode(true), 400);
+            return command.length;
+          }
+          return next;
+        });
+      }, 80);
 
-        if (currentLine >= terminalLines.length) {
-          clearInterval(typeInterval);
-          setIsTypingComplete(true);
-          setTimeout(() => setShowLinks(true), 300);
-        }
-      }, 90);
-
-      return () => clearInterval(typeInterval);
+      return () => clearInterval(commandInterval);
     }, 400);
 
     return () => clearTimeout(startDelay);
-  }, [terminalLines.length]);
+  }, [command.length]);
+
+  useEffect(() => {
+    if (!showCode) return;
+
+    let currentLine = 0;
+    const lineInterval = setInterval(() => {
+      currentLine++;
+      setActiveLines(currentLine);
+
+      if (currentLine >= codeLines.length) {
+        clearInterval(lineInterval);
+        setIsTypingComplete(true);
+        setTimeout(() => setShowLinks(true), 300);
+      }
+    }, 60);
+
+    return () => clearInterval(lineInterval);
+  }, [showCode, codeLines.length]);
 
   const links = [
     {
@@ -97,211 +288,50 @@ export default function TerminalSection() {
     },
   ];
 
-  const renderLine = (line: any, index: number) => {
-    const indent = "  ".repeat(line.indent || 0);
-    const isVisible = index < activeLines;
+  const getTokenClass = (type: Token["type"]) => {
+    switch (type) {
+      case "keyword":
+        return "text-violet-600 dark:text-violet-400";
+      case "type":
+        return "text-cyan-600 dark:text-cyan-400";
+      case "string":
+        return "text-sky-600 dark:text-sky-400";
+      case "property":
+        return "text-gray-800 dark:text-gray-200";
+      case "punctuation":
+        return "text-gray-600 dark:text-gray-400";
+      case "indent":
+        return "";
+      default:
+        return "text-gray-700 dark:text-gray-300";
+    }
+  };
 
-    if (!isVisible) return null;
-
-    const lineContent = () => {
-      switch (line.type) {
-        case "type-alias":
-          return (
-            <>
-              <span className="text-violet-600 dark:text-violet-400">type </span>
-              <span className="text-cyan-600 dark:text-cyan-400">SocialPlatform</span>
-              <span className="text-gray-700 dark:text-gray-300"> = </span>
-              <span className="text-sky-600 dark:text-sky-400">&apos;linkedin&apos;</span>
-              <span className="text-gray-700 dark:text-gray-300"> | </span>
-              <span className="text-sky-600 dark:text-sky-400">&apos;github&apos;</span>
-              <span className="text-gray-700 dark:text-gray-300"> | </span>
-              <span className="text-sky-600 dark:text-sky-400">&apos;email&apos;</span>
-              <span className="text-gray-700 dark:text-gray-300">;</span>
-            </>
-          );
-        case "type-start":
-          return (
-            <>
-              <span className="text-violet-600 dark:text-violet-400">type </span>
-              <span className="text-cyan-600 dark:text-cyan-400">Human</span>
-              <span className="text-gray-700 dark:text-gray-300"> = {"{"}</span>
-            </>
-          );
-        case "type-prop":
-          return (
-            <>
-              <span className="text-gray-400">{indent}</span>
-              <span className="text-violet-600 dark:text-violet-400">readonly </span>
-              <span className="text-gray-800 dark:text-gray-200">{line.key}</span>
-              <span className="text-gray-500 dark:text-gray-400">: </span>
-              <span className="text-cyan-600 dark:text-cyan-400">{line.value}</span>
-              <span className="text-gray-700 dark:text-gray-300">;</span>
-            </>
-          );
-        case "type-prop-socials":
-          return (
-            <>
-              <span className="text-gray-400">{indent}</span>
-              <span className="text-violet-600 dark:text-violet-400">readonly </span>
-              <span className="text-gray-800 dark:text-gray-200">socials</span>
-              <span className="text-gray-500 dark:text-gray-400">: </span>
-              <span className="text-cyan-600 dark:text-cyan-400">Readonly</span>
-              <span className="text-gray-700 dark:text-gray-300">{"<"}</span>
-              <span className="text-cyan-600 dark:text-cyan-400">Record</span>
-              <span className="text-gray-700 dark:text-gray-300">{"<"}</span>
-              <span className="text-cyan-600 dark:text-cyan-400">SocialPlatform</span>
-              <span className="text-gray-700 dark:text-gray-300">, </span>
-              <span className="text-cyan-600 dark:text-cyan-400">string</span>
-              <span className="text-gray-700 dark:text-gray-300">{">>"}</span>
-              <span className="text-gray-700 dark:text-gray-300">;</span>
-            </>
-          );
-        case "type-end":
-          return <span className="text-gray-700 dark:text-gray-300">{"};"}</span>;
-        case "brace":
-          return <span className="text-gray-700 dark:text-gray-300">{line.content}</span>;
-        case "blank":
-          return <span>&nbsp;</span>;
-        case "const-start":
-          return (
-            <>
-              <span className="text-violet-600 dark:text-violet-400">const </span>
-              <span className="text-gray-800 dark:text-gray-200">camZiny</span>
-              <span className="text-gray-500 dark:text-gray-400">: </span>
-              <span className="text-cyan-600 dark:text-cyan-400">Human</span>
-              <span className="text-gray-700 dark:text-gray-300"> = {"{"}</span>
-            </>
-          );
-        case "property":
-          return (
-            <>
-              <span className="text-gray-400">{indent}</span>
-              <span className="text-gray-800 dark:text-gray-200">{line.key}</span>
-              <span className="text-gray-500 dark:text-gray-400">: </span>
-              <span className="text-sky-600 dark:text-sky-400">{line.value}</span>
-              <span className="text-gray-700 dark:text-gray-300">,</span>
-            </>
-          );
-        case "template-start":
-          return (
-            <>
-              <span className="text-gray-400">{indent}</span>
-              <span className="text-gray-800 dark:text-gray-200">{line.key}</span>
-              <span className="text-gray-500 dark:text-gray-400">: </span>
-              <span className="text-sky-600 dark:text-sky-400">`</span>
-            </>
-          );
-        case "template-content":
-          return (
-            <>
-              <span className="text-gray-400">{indent}</span>
-              <span className="text-sky-600 dark:text-sky-400">{line.content}</span>
-            </>
-          );
-        case "template-end":
-          return (
-            <>
-              <span className="text-gray-400">{indent}</span>
-              <span className="text-sky-600 dark:text-sky-400">`</span>
-              <span className="text-gray-700 dark:text-gray-300">,</span>
-            </>
-          );
-        case "socials-obj-start":
-          return (
-            <>
-              <span className="text-gray-400">{indent}</span>
-              <span className="text-gray-800 dark:text-gray-200">socials</span>
-              <span className="text-gray-500 dark:text-gray-400">: </span>
-              <span className="text-gray-700 dark:text-gray-300">{"{"}</span>
-            </>
-          );
-        case "socials-entry":
-          return (
-            <>
-              <span className="text-gray-400">{indent}</span>
-              <span className="text-gray-800 dark:text-gray-200">{line.key}</span>
-              <span className="text-gray-500 dark:text-gray-400">: </span>
-              <span className="text-sky-600 dark:text-sky-400">&quot;{line.value}&quot;</span>
-              <span className="text-gray-700 dark:text-gray-300">,</span>
-            </>
-          );
-        case "socials-obj-end":
-          return (
-            <>
-              <span className="text-gray-400">{indent}</span>
-              <span className="text-gray-700 dark:text-gray-300">{"},"}</span>
-            </>
-          );
-        case "const-end":
-          return (
-            <>
-              <span className="text-gray-700 dark:text-gray-300">{"} "}</span>
-              <span className="text-violet-600 dark:text-violet-400">as const</span>
-              <span className="text-gray-700 dark:text-gray-300">;</span>
-            </>
-          );
-        case "keys-foreach":
-          return (
-            <>
-              <span className="text-gray-700 dark:text-gray-300">(</span>
-              <span className="text-cyan-600 dark:text-cyan-400">Object</span>
-              <span className="text-gray-700 dark:text-gray-300">.</span>
-              <span className="text-cyan-600 dark:text-cyan-400">keys</span>
-              <span className="text-gray-700 dark:text-gray-300">(</span>
-              <span className="text-gray-800 dark:text-gray-200">camZiny</span>
-              <span className="text-gray-700 dark:text-gray-300">.</span>
-              <span className="text-gray-800 dark:text-gray-200">socials</span>
-              <span className="text-gray-700 dark:text-gray-300">) </span>
-              <span className="text-violet-600 dark:text-violet-400">as </span>
-              <span className="text-cyan-600 dark:text-cyan-400">SocialPlatform</span>
-              <span className="text-gray-700 dark:text-gray-300">[]).</span>
-              <span className="text-cyan-600 dark:text-cyan-400">forEach</span>
-              <span className="text-gray-700 dark:text-gray-300">((</span>
-              <span className="text-gray-800 dark:text-gray-200">platform</span>
-              <span className="text-gray-700 dark:text-gray-300">)</span>
-              <span className="text-violet-600 dark:text-violet-400"> =&gt; </span>
-              <span className="text-gray-700 dark:text-gray-300">{"{"}</span>
-            </>
-          );
-        case "keys-foreach-body":
-          return (
-            <>
-              <span className="text-gray-400">{indent}</span>
-              <span className="text-cyan-600 dark:text-cyan-400">renderLink</span>
-              <span className="text-gray-700 dark:text-gray-300">(</span>
-              <span className="text-gray-800 dark:text-gray-200">platform</span>
-              <span className="text-gray-700 dark:text-gray-300">, </span>
-              <span className="text-gray-800 dark:text-gray-200">camZiny</span>
-              <span className="text-gray-700 dark:text-gray-300">.</span>
-              <span className="text-gray-800 dark:text-gray-200">socials</span>
-              <span className="text-gray-700 dark:text-gray-300">[</span>
-              <span className="text-gray-800 dark:text-gray-200">platform</span>
-              <span className="text-gray-700 dark:text-gray-300">]);</span>
-            </>
-          );
-        case "keys-foreach-end":
-          return (
-            <span className="text-gray-700 dark:text-gray-300">{"});"}</span>
-          );
-        default:
-          return <span>{line.content}</span>;
-      }
-    };
+  const renderLine = (line: CodeLine, lineIndex: number) => {
+    if (lineIndex >= activeLines) return null;
 
     return (
       <motion.div
-        key={index}
+        key={lineIndex}
         initial={{ opacity: 0, x: -10 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.1 }}
         className="flex items-start"
       >
         <span className="w-4 sm:w-5 md:w-6 lg:w-7 text-right mr-1 sm:mr-1.5 md:mr-2 lg:mr-3 text-gray-400 dark:text-gray-600 text-[9px] sm:text-[10px] md:text-xs select-none flex-shrink-0 pt-0.5">
-          {index + 1}
+          {lineIndex + 1}
         </span>
-        <span className="font-mono text-[9px] sm:text-[10px] md:text-xs lg:text-sm leading-relaxed break-words">
-          {lineContent()}
-          {index === activeLines - 1 && showCursor && !isTypingComplete && (
+        <span className="font-mono text-[9px] sm:text-[10px] md:text-xs lg:text-sm leading-relaxed whitespace-pre">
+          {line.length === 0 ? (
+            <span>&nbsp;</span>
+          ) : (
+            line.map((token, tokenIndex) => (
+              <span key={tokenIndex} className={getTokenClass(token.type)}>
+                {token.text}
+              </span>
+            ))
+          )}
+          {lineIndex === activeLines - 1 && showCursor && !isTypingComplete && (
             <span className="inline-block w-[2px] h-[1.1em] bg-cyan-500 dark:bg-cyan-400 ml-[1px] align-middle" />
           )}
         </span>
@@ -323,17 +353,23 @@ export default function TerminalSection() {
             <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-400 dark:bg-yellow-500" />
             <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full bg-green-400 dark:bg-green-500" />
           </div>
-          <div className="flex-1 flex justify-center">
-            <span className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 font-mono">
-              ~/cam-ziny
-            </span>
-          </div>
-          <div className="w-8 sm:w-12 md:w-16" />
+          <div className="flex-1" />
         </div>
 
         <div className="bg-gray-50 dark:bg-gray-800 p-2.5 sm:p-4 md:p-5 lg:p-6">
-          <div className="space-y-0.5 sm:space-y-1 font-mono">
-            {terminalLines.map((line, index) => renderLine(line, index))}
+          <div className="space-y-0.5 sm:space-y-1 font-mono min-h-[300px] sm:min-h-[350px]">
+            <div className="flex items-start mb-2">
+              <span className="font-mono text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-green-600 dark:text-green-400">
+                $&nbsp;
+              </span>
+              <span className="font-mono text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-gray-700 dark:text-gray-300">
+                {command.slice(0, commandTyped)}
+                {!showCode && showCursor && (
+                  <span className="inline-block w-[2px] h-[1.1em] bg-cyan-500 dark:bg-cyan-400 ml-[1px] align-middle" />
+                )}
+              </span>
+            </div>
+            {showCode && codeLines.map((line, index) => renderLine(line, index))}
           </div>
 
           <motion.div
@@ -374,4 +410,3 @@ export default function TerminalSection() {
     </motion.div>
   );
 }
-
