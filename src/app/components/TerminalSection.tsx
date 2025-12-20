@@ -357,7 +357,7 @@ export default function TerminalSection() {
         </div>
 
         <div className="bg-gray-50 dark:bg-gray-800 p-2.5 sm:p-4 md:p-5 lg:p-6">
-          <div className="space-y-0.5 sm:space-y-1 font-mono min-h-[300px] sm:min-h-[350px]">
+          <div className="space-y-0.5 sm:space-y-1 font-mono min-h-[300px] sm:min-h-[350px] overflow-x-auto">
             <div className="flex items-start mb-2">
               <span className="font-mono text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-green-600 dark:text-green-400">
                 $&nbsp;
