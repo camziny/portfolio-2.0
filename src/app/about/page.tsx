@@ -71,7 +71,7 @@ const About = () => {
           </div>
           
           <div className="md:w-2/3">
-            <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 sm:p-8 mb-6">
+            <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 sm:p-8">
               <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
                 About Me
               </h2>
@@ -84,16 +84,14 @@ const About = () => {
                 software.
               </p>
               
-              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
                 My enjoyment of this experience, combined with my deep interest in
                 technology, led me to make a career switch to software engineering.
               </p>
-            </div>
-            
-            <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 sm:p-8">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Journey</h3>
               
-              <div className="space-y-6 relative">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-5">Journey</h3>
+              
+              <div className="space-y-5 relative">
                 <div className="absolute left-[7px] top-2 bottom-2 w-[1px] bg-gray-200 dark:bg-gray-700"></div>
                 
                 <div className="flex items-start gap-4 relative">
