@@ -8,48 +8,61 @@ export const metadata = {
 
 const About = () => {
   return (
-    <div className="bg-gray-100 min-h-screen p-4 sm:p-6 dark:bg-gray-900">
-      <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-lg mt-20 overflow-hidden dark:bg-gray-800 dark:text-gray-100">
-        <div className="md:flex">
-          <div className="md:w-1/3 bg-cyan-50 dark:bg-gray-700 p-6 flex flex-col items-center justify-between text-center md:text-left">
-            <div className="w-full flex flex-col items-center">
-              <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-cyan-500 dark:border-cyan-300 mb-6">
-                <Image 
-                  src="/images/pic.jpg" 
-                  alt="Cam Ziny" 
-                  fill 
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              <h1 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">Cam Ziny</h1>
-              <p className="text-cyan-600 dark:text-cyan-300 font-medium mb-6">Software Developer</p>
-              
-              <div className="flex space-x-4 text-2xl text-gray-700 dark:text-gray-300 mb-8">
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-500 dark:hover:text-cyan-300 transition-colors">
-                  <FaLinkedin />
-                </a>
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-500 dark:hover:text-cyan-300 transition-colors">
-                  <FaGithub />
-                </a>
-                <a href="mailto:your.email@example.com" className="hover:text-cyan-500 dark:hover:text-cyan-300 transition-colors">
-                  <FaEnvelope />
-                </a>
-              </div>
+    <div className="bg-gray-50 min-h-screen p-4 sm:p-6 dark:bg-gray-900">
+      <div className="max-w-4xl mx-auto mt-20">
+        <div className="flex flex-col md:flex-row gap-8">
+          <div className="md:w-1/3 flex flex-col items-center text-center">
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 border-gray-200 dark:border-gray-700 mb-4">
+              <Image 
+                src="/images/better-pic.jpg" 
+                alt="Cam Ziny" 
+                fill 
+                className="object-cover"
+                priority
+              />
+            </div>
+            <h1 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Cam Ziny</h1>
+            <p className="text-cyan-600 dark:text-cyan-400 text-sm font-medium mb-4">Software Engineer</p>
+            
+            <div className="flex space-x-4 text-xl text-gray-500 dark:text-gray-400 mb-6">
+              <a 
+                href="https://linkedin.com/in/cameron-ziny" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
+              >
+                <FaLinkedin />
+              </a>
+              <a 
+                href="https://github.com/camziny" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
+              >
+                <FaGithub />
+              </a>
+              <a 
+                href="mailto:cameronziny@gmail.com" 
+                className="hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
+              >
+                <FaEnvelope />
+              </a>
             </div>
             
             <div className="w-full">
-              <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Areas of Focus</h3>
-              <div className="flex flex-wrap gap-2 mb-6 justify-center md:justify-start">
+              <h3 className="text-sm font-semibold mb-3 text-gray-700 dark:text-gray-300 uppercase tracking-wider">Focus Areas</h3>
+              <div className="flex flex-wrap gap-2 justify-center">
                 {[
-                  "Full Stack Web Development", 
-                  "Mobile Development", 
-                  "API Development & Integration",
-                  "Database Architecture & Design",
-                  "LLM Development & Fine-Tuning",
-                  "Cloud Architecture"
+                  "Full Stack Development", 
+                  "API Design",
+                  "Cloud Architecture",
+                  "Database Design",
+                  "LLMs & AI",
                 ].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-white dark:bg-gray-600 rounded-full text-sm text-gray-700 dark:text-gray-200 shadow-sm">
+                  <span 
+                    key={skill} 
+                    className="px-2 py-1 bg-white dark:bg-gray-800 rounded text-xs text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700"
+                  >
                     {skill}
                   </span>
                 ))}
@@ -57,70 +70,57 @@ const About = () => {
             </div>
           </div>
           
-          <div className="md:w-2/3 p-8">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-gray-800 mb-6 dark:text-gray-100 text-center md:text-left">
-              About Me
-              <div className="h-1 w-24 bg-cyan-500 dark:bg-cyan-300 mt-2 relative left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0"></div>
-            </h2>
-            
-            <p className="text-base sm:text-lg text-gray-700 mb-6 dark:text-gray-200 text-center md:text-left">
-              Former NCAA Division 1 athlete passionate about languages, traveling,
-              cars, and football (both kinds). During my 6+ years tenure as a
-              practice manager for a multi-site optometry practice, I led end-to-end
-              implementation of our practice management and patient outreach
-              software.
-            </p>
-            
-            <p className="text-base sm:text-lg text-gray-700 mb-8 dark:text-gray-200 text-center md:text-left">
-              My enjoyment of this experience, combined with my deep interest in
-              technology, led me to make a career switch to software engineering.
-            </p>
-            
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-6 text-gray-800 dark:text-gray-100 text-center md:text-left">Software Journey</h3>
+          <div className="md:w-2/3">
+            <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 sm:p-8">
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                About Me
+              </h2>
               
-              <div className="space-y-8 relative pl-10 md:pl-0">
-                <div className="absolute left-3 md:left-[28px] top-0 bottom-0 w-0.5 bg-cyan-400 dark:bg-cyan-500"></div>
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                Former NCAA Division 1 athlete passionate about languages, traveling,
+                cars, and football (both kinds). During my 6+ years tenure as a
+                practice manager for a multi-site optometry practice, I led end-to-end
+                implementation of our practice management and patient outreach
+                software.
+              </p>
+              
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+                My enjoyment of this experience, combined with my deep interest in
+                technology, led me to make a career switch to software engineering.
+              </p>
+              
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-5">Journey</h3>
+              
+              <div className="space-y-5 relative">
+                <div className="absolute left-[7px] top-2 bottom-2 w-[1px] bg-gray-200 dark:bg-gray-700"></div>
                 
-                <div className="flex items-start relative z-10">
-                  <div className="flex-shrink-0 mr-4 absolute left-[-20px] md:left-0 md:relative">
-                    <div className="w-6 h-6 rounded-full bg-white dark:bg-gray-800 border-2 border-cyan-500 dark:border-cyan-400 flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-cyan-500 dark:bg-cyan-400"></div>
-                    </div>
-                  </div>
-                  <div className="text-left pt-0">
-                    <div className="inline-block bg-gray-100 dark:bg-gray-700 text-xs font-medium px-2 py-1 rounded mb-2 ml-2 md:ml-0">2022</div>
-                    <h4 className="font-semibold text-gray-800 dark:text-white text-lg">Software Engineering Bootcamp</h4>
-                    <p className="text-cyan-600 dark:text-cyan-300 font-medium">Launch Academy</p>
-                    <p className="text-gray-600 dark:text-gray-300 mt-2">Where it all began! Learned the fundamentals of software engineering.</p>
+                <div className="flex items-start gap-4 relative">
+                  <div className="w-[15px] h-[15px] rounded-full bg-gray-100 dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 flex-shrink-0 mt-0.5 z-10"></div>
+                  <div>
+                    <span className="text-xs text-gray-500 dark:text-gray-500">2022</span>
+                    <h4 className="font-medium text-gray-900 dark:text-white">Software Engineering Bootcamp</h4>
+                    <p className="text-sm text-cyan-600 dark:text-cyan-400">Launch Academy</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">Learned the fundamentals of software engineering.</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start relative z-10">
-                  <div className="flex-shrink-0 mr-4 absolute left-[-20px] md:left-0 md:relative">
-                    <div className="w-6 h-6 rounded-full bg-white dark:bg-gray-800 border-2 border-cyan-500 dark:border-cyan-400 flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-cyan-500 dark:bg-cyan-400"></div>
-                    </div>
-                  </div>
-                  <div className="text-left pt-0">
-                    <div className="inline-block bg-gray-100 dark:bg-gray-700 text-xs font-medium px-2 py-1 rounded mb-2 ml-2 md:ml-0">2023-2024</div>
-                    <h4 className="font-semibold text-gray-800 dark:text-white text-lg">Various Projects & Contract Work</h4>
-                    <p className="text-cyan-600 dark:text-cyan-300 font-medium">Many places, many projects, many languages</p>
-                    <p className="text-gray-600 dark:text-gray-300 mt-2">Freelancing, building side projects, and continuously leveling up my skills.</p>
+                <div className="flex items-start gap-4 relative">
+                  <div className="w-[15px] h-[15px] rounded-full bg-gray-100 dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 flex-shrink-0 mt-0.5 z-10"></div>
+                  <div>
+                    <span className="text-xs text-gray-500 dark:text-gray-500">2023-2024</span>
+                    <h4 className="font-medium text-gray-900 dark:text-white">Projects & Contract Work</h4>
+                    <p className="text-sm text-cyan-600 dark:text-cyan-400">Freelance</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">Building side projects and leveling up skills.</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start relative z-10">
-                  <div className="flex-shrink-0 mr-4 absolute left-[-20px] md:left-0 md:relative">
-                    <div className="w-6 h-6 rounded-full bg-cyan-500 dark:bg-cyan-400 flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-white dark:bg-gray-800"></div>
-                    </div>
-                  </div>
-                  <div className="text-left pt-0">
-                    <div className="inline-block bg-cyan-500 dark:bg-cyan-400 text-white dark:text-gray-900 text-xs font-medium px-2 py-1 rounded mb-2 ml-2 md:ml-0">2025</div>
-                    <h4 className="font-semibold text-gray-800 dark:text-white text-lg">Software Developer</h4>
-                    <p className="text-cyan-600 dark:text-cyan-300 font-medium">Epipelagic Ventures</p>
-                    <p className="text-gray-600 dark:text-gray-300 mt-2">Building awesome things with code and solving real-world problems.</p>
+                <div className="flex items-start gap-4 relative">
+                  <div className="w-[15px] h-[15px] rounded-full bg-cyan-500 flex-shrink-0 mt-0.5 z-10"></div>
+                  <div>
+                    <span className="text-xs text-cyan-600 dark:text-cyan-400 font-medium">2025 - Present</span>
+                    <h4 className="font-medium text-gray-900 dark:text-white">Software Engineer</h4>
+                    <p className="text-sm text-cyan-600 dark:text-cyan-400">Epipelagic Ventures</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">Building solutions and solving real-world problems.</p>
                   </div>
                 </div>
               </div>
