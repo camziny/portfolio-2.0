@@ -1,150 +1,238 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
-import TimelineItem from "./TimelineItem";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { Timeline } from "./ui/timeline";
 
 const ExperienceClient = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
-  
-  const progressHeight = useTransform(
-    scrollYProgress,
-    [0, 0.85],
-    ["0%", "100%"]
-  );
+  const data = [
+    {
+      title: "Present",
+      content: (
+        <div>
+          <div className="flex items-center gap-3 mb-2">
+            <div className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20">
+              <FaBriefcase className="text-cyan-500" />
+            </div>
+            <div>
+              <p className="text-base font-semibold text-neutral-800 dark:text-neutral-200">
+                Epipelagic Ventures
+              </p>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400">
+                Jan 2025 - Present
+              </p>
+            </div>
+          </div>
+          <div className="ml-11 mb-4">
+            <div className="border-l-2 border-cyan-200 dark:border-cyan-800 pl-4 space-y-3">
+              <div>
+                <p className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Senior Software Engineer</p>
+                <p className="text-xs text-neutral-500 dark:text-neutral-500">Jan 2026 - Present</p>
+              </div>
+              <div>
+                <p className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Junior Software Developer</p>
+                <p className="text-xs text-neutral-500 dark:text-neutral-500">Jan 2025 - Jan 2026</p>
+              </div>
+            </div>
+          </div>
+          <div className="mb-8 flex flex-wrap gap-2">
+            {["React", "React Native", "Flutter", "Next.js", "PostgreSQL", "TypeScript", "Tailwind CSS", "AWS"].map((skill) => (
+              <span key={skill} className="px-2 py-1 text-xs rounded-full bg-cyan-50 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800">
+                {skill}
+              </span>
+            ))}
+          </div>
 
-  const items = [
-    {
-      title: "2025 - Present",
-      cardTitle: "Epipelagic Ventures",
-      cardSubtitle: "Software Engineer",
-      icon: <FaBriefcase />,
-      skills: [
-        "React",
-        "React Native",
-        "Flutter",
-        "Next.js",
-        "PostgreSQL",
-        "TypeScript",
-        "Tailwind CSS",
-        "AWS",
-      ],
-    },
-    {
-      title: "2023 - Present",
-      cardTitle: "Innovators for Purpose",
-      cardSubtitle: "Instructor, Web Development",
-      icon: <FaBriefcase />,
-      skills: [
-        "Node.js",
-        "Express",
-        "JavaScript",
-        "Python",
-        "SQLite",
-      ],
+          <div className="flex items-center gap-3 mb-4 mt-8">
+            <div className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20">
+              <FaBriefcase className="text-cyan-500" />
+            </div>
+            <div>
+              <p className="text-base font-semibold text-neutral-800 dark:text-neutral-200">
+                Innovators for Purpose
+              </p>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400">
+                Instructor, Web Development · 2023 - Present
+              </p>
+            </div>
+          </div>
+          <div className="mb-8 flex flex-wrap gap-2">
+            {["Node.js", "Express", "JavaScript", "Python", "SQLite"].map((skill) => (
+              <span key={skill} className="px-2 py-1 text-xs rounded-full bg-cyan-50 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ),
     },
     {
       title: "2023 - 2024",
-      cardTitle: "Dart Co.",
-      cardSubtitle: "Software Developer",
-      icon: <FaBriefcase />,
-      skills: [
-        "React",
-        "Vue.js",
-        "Node.js",
-        "Docker",
-        "PostgreSQL",
-        "TypeScript",
-      ],
+      content: (
+        <div>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20">
+              <FaBriefcase className="text-cyan-500" />
+            </div>
+            <div>
+              <p className="text-base font-semibold text-neutral-800 dark:text-neutral-200">
+                Dart Co.
+              </p>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400">
+                Software Developer
+              </p>
+            </div>
+          </div>
+          <div className="mb-8 flex flex-wrap gap-2">
+            {["React", "Vue.js", "Node.js", "Docker", "PostgreSQL", "TypeScript"].map((skill) => (
+              <span key={skill} className="px-2 py-1 text-xs rounded-full bg-cyan-50 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ),
     },
     {
       title: "2023",
-      cardTitle: "myTindy",
-      cardSubtitle: "Software Developer",
-      icon: <FaBriefcase />,
-      skills: [
-        "React Native",
-        "Node.js",
-        "MongoDB",
-        "TypeScript",
-        "AWS",
-      ],
-    },
-    {
-      title: "2023",
-      cardTitle: "Chingu",
-      cardSubtitle: "Full-Stack Developer",
-      icon: <FaBriefcase />,
-      skills: ["React", "Node.js", "PostgreSQL", "TypeScript"],
-    },
-    {
-      title: "2023",
-      cardTitle: "Scale AI",
-      cardSubtitle: "AI Trainer",
-      icon: <FaBriefcase />,
-      skills: ["Python", "JavaScript", "C++", "Java"],
+      content: (
+        <div>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20">
+              <FaBriefcase className="text-cyan-500" />
+            </div>
+            <div>
+              <p className="text-base font-semibold text-neutral-800 dark:text-neutral-200">
+                myTindy
+              </p>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400">
+                Software Developer
+              </p>
+            </div>
+          </div>
+          <div className="mb-8 flex flex-wrap gap-2">
+            {["React Native", "Node.js", "MongoDB", "TypeScript", "AWS"].map((skill) => (
+              <span key={skill} className="px-2 py-1 text-xs rounded-full bg-cyan-50 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800">
+                {skill}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-3 mb-4 mt-8">
+            <div className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20">
+              <FaBriefcase className="text-cyan-500" />
+            </div>
+            <div>
+              <p className="text-base font-semibold text-neutral-800 dark:text-neutral-200">
+                Chingu
+              </p>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400">
+                Full-Stack Developer
+              </p>
+            </div>
+          </div>
+          <div className="mb-8 flex flex-wrap gap-2">
+            {["React", "Node.js", "PostgreSQL", "TypeScript"].map((skill) => (
+              <span key={skill} className="px-2 py-1 text-xs rounded-full bg-cyan-50 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800">
+                {skill}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-3 mb-4 mt-8">
+            <div className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20">
+              <FaBriefcase className="text-cyan-500" />
+            </div>
+            <div>
+              <p className="text-base font-semibold text-neutral-800 dark:text-neutral-200">
+                Scale AI
+              </p>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400">
+                AI Trainer
+              </p>
+            </div>
+          </div>
+          <div className="mb-8 flex flex-wrap gap-2">
+            {["Python", "JavaScript", "C++", "Java"].map((skill) => (
+              <span key={skill} className="px-2 py-1 text-xs rounded-full bg-cyan-50 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ),
     },
     {
       title: "2022",
-      cardTitle: "Launch Academy",
-      cardSubtitle: "Apprentice Developer",
-      icon: <FaBriefcase />,
-      skills: [
-        "React",
-        "Node.js",
-        "PostgreSQL",
-        "JavaScript",
-      ],
+      content: (
+        <div>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20">
+              <FaBriefcase className="text-cyan-500" />
+            </div>
+            <div>
+              <p className="text-base font-semibold text-neutral-800 dark:text-neutral-200">
+                Launch Academy
+              </p>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400">
+                Apprentice Developer
+              </p>
+            </div>
+          </div>
+          <div className="mb-8 flex flex-wrap gap-2">
+            {["React", "Node.js", "PostgreSQL", "JavaScript"].map((skill) => (
+              <span key={skill} className="px-2 py-1 text-xs rounded-full bg-cyan-50 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ),
     },
     {
       title: "2015 - 2022",
-      cardTitle: "Natick Eye Associates",
-      cardSubtitle: "Practice Manager",
-      icon: <FaBriefcase />,
-      skills: [],
+      content: (
+        <div>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20">
+              <FaBriefcase className="text-cyan-500" />
+            </div>
+            <div>
+              <p className="text-base font-semibold text-neutral-800 dark:text-neutral-200">
+                Natick Eye Associates
+              </p>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400">
+                Practice Manager
+              </p>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
       title: "2010 - 2014",
-      cardTitle: "Sacred Heart University",
-      cardSubtitle: "Business Administration",
-      icon: <FaGraduationCap />,
-      skills: [],
+      content: (
+        <div>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20">
+              <FaGraduationCap className="text-cyan-500" />
+            </div>
+            <div>
+              <p className="text-base font-semibold text-neutral-800 dark:text-neutral-200">
+                Sacred Heart University
+              </p>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400">
+                Business Administration
+              </p>
+            </div>
+          </div>
+        </div>
+      ),
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-20 pt-28" ref={containerRef}>
-      <div className="max-w-3xl mx-auto px-4">
-        <h2 className="text-2xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-          Experience
-        </h2>
-        
-        <div className="relative">
-          <div className="absolute hidden md:block left-1/2 transform -translate-x-1/2 w-px h-full bg-gray-200 dark:bg-gray-700">
-            <motion.div 
-              className="w-full origin-top bg-cyan-500"
-              style={{ height: progressHeight }}
-            />
-          </div>
-          
-          <div className="absolute md:hidden left-4 w-px h-full bg-gray-200 dark:bg-gray-700">
-            <motion.div 
-              className="w-full origin-top bg-cyan-500"
-              style={{ height: progressHeight }}
-            />
-          </div>
-          
-          {items.map((item, index) => (
-            <TimelineItem key={index} item={item} index={index} />
-          ))}
-        </div>
-        
-        <div className="h-8"></div>
-      </div>
+    <div className="relative w-full overflow-clip min-h-screen bg-gray-50 dark:bg-gray-900 pt-32 pb-20">
+      <Timeline data={data} />
     </div>
   );
 };
