@@ -2,7 +2,7 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiSun, FiMoon } from "react-icons/fi";
+import { Sun, Moon } from "lucide-react";
 
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
@@ -19,7 +19,7 @@ export function ThemeSwitcher() {
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="p-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+      className="p-2 text-muted-foreground hover:text-foreground transition-colors"
       aria-label="Toggle theme"
     >
       <AnimatePresence mode="wait">
@@ -31,9 +31,9 @@ export function ThemeSwitcher() {
           transition={{ duration: 0.2 }}
         >
           {isDark ? (
-            <FiMoon className="w-5 h-5" />
+            <Moon className="w-4 h-4" />
           ) : (
-            <FiSun className="w-5 h-5" />
+            <Sun className="w-4 h-4" />
           )}
         </motion.div>
       </AnimatePresence>
