@@ -72,16 +72,15 @@ const BookCard = ({
       </CardBody>
       <Divider />
       <CardFooter className="p-4 bg-white dark:bg-gray-800 flex justify-between items-center">
-        <Link
+        <a
           href={link}
-          passHref
           className="text-cyan-600 hover:text-cyan-700 focus:outline-none focus:ring focus:ring-cyan-300 rounded-full p-2 flex items-center"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FiExternalLink className="mr-2" />
           <span className="font-semibold"></span>
-        </Link>
+        </a>
         <Link
           href={`books/${title}`}
           passHref

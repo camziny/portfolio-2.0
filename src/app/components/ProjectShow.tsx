@@ -67,7 +67,7 @@ const ProjectShow: React.FC<ProjectProps> = ({ project }) => {
 
           <div className="flex items-center gap-2 mt-6">
             {project.links.demo && (
-              <Link
+              <a
                 href={project.links.demo}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -75,10 +75,10 @@ const ProjectShow: React.FC<ProjectProps> = ({ project }) => {
               >
                 <ExternalLink className="w-3.5 h-3.5" />
                 Live Demo
-              </Link>
+              </a>
             )}
             {project.links.source && (
-              <Link
+              <a
                 href={project.links.source}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -86,7 +86,7 @@ const ProjectShow: React.FC<ProjectProps> = ({ project }) => {
               >
                 <FiGithub className="w-3.5 h-3.5" />
                 Source
-              </Link>
+              </a>
             )}
           </div>
 
