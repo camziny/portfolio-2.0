@@ -20,19 +20,19 @@ const NavBarClient = () => {
     <nav
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800"
+          ? "bg-background/80 backdrop-blur-md border-b border-border"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center h-14 sm:h-16">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6">
+        <div className="flex justify-between items-center h-14">
           <div className="hidden md:flex items-center gap-1">
             {menuItems.map((item) => (
               <Link
                 href={item.href}
                 key={item.label}
-                className="px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-400 
-                         hover:text-gray-900 dark:hover:text-white transition-colors"
+                className="px-3 py-1.5 text-sm text-muted-foreground 
+                         hover:text-foreground transition-colors"
               >
                 {item.label}
               </Link>
@@ -41,7 +41,7 @@ const NavBarClient = () => {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 -ml-2 text-gray-600 dark:text-gray-400"
+            className="md:hidden p-2 -ml-2 text-muted-foreground"
             aria-label="Toggle menu"
           >
             <div className="w-5 h-4 flex flex-col justify-between">
@@ -76,16 +76,16 @@ const NavBarClient = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.15 }}
-            className="md:hidden absolute left-0 right-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800"
+            className="md:hidden absolute left-0 right-0 bg-background border-b border-border"
           >
-            <div className="max-w-5xl mx-auto px-4 py-2">
+            <div className="max-w-2xl mx-auto px-4 py-2">
               {menuItems.map((item) => (
                 <Link
                   href={item.href}
                   key={item.label}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block px-2 py-2.5 text-sm font-medium text-gray-600 dark:text-gray-400 
-                           hover:text-gray-900 dark:hover:text-white transition-colors"
+                  className="block px-2 py-2.5 text-sm text-muted-foreground 
+                           hover:text-foreground transition-colors"
                 >
                   {item.label}
                 </Link>

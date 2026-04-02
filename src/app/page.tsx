@@ -5,8 +5,8 @@ import ContactSection from "./components/ContactSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 overflow-x-hidden">
-      <div className="relative min-h-screen flex flex-col items-center px-3 sm:px-4 lg:px-8 pt-20 sm:pt-24 pb-8 sm:pb-12">
+    <div className="min-h-screen bg-background overflow-x-hidden">
+      <div className="relative min-h-[100svh] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-4 sm:pb-6">
         <IntroHeader />
         <TerminalSection />
       </div>

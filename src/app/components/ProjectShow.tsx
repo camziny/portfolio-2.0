@@ -2,10 +2,11 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
-import { Button } from "@nextui-org/react";
 import Link from "next/link";
-import { FaArrowLeft, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { TextEffectPerChar } from "@/utils/textEffects";
+import { ArrowLeft, ExternalLink } from "lucide-react";
+import { FiGithub } from "react-icons/fi";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 
 interface Project {
   name: string;
@@ -27,167 +28,117 @@ interface ProjectProps {
   project: Project;
 }
 
-interface SectionProps {
-  title: string;
-  children: React.ReactNode;
-  variants: any;
-}
-
 const ProjectShow: React.FC<ProjectProps> = ({ project }) => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        when: "beforeChildren",
-        duration: 0.5,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.5, ease: "easeOut" },
-    },
-  };
-
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-24 pb-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-background pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-2xl mx-auto">
         <motion.div
-          initial={{ x: -20, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          className="mb-8"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
         >
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg
-                     bg-gradient-to-br from-white to-cyan-50 dark:from-gray-800 dark:to-cyan-900/20
-                     hover:from-cyan-50 hover:to-cyan-100 dark:hover:from-gray-800 dark:hover:to-cyan-900/40
-                     border border-cyan-100 dark:border-cyan-900/50
-                     text-gray-700 dark:text-gray-200
-                     transition-all duration-300 shadow-sm hover:shadow group"
+            className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
           >
-            <FaArrowLeft className="text-sm transition-transform duration-300 group-hover:-translate-x-1" />
-            <span className="text-sm font-medium">Back to Projects</span>
+            <ArrowLeft className="w-3.5 h-3.5" />
+            Back
           </Link>
-        </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="space-y-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden"
-        >
-          <div className="p-6 sm:p-8 border-b border-gray-200 dark:border-gray-700">
-            <div className="flex flex-col md:flex-row gap-8 items-center">
-              <div className="w-full md:w-1/3 flex-shrink-0">
-                <div className="relative w-48 h-48 mx-auto rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-700 shadow-md">
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    layout="fill"
-                    objectFit="contain"
-                    className="transition-transform duration-300 hover:scale-105 p-2"
-                    quality={85}
-                  />
-                </div>
-              </div>
-              <div className="w-full md:w-2/3">
-                <TextEffectPerChar className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">
-                  {project.name}
-                </TextEffectPerChar>
-                <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-4 mt-6">
-                  {project.links.demo && (
-                    <Link
-                      href={project.links.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 rounded-lg
-                               bg-gradient-to-br from-white to-cyan-50 dark:from-gray-800 dark:to-cyan-900/20
-                               hover:from-cyan-50 hover:to-cyan-100 dark:hover:from-gray-800 dark:hover:to-cyan-900/40
-                               border border-cyan-100 dark:border-cyan-900/50
-                               text-gray-700 dark:text-gray-200
-                               transition-all duration-300 shadow-sm hover:shadow"
-                    >
-                      <FaExternalLinkAlt className="text-sm" />
-                      <span>Live Demo</span>
-                    </Link>
-                  )}
-                  {project.links.source && (
-                    <Link
-                      href={project.links.source}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 rounded-lg
-                               bg-gradient-to-br from-white to-cyan-50 dark:from-gray-800 dark:to-cyan-900/20
-                               hover:from-cyan-50 hover:to-cyan-100 dark:hover:from-gray-800 dark:hover:to-cyan-900/40
-                               border border-cyan-100 dark:border-cyan-900/50
-                               text-gray-700 dark:text-gray-200
-                               transition-all duration-300 shadow-sm hover:shadow"
-                    >
-                      <FaGithub className="text-sm" />
-                      <span>Source Code</span>
-                    </Link>
-                  )}
-                </div>
-              </div>
+          <div className="flex items-start gap-4 mt-8">
+            <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+              <Image
+                src={project.image}
+                alt={project.name}
+                fill
+                className="object-cover"
+                quality={85}
+              />
             </div>
-          </div>
-          <div className="px-6 sm:px-8 pb-8 space-y-6">
-            <motion.div variants={itemVariants} className="prose dark:prose-invert max-w-none">
-              <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+            <div>
+              <h1 className="text-xl font-semibold text-foreground">
+                {project.name}
+              </h1>
+              <p className="text-sm text-muted-foreground mt-1">
                 {project.description}
               </p>
-            </motion.div>
-            <div className="grid gap-8 pt-6">
-              <Section title="Technologies Used" variants={itemVariants}>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, index) => (
-                    <span key={index} className="px-3 py-1 text-sm rounded-full
-                                               bg-gray-100 dark:bg-gray-700
-                                               text-gray-700 dark:text-gray-300">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </Section>
-              <Section title="Key Features" variants={itemVariants}>
-                <ul className="list-disc pl-5 space-y-2">
-                  {project.keyFeatures.map((feature, index) => (
-                    <li key={index} className="text-gray-600 dark:text-gray-300">{feature}</li>
-                  ))}
-                </ul>
-              </Section>
+            </div>
+          </div>
 
-              <Section title="Purpose and Goal" variants={itemVariants}>
-                <p className="text-gray-600 dark:text-gray-300">{project.purpose}</p>
-              </Section>
+          <div className="flex items-center gap-2 mt-6">
+            {project.links.demo && (
+              <a
+                href={project.links.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-3 py-1.5 text-sm text-foreground hover:bg-muted transition-colors"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                Live Demo
+              </a>
+            )}
+            {project.links.source && (
+              <a
+                href={project.links.source}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-3 py-1.5 text-sm text-foreground hover:bg-muted transition-colors"
+              >
+                <FiGithub className="w-3.5 h-3.5" />
+                Source
+              </a>
+            )}
+          </div>
 
-              <Section title="Role" variants={itemVariants}>
-                <p className="text-gray-600 dark:text-gray-300">{project.role}</p>
-              </Section>
+          <Separator className="my-8" />
 
-              <Section title="Technical Challenges & Solutions" variants={itemVariants}>
+          <div className="space-y-8">
+            <Section title="Technologies">
+              <div className="flex flex-wrap gap-1.5">
+                {project.technologies.map((tech, index) => (
+                  <Badge key={index} variant="secondary">
+                    {tech}
+                  </Badge>
+                ))}
+              </div>
+            </Section>
+
+            <Section title="Key Features">
+              <ul className="space-y-2">
+                {project.keyFeatures.map((feature, index) => (
+                  <li key={index} className="text-sm text-muted-foreground flex items-start gap-2">
+                    <span className="text-foreground mt-1.5 block w-1 h-1 rounded-full bg-foreground/40 flex-shrink-0" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </Section>
+
+            <Section title="Purpose">
+              <p className="text-sm text-muted-foreground leading-relaxed">{project.purpose}</p>
+            </Section>
+
+            <Section title="Role">
+              <p className="text-sm text-muted-foreground leading-relaxed">{project.role}</p>
+            </Section>
+
+            {project.technicalHurdles.length > 0 && (
+              <Section title="Challenges & Solutions">
                 <div className="space-y-4">
                   {project.technicalHurdles.map((hurdle, index) => (
-                    <div key={index} className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4">
-                      <p className="font-medium text-gray-700 dark:text-gray-200 mb-2">Challenge {index + 1}:</p>
-                      <p className="text-gray-600 dark:text-gray-300 mb-3">{hurdle}</p>
-                      <p className="font-medium text-gray-700 dark:text-gray-200 mb-2">Solution:</p>
-                      <p className="text-gray-600 dark:text-gray-300">{project.solutions[index]}</p>
+                    <div key={index} className="rounded-lg border border-border p-4">
+                      <p className="text-sm font-medium text-foreground">
+                        {hurdle}
+                      </p>
+                      <Separator className="my-3" />
+                      <p className="text-sm text-muted-foreground">
+                        {project.solutions[index]}
+                      </p>
                     </div>
                   ))}
                 </div>
               </Section>
-            </div>
+            )}
           </div>
         </motion.div>
       </div>
@@ -195,11 +146,11 @@ const ProjectShow: React.FC<ProjectProps> = ({ project }) => {
   );
 };
 
-const Section = ({ title, children, variants }: SectionProps) => (
-  <motion.div variants={variants} className="space-y-3">
-    <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100">{title}</h2>
+const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
+  <div>
+    <h2 className="text-sm font-medium text-foreground mb-3">{title}</h2>
     {children}
-  </motion.div>
+  </div>
 );
 
 export default ProjectShow;
