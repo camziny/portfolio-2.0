@@ -1,8 +1,20 @@
 "use client";
 import React from "react";
-import { Briefcase, GraduationCap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import CompanyLogo from "./CompanyLogo";
 import { Timeline } from "./ui/timeline";
+
+const logos = {
+  epipelagic: "/data/images/company logos/epipelagic-logo.jpeg",
+  innovatorsForPurpose: "/data/images/company logos/innovators_for_purpose_logo.jpeg",
+  dart: "/data/images/company logos/dart-logo.jpeg",
+  myTindy: "/data/images/company logos/my-tindy-logo.jpeg",
+  chingu: "/data/images/company logos/chingu-lgo.jpeg",
+  scaleAi: "/data/images/company logos/scaleai_logo.jpeg",
+  launchAcademy: "/data/images/company logos/launch-logo.jpeg",
+  natickEye: "/data/images/company logos/natick-eye-logo.png",
+  sacredHeart: "/data/images/company logos/sacred-heart-logo.jpeg",
+} as const;
 
 const ExperienceClient = () => {
   const data = [
@@ -12,9 +24,7 @@ const ExperienceClient = () => {
         <div className="space-y-6">
           <div>
             <div className="flex items-center gap-3 mb-2">
-              <div className="p-1.5 rounded-md bg-muted">
-                <Briefcase className="w-3.5 h-3.5 text-foreground" />
-              </div>
+              <CompanyLogo src={logos.epipelagic} alt="Epipelagic Ventures" />
               <div>
                 <p className="text-sm font-medium text-foreground">
                   Epipelagic Ventures
@@ -24,7 +34,7 @@ const ExperienceClient = () => {
                 </p>
               </div>
             </div>
-            <div className="ml-9 mb-3">
+            <div className="ml-12 mb-3">
               <div className="border-l border-border pl-3 space-y-2">
                 <div>
                   <p className="text-sm text-foreground">Senior Software Engineer</p>
@@ -36,7 +46,7 @@ const ExperienceClient = () => {
                 </div>
               </div>
             </div>
-            <div className="ml-9 flex flex-wrap gap-1">
+            <div className="ml-12 flex flex-wrap gap-1">
               {["React", "React Native", "Flutter", "Next.js", "PostgreSQL", "TypeScript", "Tailwind CSS", "AWS"].map((skill) => (
                 <Badge key={skill} variant="secondary" className="text-[10px]">
                   {skill}
@@ -47,19 +57,17 @@ const ExperienceClient = () => {
 
           <div>
             <div className="flex items-center gap-3 mb-2">
-              <div className="p-1.5 rounded-md bg-muted">
-                <Briefcase className="w-3.5 h-3.5 text-foreground" />
-              </div>
+              <CompanyLogo src={logos.innovatorsForPurpose} alt="Innovators for Purpose" />
               <div>
                 <p className="text-sm font-medium text-foreground">
                   Innovators for Purpose
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  Instructor, Web Development · 2023 - Present
+                  Instructor, Software Development · 2023 - Present
                 </p>
               </div>
             </div>
-            <div className="ml-9 flex flex-wrap gap-1">
+            <div className="ml-12 flex flex-wrap gap-1">
               {["Node.js", "Express", "JavaScript", "Python", "SQLite"].map((skill) => (
                 <Badge key={skill} variant="secondary" className="text-[10px]">
                   {skill}
@@ -75,9 +83,7 @@ const ExperienceClient = () => {
       content: (
         <div>
           <div className="flex items-center gap-3 mb-3">
-            <div className="p-1.5 rounded-md bg-muted">
-              <Briefcase className="w-3.5 h-3.5 text-foreground" />
-            </div>
+            <CompanyLogo src={logos.dart} alt="Dart Co." />
             <div>
               <p className="text-sm font-medium text-foreground">
                 Dart Co.
@@ -87,7 +93,7 @@ const ExperienceClient = () => {
               </p>
             </div>
           </div>
-          <div className="ml-9 flex flex-wrap gap-1">
+          <div className="ml-12 flex flex-wrap gap-1">
             {["React", "Vue.js", "Node.js", "Docker", "PostgreSQL", "TypeScript"].map((skill) => (
               <Badge key={skill} variant="secondary" className="text-[10px]">
                 {skill}
@@ -103,9 +109,7 @@ const ExperienceClient = () => {
         <div className="space-y-6">
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <div className="p-1.5 rounded-md bg-muted">
-                <Briefcase className="w-3.5 h-3.5 text-foreground" />
-              </div>
+              <CompanyLogo src={logos.myTindy} alt="myTindy" />
               <div>
                 <p className="text-sm font-medium text-foreground">
                   myTindy
@@ -115,7 +119,7 @@ const ExperienceClient = () => {
                 </p>
               </div>
             </div>
-            <div className="ml-9 flex flex-wrap gap-1">
+            <div className="ml-12 flex flex-wrap gap-1">
               {["React Native", "Node.js", "MongoDB", "TypeScript", "AWS"].map((skill) => (
                 <Badge key={skill} variant="secondary" className="text-[10px]">
                   {skill}
@@ -126,9 +130,7 @@ const ExperienceClient = () => {
 
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <div className="p-1.5 rounded-md bg-muted">
-                <Briefcase className="w-3.5 h-3.5 text-foreground" />
-              </div>
+              <CompanyLogo src={logos.chingu} alt="Chingu" />
               <div>
                 <p className="text-sm font-medium text-foreground">
                   Chingu
@@ -138,7 +140,7 @@ const ExperienceClient = () => {
                 </p>
               </div>
             </div>
-            <div className="ml-9 flex flex-wrap gap-1">
+            <div className="ml-12 flex flex-wrap gap-1">
               {["React", "Node.js", "PostgreSQL", "TypeScript"].map((skill) => (
                 <Badge key={skill} variant="secondary" className="text-[10px]">
                   {skill}
@@ -149,9 +151,7 @@ const ExperienceClient = () => {
 
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <div className="p-1.5 rounded-md bg-muted">
-                <Briefcase className="w-3.5 h-3.5 text-foreground" />
-              </div>
+              <CompanyLogo src={logos.scaleAi} alt="Scale AI" />
               <div>
                 <p className="text-sm font-medium text-foreground">
                   Scale AI
@@ -161,7 +161,7 @@ const ExperienceClient = () => {
                 </p>
               </div>
             </div>
-            <div className="ml-9 flex flex-wrap gap-1">
+            <div className="ml-12 flex flex-wrap gap-1">
               {["Python", "JavaScript", "C++", "Java"].map((skill) => (
                 <Badge key={skill} variant="secondary" className="text-[10px]">
                   {skill}
@@ -177,9 +177,7 @@ const ExperienceClient = () => {
       content: (
         <div>
           <div className="flex items-center gap-3 mb-3">
-            <div className="p-1.5 rounded-md bg-muted">
-              <Briefcase className="w-3.5 h-3.5 text-foreground" />
-            </div>
+            <CompanyLogo src={logos.launchAcademy} alt="Launch Academy" />
             <div>
               <p className="text-sm font-medium text-foreground">
                 Launch Academy
@@ -189,7 +187,7 @@ const ExperienceClient = () => {
               </p>
             </div>
           </div>
-          <div className="ml-9 flex flex-wrap gap-1">
+          <div className="ml-12 flex flex-wrap gap-1">
             {["React", "Node.js", "PostgreSQL", "JavaScript"].map((skill) => (
               <Badge key={skill} variant="secondary" className="text-[10px]">
                 {skill}
@@ -204,9 +202,7 @@ const ExperienceClient = () => {
       content: (
         <div>
           <div className="flex items-center gap-3">
-            <div className="p-1.5 rounded-md bg-muted">
-              <Briefcase className="w-3.5 h-3.5 text-foreground" />
-            </div>
+            <CompanyLogo src={logos.natickEye} alt="Natick Eye Associates" wide />
             <div>
               <p className="text-sm font-medium text-foreground">
                 Natick Eye Associates
@@ -224,9 +220,7 @@ const ExperienceClient = () => {
       content: (
         <div>
           <div className="flex items-center gap-3">
-            <div className="p-1.5 rounded-md bg-muted">
-              <GraduationCap className="w-3.5 h-3.5 text-foreground" />
-            </div>
+            <CompanyLogo src={logos.sacredHeart} alt="Sacred Heart University" />
             <div>
               <p className="text-sm font-medium text-foreground">
                 Sacred Heart University
