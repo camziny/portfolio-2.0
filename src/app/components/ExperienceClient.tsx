@@ -202,7 +202,7 @@ const ExperienceClient = () => {
       content: (
         <div>
           <div className="flex items-center gap-3">
-            <CompanyLogo src={logos.natickEye} alt="Natick Eye Associates" />
+            <CompanyLogo src={logos.natickEye} alt="Natick Eye Associates" wide />
             <div>
               <p className="text-sm font-medium text-foreground">
                 Natick Eye Associates
