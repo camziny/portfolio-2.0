@@ -63,7 +63,7 @@ const ExperienceClient = () => {
                   Innovators for Purpose
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  Instructor, Web Development · 2023 - Present
+                  Instructor, Software Development · 2023 - Present
                 </p>
               </div>
             </div>
