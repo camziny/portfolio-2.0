@@ -9,11 +9,12 @@ interface Project {
   image: StaticImageData;
   skills: string;
   link: string;
-  github: string;
+  github?: string;
+  appStore?: string;
 }
 
 const ProjectCard = ({
-  project: { name, image, skills, link, github },
+  project: { name, image, skills, link, github, appStore },
 }: {
   project: Project;
 }) => {
@@ -41,14 +42,27 @@ const ProjectCard = ({
             >
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
-            <a
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <FiGithub className="w-3.5 h-3.5" />
-            </a>
+            {appStore && (
+              <a
+                href={appStore}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors text-[10px] font-medium"
+                aria-label="App Store"
+              >
+                iOS
+              </a>
+            )}
+            {github && (
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <FiGithub className="w-3.5 h-3.5" />
+              </a>
+            )}
           </div>
         </div>
         <p className="text-sm text-muted-foreground line-clamp-2 mt-1">
