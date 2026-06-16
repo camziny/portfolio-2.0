@@ -17,6 +17,7 @@ interface Project {
   links: {
     demo?: string;
     source?: string;
+    appStore?: string;
   };
   purpose: string;
   role: string;
@@ -74,7 +75,18 @@ const ProjectShow: React.FC<ProjectProps> = ({ project }) => {
                 className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-3 py-1.5 text-sm text-foreground hover:bg-muted transition-colors"
               >
                 <ExternalLink className="w-3.5 h-3.5" />
-                Live Demo
+                {project.links.appStore ? "Website" : "Live Demo"}
+              </a>
+            )}
+            {project.links.appStore && (
+              <a
+                href={project.links.appStore}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-3 py-1.5 text-sm text-foreground hover:bg-muted transition-colors"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                App Store
               </a>
             )}
             {project.links.source && (
